@@ -12,4 +12,4 @@ export function LogInPageNav() {
   );
 }
 
-export default connect()(LoginPageNav);
+export default connect()(LogInPageNav);
