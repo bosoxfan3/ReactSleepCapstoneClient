@@ -1,14 +1,31 @@
 import React from 'react';
-import UserNav from './user-nav';
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+import {fetchProtectedData} from '../actions/protected-data';
+//this will become a fetch sleep data or some other sort of action later
 
-export function SleepStatsPage() {
-  return (
-    <div>
-      <UserNav />
-      <h1>Stats will go here</h1>
-    </div>
-  );
+import UserNav from './user-nav';
+
+
+export class SleepStatsPage extends React.Component {
+  componentDidMount() {
+    if (!this.props.loggedIn) {
+      return;
+    }
+    this.props.dispatch(fetchProtectedData());
+  }
+  render() {
+    return (
+      <div>
+        <UserNav />
+        <h1>'protected data': {this.props.protectedData}</h1>
+      </div>
+    );
+  }
 }
 
-export default connect()(SleepStatsPage);
+const mapStateToProps = state => {
+  protectedData: state.protectedData.data
+};
+
+export default connect(mapStateToProps)(SleepStatsPage);

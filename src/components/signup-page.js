@@ -1,9 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+
 import SignUpPageNav from './signup-page-nav';
 import SignUpForm from './signup-form';
-import {connect} from 'react-redux';
 
-export function SignUpPage() {
+export function SignUpPage(props) {
+  if (props.loggedIn) {
+    return <Redirect to="/stats" />;
+  }
   return (
     <div>
       <SignUpPageNav />
@@ -12,4 +17,8 @@ export function SignUpPage() {
   );
 }
 
-export default connect()(SignUpPage);
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(SignUpPage);

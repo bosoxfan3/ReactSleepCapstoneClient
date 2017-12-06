@@ -7,7 +7,7 @@ export function UserNav() {
       <nav>
         <a href="/stats">Sleep Stats</a>
         <a href="/sleep">My Sleep</a>
-        <a href="/sleep/new">Add Sleep</a>
+        <a href="/add-sleep">Add Sleep</a>
         <button href="/logout">Log Out</button>
       </nav>
     </header>
