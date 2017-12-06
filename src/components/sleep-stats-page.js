@@ -28,6 +28,7 @@ export class SleepStatsPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null,
   protectedData: state.protectedData.data
 });
 

@@ -37,7 +37,7 @@ export class App extends React.Component {
       60 * 60 * 1000 //one hour
     );
   }
-  stopPeriodRefresh() {
+  stopPeriodicRefresh() {
     if (!this.refreshInterval) {
       return;
     }

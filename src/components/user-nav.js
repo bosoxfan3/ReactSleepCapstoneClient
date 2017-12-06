@@ -1,17 +1,30 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {setCurrentUser, setAuthToken} from '../actions/auth';
+import {clearAuthToken} from '../local-storage';
 
-export function UserNav() {
-  return (
-    <header>
-      <nav>
-        <a href="/stats">Sleep Stats</a>
-        <a href="/sleep">My Sleep</a>
-        <a href="/add-sleep">Add Sleep</a>
-        <button href="/logout">Log Out</button>
-      </nav>
-    </header>
-  );
+export class UserNav extends React.Component {
+  logOut() {
+    this.props.dispatch(setCurrentUser(null));
+    this.props.dispatch(setAuthToken(null));
+    clearAuthToken();
+  };
+  render() {
+    return (
+      <header>
+        <nav>
+          <a href="/stats">Sleep Stats</a>
+          <a href="/sleep">My Sleep</a>
+          <a href="/add-sleep">Add Sleep</a>
+          <button onClick={() => this.logOut()}>Log Out</button>
+        </nav>
+      </header>
+    );
+  };
 }
 
-export default connect()(UserNav);
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(UserNav);
