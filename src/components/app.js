@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, withRouter} from 'react-router-dom';
+import {Route, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import LandingPage from './landing-page';

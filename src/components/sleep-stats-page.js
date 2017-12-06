@@ -15,6 +15,9 @@ export class SleepStatsPage extends React.Component {
     this.props.dispatch(fetchProtectedData());
   }
   render() {
+    if (!this.props.loggedIn) {
+      return <Redirect to="/" />;
+    }
     return (
       <div>
         <UserNav />
@@ -24,8 +27,8 @@ export class SleepStatsPage extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => ({
   protectedData: state.protectedData.data
-};
+});
 
 export default connect(mapStateToProps)(SleepStatsPage);
