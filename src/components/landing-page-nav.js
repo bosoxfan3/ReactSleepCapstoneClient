@@ -7,8 +7,8 @@ export function LandingPageNav() {
       <nav>
         <a href="/">SleepApp</a>
         <a href="/">About</a>
-        <a href="/">Sign Up</a>
-        <button href="/login">Log In</button>
+        <a href="/signup">Sign Up</a>
+        <a href="/login">Log In</a>
       </nav>
     </header>
   );
