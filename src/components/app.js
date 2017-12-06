@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import LandingPage from './landing-page';
@@ -45,7 +45,6 @@ export class App extends React.Component {
   }
   render() {
     return (
-      <Router>
         <div>
           <main>
             <Route exact path="/" component={LandingPage} />
@@ -56,7 +55,6 @@ export class App extends React.Component {
             <Route exact path="/add-sleep" component={AddSleepPage} />
           </main>
         </div>
-      </Router>
     );
   }
 }
@@ -66,8 +64,6 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(App);
-
-//curric had something called dealing with update blocking
-//imported {withRouter} from 'react-router-dom'
-//then did export default withRouter(connect(mapStateToProps)(App))
+//it wouldn't render without this withRouter function. curric says it
+//is to deal with 'update blocking'
+export default withRouter(connect(mapStateToProps)(App));
