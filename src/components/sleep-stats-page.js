@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import {fetchProtectedData} from '../actions/protected-data';
-//this will become a fetch sleep data or some other sort of action later
+import {fetchSleepData} from '../actions/sleep-data';
 
 import UserNav from './user-nav';
 
@@ -12,7 +11,7 @@ export class SleepStatsPage extends React.Component {
     if (!this.props.loggedIn) {
       return;
     }
-    this.props.dispatch(fetchProtectedData());
+    this.props.dispatch(fetchSleepData());
   }
   render() {
     if (!this.props.loggedIn) {
@@ -22,7 +21,7 @@ export class SleepStatsPage extends React.Component {
     return (
       <div>
         <UserNav />
-        <h1>'protected data': {this.props.protectedData}</h1>
+        <h1>'sleep data': {this.props.sleepData}</h1>
       </div>
     );
   }
@@ -30,7 +29,7 @@ export class SleepStatsPage extends React.Component {
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null,
-  protectedData: state.protectedData.sleeps
+  sleepData: state.sleepData.sleeps
 });
 
 export default connect(mapStateToProps)(SleepStatsPage);

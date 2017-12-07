@@ -1,12 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 export function SignUpPageNav() {
   return (
     <header>
       <nav>
-        <a href="/">Back To Home</a>
-        <a href="/login">Log In</a>
+        <Link to="/">Back To Home</Link>
+        <Link to="/login">Log In</Link>
       </nav>
     </header>
   );

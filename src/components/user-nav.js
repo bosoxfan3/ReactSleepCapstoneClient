@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {setCurrentUser, setAuthToken} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
+import {Link} from 'react-router-dom';
 
 export class UserNav extends React.Component {
   logOut() {
@@ -13,9 +14,9 @@ export class UserNav extends React.Component {
     return (
       <header>
         <nav>
-          <a href="/stats">Sleep Stats</a>
-          <a href="/sleep">My Sleep</a>
-          <a href="/add-sleep">Add Sleep</a>
+          <Link to="/stats">Sleep Stats</Link>
+          <Link to="/sleep">My Sleep</Link>
+          <Link to="/add-sleep">Add Sleep</Link>
           <button onClick={() => this.logOut()}>Log Out</button>
         </nav>
       </header>

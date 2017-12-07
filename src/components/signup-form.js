@@ -2,10 +2,10 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
-import Input from './input';
+import Input from './form-components/input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 
-export class RegistrationForm extends React.Component {
+export class SignupForm extends React.Component {
     onSubmit(values) {
         const {username, password, firstName, lastName} = values;
         const user = {username, password, firstName, lastName};
@@ -17,7 +17,7 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
             <form
-                className="login-form"
+                className="signup-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -57,7 +57,7 @@ export class RegistrationForm extends React.Component {
 }
 
 export default reduxForm({
-    form: 'registration',
+    form: 'signup',
     onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('registration', Object.keys(errors)[0]))
-})(RegistrationForm);
+        dispatch(focus('signup', Object.keys(errors)[0]))
+})(SignupForm);
