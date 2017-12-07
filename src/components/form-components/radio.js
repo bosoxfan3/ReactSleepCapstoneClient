@@ -2,14 +2,15 @@ import React from 'react';
 import {Field} from 'redux-form';
 
 export default function Radio(props) {
+  const name=props.input.name;
   const options = props.options.map((option, index) => (
-    <label key={index} htmlFor={props.name}>
+    <label key={index} htmlFor={name}>
       <Field
         component="input"
         value={option}
-        id={props.name}
+        id={name}
         type="radio"
-        name={props.name}
+        name={name}
       />
       {option}
     </label>
