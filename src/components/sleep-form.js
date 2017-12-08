@@ -3,6 +3,7 @@ import {reduxForm, Field} from 'redux-form';
 import Select from './form-components/select';
 import TimeInput from './form-components/time-input';
 import Radio from './form-components/radio';
+import {required} from '../validators'
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 'August', 'September', 'October', 'November', 'December'];
@@ -36,18 +37,21 @@ export class SleepForm extends React.Component {
               component={Select}
               name="month"
               options={months}
+              validate={required}
             />
             <label htmlFor="day">Day</label>
             <Field
               component={Select}
               name="day"
               options={days}
+              validate={required}
             />
             <label htmlFor="year">Year</label>
             <Field
               component={Select}
               name="year"
               options={[2017, 2018]}
+              validate={required}
             />
           </fieldset>
           <section id="sleep-times">
@@ -56,12 +60,14 @@ export class SleepForm extends React.Component {
               name="bedTime"
               id="bed-time"
               label="When Did You Go To Bed?"
+              validate={required}
             />
             <Field
               component={TimeInput}
               name="awakeTime"
               id="awake-time"
               label="What Time Did You Wake Up?"
+              validate={required}
             />
           </section>
           <section id="sleep-alarm">
@@ -70,6 +76,7 @@ export class SleepForm extends React.Component {
               component={Radio}
               name="alarm"
               options={['Yes', 'No']}
+              validate={required}
             />
           </section>
           <section id="sleep-exercise">
@@ -78,6 +85,7 @@ export class SleepForm extends React.Component {
               component={Radio}
               name="exercise"
               options={['Yes', 'No']}
+              validate={required}
             />
           </section>
           <section id="sleep-blue-light">
@@ -86,6 +94,7 @@ export class SleepForm extends React.Component {
               component={Radio}
               name="blueLight"
               options={['Yes', 'No']}
+              validate={required}
             />
           </section>
           <section id="sleep-caffeine">
@@ -93,7 +102,8 @@ export class SleepForm extends React.Component {
             <Field
               component={Select}
               name="caffeine"
-              options={[1, 2, 3, 4, 5]}
+              options={[0, 1, 2, 3, 4, 5]}
+              validate={required}
             />
           </section>
           <section id="sleep-mood-wake">
@@ -102,6 +112,7 @@ export class SleepForm extends React.Component {
               component={Select}
               name="wakeUp"
               options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+              validate={required}
             />
           </section>
           <section id="sleep-mood-sleep">
@@ -110,6 +121,7 @@ export class SleepForm extends React.Component {
               component={Select}
               name="toSleep"
               options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+              validate={required}
             />
           </section>
           <button type="submit">Submit</button>
