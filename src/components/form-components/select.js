@@ -1,19 +1,18 @@
 import React from 'react';
 
-export default function Select(props) {
-  const options = props.options.map((option, index) => (
-    <option key={index} value={option}>{option}</option>
-  ));
-  return (
-    <div>
+export default class Select extends React.Component {
+  render() {
+    const options = this.props.options.map((option) => (
+      <option key={option} value={option}>{option}</option>
+    ));
+    const { input, name} = this.props;
+    return (
       <div>
-        {props.label}
-      </div>
-      <div>
-        <select name={props.name} id={props.name} required>
+        <select {...input} {...name}>
+          <option value=""></option>
           {options}
         </select>
       </div>
-    </div>
-  );
+    );
+  }
 }

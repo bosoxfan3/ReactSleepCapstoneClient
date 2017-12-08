@@ -31,23 +31,22 @@ export class SleepForm extends React.Component {
             this.onSubmit(values)
           )}>
           <fieldset name="date-of-sleep">
-            <h4>Date of Sleep</h4>
+            <label htmlFor="month">Month</label>
             <Field
               component={Select}
               name="month"
-              label="Month"
               options={months}
             />
+            <label htmlFor="day">Day</label>
             <Field
               component={Select}
               name="day"
-              label="Day"
               options={days}
             />
+            <label htmlFor="year">Year</label>
             <Field
               component={Select}
               name="year"
-              label="Year"
               options={[2017, 2018]}
             />
           </fieldset>
@@ -90,26 +89,26 @@ export class SleepForm extends React.Component {
             />
           </section>
           <section id="sleep-caffeine">
+            <label htmlFor="caffeine">How many servings of caffeine did you consume?</label>
             <Field
               component={Select}
               name="caffeine"
-              label="How many servings of caffeine did you consume?"
               options={[1, 2, 3, 4, 5]}
             />
           </section>
           <section id="sleep-mood-wake">
+            <label htmlFor="wakeup">Rate your mood from 1 to 10 (10 being best) at waking</label>
             <Field
               component={Select}
               name="wakeUp"
-              label="Rate your mood from 1 to 10 (10 being best) at waking"
               options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
             />
           </section>
           <section id="sleep-mood-sleep">
+            <label htmlFor="toSleep">Rate your mood from 1 to 10 (10 being best) before sleeping</label>
             <Field
               component={Select}
               name="toSleep"
-              label="Rate your mood from 1 to 10 (10 being best) before sleeping"
               options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
             />
           </section>

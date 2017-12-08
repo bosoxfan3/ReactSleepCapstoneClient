@@ -8,7 +8,7 @@ export default function Radio(props) {
       <Field
         component="input"
         value={option}
-        id={name}
+        id={option}
         type="radio"
         name={name}
       />
