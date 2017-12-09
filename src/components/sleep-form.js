@@ -4,6 +4,7 @@ import Select from './form-components/select';
 import TimeInput from './form-components/time-input';
 import Radio from './form-components/radio';
 import {required} from '../validators'
+import {postSleepData} from '../actions/sleep-data';
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 'August', 'September', 'October', 'November', 'December'];
@@ -12,17 +13,9 @@ const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 
 export class SleepForm extends React.Component {
   onSubmit(values) {
-    console.log(values);
+    this.props.dispatch(postSleepData(values));
   }
   render() {
-
-    //Make sure to add required to all these fields once it is working!
-    //
-    //
-    //
-    //
-
-
     return (
       <section>
         <h2>New Night of Sleep</h2>
@@ -107,19 +100,19 @@ export class SleepForm extends React.Component {
             />
           </section>
           <section id="sleep-mood-wake">
-            <label htmlFor="wakeup">Rate your mood from 1 to 10 (10 being best) at waking</label>
+            <label htmlFor="moodAtWake">Rate your mood from 1 to 10 (10 being best) at waking</label>
             <Field
               component={Select}
-              name="wakeUp"
+              name="moodAtWake"
               options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
               validate={required}
             />
           </section>
           <section id="sleep-mood-sleep">
-            <label htmlFor="toSleep">Rate your mood from 1 to 10 (10 being best) before sleeping</label>
+            <label htmlFor="moodAtSleep">Rate your mood from 1 to 10 (10 being best) before sleeping</label>
             <Field
               component={Select}
-              name="toSleep"
+              name="moodAtSleep"
               options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
               validate={required}
             />

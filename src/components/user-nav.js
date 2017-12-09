@@ -15,8 +15,8 @@ export class UserNav extends React.Component {
       <header>
         <nav>
           <Link to="/stats">Sleep Stats</Link>
-          <Link to="/sleep">My Sleep</Link>
-          <Link to="/add-sleep">Add Sleep</Link>
+          <Link to="/sleeps">My Sleeps</Link>
+          <Link to="/sleeps/new">Add Sleep</Link>
           <button onClick={() => this.logOut()}>Log Out</button>
         </nav>
       </header>

@@ -5,17 +5,23 @@ import {Redirect} from 'react-router-dom';
 import UserNav from './user-nav';
 import MySleeps from './my-sleeps';
 
-
-export function MySleepPage() {
-  if (!this.props.loggedIn) {
-    return <Redirect to="/" />;
+export class MySleepPage extends React.Component {
+  componentDidMount() {
+    if (!this.props.loggedIn) {
+      return;
+    }
   }
-  return (
-    <div>
-      <UserNav />
-      <MySleeps />
-    </div>
-  );
+  render() {
+    if (!this.props.loggedIn) {
+      return <Redirect to="/" />;
+    }
+    return (
+      <div>
+        <UserNav />
+        <MySleeps />
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => ({

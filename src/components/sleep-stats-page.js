@@ -17,11 +17,11 @@ export class SleepStatsPage extends React.Component {
     if (!this.props.loggedIn) {
       return <Redirect to="/" />;
     }
-    console.log(this.props.protectedData);
+    console.log(this.props.sleepData);
     return (
       <div>
         <UserNav />
-        <h1>'sleep data': {this.props.sleepData}</h1>
+        <h1>'sleep data':</h1>
       </div>
     );
   }

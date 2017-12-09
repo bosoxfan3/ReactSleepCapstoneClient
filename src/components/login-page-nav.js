@@ -6,7 +6,7 @@ export function LogInPageNav() {
   return (
     <header>
       <nav>
-        <Link to="/">BLinkck To Home</Link>
+        <Link to="/">Back To Home</Link>
         <Link to="/signup">Sign Up</Link>
       </nav>
     </header>

@@ -51,8 +51,8 @@ export class App extends React.Component {
             <Route exact path="/login" component={LogInPage} />
             <Route exact path="/signup" component={SignUpPage} />
             <Route exact path="/stats" component={SleepStatsPage} />
-            <Route exact path="/sleep" component={MySleepPage} />
-            <Route exact path="/add-sleep" component={AddSleepPage} />
+            <Route exact path="/sleeps" component={MySleepPage} />
+            <Route exact path="/sleeps/new" component={AddSleepPage} />
           </main>
         </div>
     );
