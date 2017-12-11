@@ -1,16 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchSleepData, deleteSleepData, turnEditingOn} from '../actions/sleep-data';
+import {fetchSleepData, deleteSleepData, saveCurrentSleep} from '../actions/sleep-data';
 import {Redirect} from 'react-router-dom';
 // import {reduxForm, Field} from 'redux-form';
 // import {required} from '../validators'
 // import Select from './editing-form-components/select';
 
-let alarm;
-let exercise;
-let blueLight;
-let currentEditIndex;
-let currentSleepDate;
+
+// let currentEditIndex;
+// let currentSleepID;
 
 export class MySleeps extends React.Component {
   onDeleteClick(date) {
@@ -47,12 +45,11 @@ export class MySleeps extends React.Component {
   //   )
   // }
 
-  switchToEditingPage(index, sleep) {
-    console.log(index);
+  switchToEditingPage(sleep) {
     console.log(sleep);
-    currentEditIndex = index;
-    currentSleepDate = sleep.date;
-    this.props.dispatch(turnEditingOn(currentEditIndex, sleep));
+    this.props.dispatch(saveCurrentSleep(sleep));
+    this.props.history.push(`/sleeps/${sleep.id}`);
+    // this.props.dispatch(turnEditingOn(sleep));
     // if (editing === false) {
     //   editing = true;
     //   currentEditIndex = index;
@@ -74,11 +71,14 @@ export class MySleeps extends React.Component {
 
   render() {
     
-    if (this.props.editing === true) {
-      return <Redirect to={`/sleeps/${currentSleepDate}`} />;
-    }
+    // if (this.props.editing === true) {
+    //   return <Redirect to={`/sleeps/${currentSleepID}`} />;
+    // }
 
     const sleeps = this.props.sleeps.map((sleep, index) => {
+      let alarm;
+      let exercise;
+      let blueLight;
       if (sleep.alarm === true) {
         alarm = 'Yes'
       } else {
@@ -104,7 +104,7 @@ export class MySleeps extends React.Component {
           <p>Caffeine: {sleep.caffeine} servings</p>
           <p>Morning Mood: {sleep.moodAtWake}</p>
           <p>Night Mood: {sleep.moodAtSleep}</p>
-          <button onClick={() => this.switchToEditingPage(index, sleep)}>Edit</button>
+          <button onClick={() => this.switchToEditingPage(sleep)}>Edit</button>
           <button onClick={() => this.onDeleteClick(sleep.date)}>Delete</button>
         </div>
       );

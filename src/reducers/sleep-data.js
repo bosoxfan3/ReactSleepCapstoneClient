@@ -7,15 +7,15 @@ import {
   DELETE_SLEEP_DATA_ERROR,
   UPDATE_SLEEP_DATA_SUCCESS,
   UPDATE_SLEEP_DATA_ERROR,
-  TURN_EDITING_ON,
-  TURN_EDITING_OFF
+  SAVE_CURRENT_SLEEP
+//   TURN_EDITING_OFF
 } from '../actions/sleep-data';
 
 const initialState = {
   sleeps: [],
   error: null,
-  editing: false,
   index: null,
+  editing: false,
   currentSleep: null
 };
 
@@ -62,19 +62,16 @@ export default function reducer(state = initialState, action) {
           error: action.error
       });
   }
-  if (action.type === TURN_EDITING_ON) {
+  if (action.type === SAVE_CURRENT_SLEEP) {
       return Object.assign({}, state, {
-          editing: true,
-          index: action.index,
           currentSleep: action.data
       });
   }
-  if (action.type === TURN_EDITING_OFF) {
-      return Object.assign({}, state, {
-          editing: false,
-          index: null,
-          currentSleep: null
-      });
-  }
+//   if (action.type === TURN_EDITING_OFF) {
+//       return Object.assign({}, state, {
+//           editing: false,
+//           currentSleep: null
+//       });
+//   }
   return state;
 }

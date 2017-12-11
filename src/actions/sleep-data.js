@@ -49,17 +49,16 @@ export const updateSleepDataError = error => ({
     error
 });
 
-export const TURN_EDITING_ON = 'TURN_EDITING_ON';
-export const turnEditingOn = (index, data) => ({
-    type: TURN_EDITING_ON,
-    index,
+export const SAVE_CURRENT_SLEEP = 'SAVE_CURRENT_SLEEP';
+export const saveCurrentSleep = (data) => ({
+    type: SAVE_CURRENT_SLEEP,
     data
 });
 
-export const TURN_EDITING_OFF = 'TURN_EDITING_OFF';
-export const turnEditingOff = () => ({
-    type: TURN_EDITING_OFF
-});
+// export const TURN_EDITING_OFF = 'TURN_EDITING_OFF';
+// export const turnEditingOff = () => ({
+//     type: TURN_EDITING_OFF
+// });
 
 export const fetchSleepData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;

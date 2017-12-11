@@ -18,7 +18,7 @@ export class MySleepPage extends React.Component {
     return (
       <div>
         <UserNav />
-        <MySleeps />
+        <MySleeps history={this.props.history} />
       </div>
     );
   }

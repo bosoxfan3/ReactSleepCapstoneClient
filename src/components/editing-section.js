@@ -6,7 +6,7 @@ import Select from './form-components/select';
 import TimeInput from './form-components/time-input';
 import Radio from './form-components/radio';
 import {required} from '../validators'
-import {updateSleepData, turnEditingOff} from '../actions/sleep-data';
+import {updateSleepData} from '../actions/sleep-data';
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 'August', 'September', 'October', 'November', 'December'];
@@ -19,13 +19,17 @@ export class EditingSection extends React.Component {
   onSubmit(values) {
     this.props.dispatch(updateSleepData(values));
   }
-  setEditing() {
-    this.props.dispatch(turnEditingOff());
+  onComponentDidMount() {
+    // this.props.dispatch(fetchSleepData(this.props.match.params.id));
+    console.log(this.props.sleep);
   }
+  // setEditing() {
+  //   // this.props.dispatch(turnEditingOff());
+  // }
   render() {
-    if (this.props.editing === false) {
-      return <Redirect to="/stats" />
-    }
+    // if (this.props.editing === false) {
+    //   return <Redirect to="/stats" />
+    // }
     // if (this.props.sleep.awakeTime.length < 5) {
     //   awakeTimeAdjustment = `0${this.props.sleep.awakeTime}`;
     // } else {
@@ -68,7 +72,7 @@ export class EditingSection extends React.Component {
         <form onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
         )}>
-        <h3>Editing {this.props.sleep.date}</h3>
+        {/* <h3>Editing {this.props.sleep.date}</h3> */}
         <fieldset name="date-of-sleep">
             <label htmlFor="month">Month</label>
             <Field
@@ -94,6 +98,7 @@ export class EditingSection extends React.Component {
         </fieldset>
         <section id="sleep-times">
             <Field
+              value={this.props.sleep.bedTime}
               component={TimeInput}
               name="bedTime"
               id="bed-time"
@@ -164,7 +169,7 @@ export class EditingSection extends React.Component {
         </section>
         <button type="submit">Submit Changes</button>
         </form>
-        <button onClick={() => this.setEditing()}>Stop Editing</button> 
+        <button>Stop Editing</button> 
       </section>
     );
   }
@@ -172,9 +177,7 @@ export class EditingSection extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    index: state.sleepData.index,
     sleep: state.sleepData.currentSleep,
-    editing: state.sleepData.editing
   }
 };
 
