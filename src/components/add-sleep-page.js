@@ -2,14 +2,29 @@ import React from 'react';
 import UserNav from './user-nav';
 import SleepForm from './sleep-form';
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
-export function AddSleepPage() {
-  return (
-    <div>
-      <UserNav />
-      <SleepForm />
-    </div>
-  );
+export class AddSleepPage extends React.Component {
+  componentDidMount() {
+    if (!this.props.loggedIn) {
+      return;
+    }
+  }
+  render() {
+    if (!this.props.loggedIn) {
+      return <Redirect to="/" />;
+    }
+    return (
+      <div>
+        <UserNav />
+        <SleepForm history={this.props.history} />
+      </div>
+    );
+  }
 }
 
-export default connect()(AddSleepPage);
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(AddSleepPage);

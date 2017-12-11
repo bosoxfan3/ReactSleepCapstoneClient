@@ -55,11 +55,6 @@ export const saveCurrentSleep = (data) => ({
     data
 });
 
-// export const TURN_EDITING_OFF = 'TURN_EDITING_OFF';
-// export const turnEditingOff = () => ({
-//     type: TURN_EDITING_OFF
-// });
-
 export const fetchSleepData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/sleeps`, {
@@ -78,35 +73,7 @@ export const fetchSleepData = () => (dispatch, getState) => {
 };
 
 export const postSleepData = (values) => (dispatch, getState) => {
-    // let month;
-    // if (values.month === 'January') {
-    //     month = 1;
-    // } else if (values.month === 'February') {
-    //     month = 2;
-    // } else if (values.month === 'March') {
-    //     month = 3;
-    // } else if (values.month === 'April') {
-    //     month = 4;
-    // } else if (values.month === 'May') {
-    //     month = 5;
-    // } else if (values.month === 'June') {
-    //     month = 6;
-    // } else if (values.month === 'July') {
-    //     month = 7;
-    // } else if (values.month === 'August') {
-    //     month = 8;
-    // } else if (values.month === 'September') {
-    //     month = 9;
-    // } else if (values.month === 'October') {
-    //     month = 10;
-    // } else if (values.month === 'November') {
-    //     month = 11;
-    // } else if (values.month === 'December') {
-    //     month = 12;
-    // }
     const authToken = getState().auth.authToken;
-    // const date = `${month}-${values.day}-${values.year}`;
-    // console.log(date);
     const bedTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.bedTime}`);
     const nextDay = Number(values.day) + 1;
     const awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
@@ -139,10 +106,9 @@ export const postSleepData = (values) => (dispatch, getState) => {
         });
 };
 
-export const deleteSleepData = (date) => (dispatch, getState) => {
-    console.log('trying to delete');
+export const deleteSleepData = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/sleeps/${date}`, {
+    return fetch(`${API_BASE_URL}/sleeps/${id}`, {
         method: 'DELETE',
         headers: {
             // Provide our auth token as credentials
@@ -157,40 +123,13 @@ export const deleteSleepData = (date) => (dispatch, getState) => {
         });
 };
 
-export const updateSleepData = (values) => (dispatch, getState) => {
-    let month;
-    if (values.month === 'January') {
-        month = 1;
-    } else if (values.month === 'February') {
-        month = 2;
-    } else if (values.month === 'March') {
-        month = 3;
-    } else if (values.month === 'April') {
-        month = 4;
-    } else if (values.month === 'May') {
-        month = 5;
-    } else if (values.month === 'June') {
-        month = 6;
-    } else if (values.month === 'July') {
-        month = 7;
-    } else if (values.month === 'August') {
-        month = 8;
-    } else if (values.month === 'September') {
-        month = 9;
-    } else if (values.month === 'October') {
-        month = 10;
-    } else if (values.month === 'November') {
-        month = 11;
-    } else if (values.month === 'December') {
-        month = 12;
-    }
+export const updateSleepData = (values, id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    const date = `${month}-${values.day}-${values.year}`;
     const bedTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.bedTime}`);
     const nextDay = Number(values.day) + 1;
     const awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
     const data = {
-        date: date,
+        id: id,
         bedTime: bedTime,
         awakeTime: awakeTime,
         alarm: (values.alarm==='Yes'),
@@ -200,13 +139,15 @@ export const updateSleepData = (values) => (dispatch, getState) => {
         moodAtWake: values.moodAtWake,
         moodAtSleep: values.moodAtSleep,
     }
-    return fetch(`${API_BASE_URL}/sleeps/${date}`, {
+    return fetch(`${API_BASE_URL}/sleeps/${id}`, {
         method: 'PUT',
         headers: {
             // Provide our auth token as credentials
-            Authorization: `Bearer ${authToken}`
+            Authorization: `Bearer ${authToken}`,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         },
-        body: data
+        body: JSON.stringify(data)
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())

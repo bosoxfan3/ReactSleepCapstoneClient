@@ -8,14 +8,11 @@ import {
   UPDATE_SLEEP_DATA_SUCCESS,
   UPDATE_SLEEP_DATA_ERROR,
   SAVE_CURRENT_SLEEP
-//   TURN_EDITING_OFF
 } from '../actions/sleep-data';
 
 const initialState = {
   sleeps: [],
   error: null,
-  index: null,
-  editing: false,
   currentSleep: null
 };
 
@@ -32,7 +29,8 @@ export default function reducer(state = initialState, action) {
   }
   if (action.type === POST_SLEEP_DATA_SUCCESS) {
      return Object.assign({}, state, {
-         sleeps: [...state.sleeps, action.data]
+         sleeps: [...state.sleeps, action.data],
+         error: null
      });
   }
   if (action.type === POST_SLEEP_DATA_ERROR) {
@@ -42,7 +40,8 @@ export default function reducer(state = initialState, action) {
   }
   if (action.type === DELETE_SLEEP_DATA_SUCCESS) {
       return Object.assign({}, state, {
-          sleeps: state.sleeps.filter(sleep => sleep.date !== action.data.date)
+          sleeps: state.sleeps.filter(sleep => sleep.id !== action.data.id),
+          error: null
       });
   }
   if (action.type === DELETE_SLEEP_DATA_ERROR) {
@@ -53,8 +52,9 @@ export default function reducer(state = initialState, action) {
   if (action.type === UPDATE_SLEEP_DATA_SUCCESS) {
       return Object.assign({}, state, {
           sleeps: state.sleeps.map(sleep =>
-            sleep.date === action.sleep.date ? action.data : sleep
-        )
+            sleep.id === action.sleep.id ? action.data : sleep
+        ),
+        error: null
       });
   }
   if (action.type === UPDATE_SLEEP_DATA_ERROR) {
@@ -64,14 +64,9 @@ export default function reducer(state = initialState, action) {
   }
   if (action.type === SAVE_CURRENT_SLEEP) {
       return Object.assign({}, state, {
-          currentSleep: action.data
+          currentSleep: action.data,
+          error: null
       });
   }
-//   if (action.type === TURN_EDITING_OFF) {
-//       return Object.assign({}, state, {
-//           editing: false,
-//           currentSleep: null
-//       });
-//   }
   return state;
 }

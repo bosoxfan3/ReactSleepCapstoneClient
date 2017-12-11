@@ -13,58 +13,64 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-// let awakeTimeAdjustment;
-
 export class EditingSection extends React.Component {
   onSubmit(values) {
-    this.props.dispatch(updateSleepData(values));
+    let id = this.props.match.params.id;
+    this.props.dispatch(updateSleepData(values, id));
   }
-  onComponentDidMount() {
-    // this.props.dispatch(fetchSleepData(this.props.match.params.id));
-    console.log(this.props.sleep);
-  }
-  // setEditing() {
-  //   // this.props.dispatch(turnEditingOff());
+  // onComponentDidMount() {
+  //   // this.props.dispatch(fetchSleepData(this.props.match.params.id));
+  //   console.log(this.props.sleep);
   // }
+
+  
+  //the fetchByID that would've been done above on mount is taken care of 
+  //by my currentSleep key and value in the store
+
+
+
   render() {
-    // if (this.props.editing === false) {
-    //   return <Redirect to="/stats" />
-    // }
-    // if (this.props.sleep.awakeTime.length < 5) {
-    //   awakeTimeAdjustment = `0${this.props.sleep.awakeTime}`;
-    // } else {
-    //   awakeTimeAdjustment = this.props.sleep.awakeTime;
-    // }
-    // let month = this.props.sleep.date.split('-')[0];
-    // let day = this.props.sleep.date.split('-')[1];
-    // let year = this.props.sleep.date.split('-')[2];
-    // if (month === '1') {
-    //   month = 'January';
-    // } else if (month === '2') {
-    //   month = 'February';
-    // } else if (month === '3') {
-    //   month = 'March';
-    // } else if (month === '4') {
-    //   month = 'April';
-    // } else if (month === '5') {
-    //   month = 'May';
-    // } else if (month === '6') {
-    //   month = 'June';
-    // } else if (month === '7') {
-    //   month = 'July';
-    // } else if (month === '8') {
-    //   month = 'August';
-    // } else if (month === '9') {
-    //   month = 'September';
-    // } else if (month === '10') {
-    //   month = 'October';
-    // } else if (month === '11') {
-    //   month = 'November';
-    // } else if (month === '12') {
-    //   month = 'December';
-    // } else {
-    //   month = '';
-    // }
+    console.log(this.props.sleep);
+    let awakeTimeAdjustment;
+    if (this.props.sleep.awakeTime.length < 5) {
+      awakeTimeAdjustment = `0${this.props.sleep.awakeTime}`;
+    } else {
+      awakeTimeAdjustment = this.props.sleep.awakeTime;
+    }
+    let month = this.props.sleep.date.split(' ')[0];
+    let day = this.props.sleep.date.split(' ')[1];
+    if (day[0] === '0') {
+      day = day.substring(1);
+    }
+    let year = this.props.sleep.date.split(' ')[2];
+    if (month === 'Jan') {
+      month = 'January';
+    } else if (month === 'Feb') {
+      month = 'February';
+    } else if (month === 'Mar') {
+      month = 'March';
+    } else if (month === 'Apr') {
+      month = 'April';
+    } else if (month === 'May') {
+      month = 'May';
+    } else if (month === 'Jun') {
+      month = 'June';
+    } else if (month === 'Jul') {
+      month = 'July';
+    } else if (month === 'Aug') {
+      month = 'August';
+    } else if (month === 'Sep') {
+      month = 'September';
+    } else if (month === 'Oct') {
+      month = 'October';
+    } else if (month === 'Nov') {
+      month = 'November';
+    } else if (month === 'Dec') {
+      month = 'December';
+    } else {
+      month = '';
+    }
+    console.log(month);
     //defaultValue = {month} , {day} , {awakeTimeAdjustment} 
     //{this.props.sleep.bedTime}, etc.
     return (
@@ -72,10 +78,11 @@ export class EditingSection extends React.Component {
         <form onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
         )}>
-        {/* <h3>Editing {this.props.sleep.date}</h3> */}
+        {<h3>Editing {this.props.sleep.date}</h3>}
         <fieldset name="date-of-sleep">
             <label htmlFor="month">Month</label>
             <Field
+              defaultValue={month}
               component={Select}
               name="month"
               options={months}
@@ -83,6 +90,8 @@ export class EditingSection extends React.Component {
             />
             <label htmlFor="day">Day</label>
             <Field
+              defaultValue={day}
+              value={day}
               component={Select}
               name="day"
               options={days}
@@ -90,6 +99,7 @@ export class EditingSection extends React.Component {
             />
             <label htmlFor="year">Year</label>
             <Field
+              defaultValue={year}
               component={Select}
               name="year"
               options={[2017, 2018]}

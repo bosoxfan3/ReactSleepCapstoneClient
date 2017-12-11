@@ -11,8 +11,8 @@ import {Redirect} from 'react-router-dom';
 // let currentSleepID;
 
 export class MySleeps extends React.Component {
-  onDeleteClick(date) {
-    this.props.dispatch(deleteSleepData(date));
+  onDeleteClick(id) {
+    this.props.dispatch(deleteSleepData(id));
     this.componentDidUpdate();
   }
 
@@ -105,7 +105,7 @@ export class MySleeps extends React.Component {
           <p>Morning Mood: {sleep.moodAtWake}</p>
           <p>Night Mood: {sleep.moodAtSleep}</p>
           <button onClick={() => this.switchToEditingPage(sleep)}>Edit</button>
-          <button onClick={() => this.onDeleteClick(sleep.date)}>Delete</button>
+          <button onClick={() => this.onDeleteClick(sleep.id)}>Delete</button>
         </div>
       );
     });
