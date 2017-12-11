@@ -4,12 +4,19 @@ import {
   POST_SLEEP_DATA_SUCCESS,
   POST_SLEEP_DATA_ERROR,
   DELETE_SLEEP_DATA_SUCCESS,
-  DELETE_SLEEP_DATA_ERROR
+  DELETE_SLEEP_DATA_ERROR,
+  UPDATE_SLEEP_DATA_SUCCESS,
+  UPDATE_SLEEP_DATA_ERROR,
+  TURN_EDITING_ON,
+  TURN_EDITING_OFF
 } from '../actions/sleep-data';
 
 const initialState = {
   sleeps: [],
-  error: null
+  error: null,
+  editing: false,
+  index: null,
+  currentSleep: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -41,6 +48,32 @@ export default function reducer(state = initialState, action) {
   if (action.type === DELETE_SLEEP_DATA_ERROR) {
       return Object.assign({}, state, {
           error: action.error
+      });
+  }
+  if (action.type === UPDATE_SLEEP_DATA_SUCCESS) {
+      return Object.assign({}, state, {
+          sleeps: state.sleeps.map(sleep =>
+            sleep.date === action.sleep.date ? action.data : sleep
+        )
+      });
+  }
+  if (action.type === UPDATE_SLEEP_DATA_ERROR) {
+      return Object.assign({}, state, {
+          error: action.error
+      });
+  }
+  if (action.type === TURN_EDITING_ON) {
+      return Object.assign({}, state, {
+          editing: true,
+          index: action.index,
+          currentSleep: action.data
+      });
+  }
+  if (action.type === TURN_EDITING_OFF) {
+      return Object.assign({}, state, {
+          editing: false,
+          index: null,
+          currentSleep: null
       });
   }
   return state;

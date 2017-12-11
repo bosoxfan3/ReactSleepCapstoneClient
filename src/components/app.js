@@ -8,6 +8,7 @@ import SignUpPage from './signup-page';
 import SleepStatsPage from './sleep-stats-page';
 import MySleepPage from './my-sleep-page';
 import AddSleepPage from './add-sleep-page';
+import EditingPage from './editing-page';
 
 import {refreshAuthToken} from '../actions/auth';
 
@@ -52,7 +53,8 @@ export class App extends React.Component {
             <Route exact path="/signup" component={SignUpPage} />
             <Route exact path="/stats" component={SleepStatsPage} />
             <Route exact path="/sleeps" component={MySleepPage} />
-            <Route exact path="/sleeps/new" component={AddSleepPage} />
+            <Route exact path="/sleeps/add/new" component={AddSleepPage} />
+            <Route exact path="/sleeps/:date" component={EditingPage} />
           </main>
         </div>
     );

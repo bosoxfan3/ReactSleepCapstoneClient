@@ -37,6 +37,30 @@ export const deleteSleepDataError = error => ({
     error
 });
 
+export const UPDATE_SLEEP_DATA_SUCCESS = 'UPDATE_SLEEP_DATA_SUCCESS';
+export const updateSleepDataSuccess = data => ({
+    type: UPDATE_SLEEP_DATA_SUCCESS,
+    data
+});
+
+export const UPDATE_SLEEP_DATA_ERROR = 'UPDATE_SLEEP_DATA_ERROR';
+export const updateSleepDataError = error => ({
+    type: UPDATE_SLEEP_DATA_ERROR,
+    error
+});
+
+export const TURN_EDITING_ON = 'TURN_EDITING_ON';
+export const turnEditingOn = (index, data) => ({
+    type: TURN_EDITING_ON,
+    index,
+    data
+});
+
+export const TURN_EDITING_OFF = 'TURN_EDITING_OFF';
+export const turnEditingOff = () => ({
+    type: TURN_EDITING_OFF
+});
+
 export const fetchSleepData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/sleeps`, {
@@ -55,8 +79,35 @@ export const fetchSleepData = () => (dispatch, getState) => {
 };
 
 export const postSleepData = (values) => (dispatch, getState) => {
+    let month;
+    if (values.month === 'January') {
+        month = 1;
+    } else if (values.month === 'February') {
+        month = 2;
+    } else if (values.month === 'March') {
+        month = 3;
+    } else if (values.month === 'April') {
+        month = 4;
+    } else if (values.month === 'May') {
+        month = 5;
+    } else if (values.month === 'June') {
+        month = 6;
+    } else if (values.month === 'July') {
+        month = 7;
+    } else if (values.month === 'August') {
+        month = 8;
+    } else if (values.month === 'September') {
+        month = 9;
+    } else if (values.month === 'October') {
+        month = 10;
+    } else if (values.month === 'November') {
+        month = 11;
+    } else if (values.month === 'December') {
+        month = 12;
+    }
     const authToken = getState().auth.authToken;
-    const date = `${values.month}-${values.day}-${values.year}`;
+    const date = `${month}-${values.day}-${values.year}`;
+    console.log(date);
     const bedTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.bedTime}`);
     const nextDay = Number(values.day) + 1;
     const awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
@@ -72,7 +123,7 @@ export const postSleepData = (values) => (dispatch, getState) => {
         moodAtSleep: values.moodAtSleep,
     }
     console.log(data);
-    return fetch(`${API_BASE_URL}/sleeps/new`, {
+    return fetch(`${API_BASE_URL}/sleeps/add/new`, {
         method: 'POST',
         headers: {
             // Provide our auth token as credentials
@@ -103,5 +154,64 @@ export const deleteSleepData = (date) => (dispatch, getState) => {
         .then((data) => dispatch(fetchSleepDataSuccess(data)))
         .catch(err => {
             dispatch(fetchSleepDataError(err));
+        });
+};
+
+export const updateSleepData = (values) => (dispatch, getState) => {
+    let month;
+    if (values.month === 'January') {
+        month = 1;
+    } else if (values.month === 'February') {
+        month = 2;
+    } else if (values.month === 'March') {
+        month = 3;
+    } else if (values.month === 'April') {
+        month = 4;
+    } else if (values.month === 'May') {
+        month = 5;
+    } else if (values.month === 'June') {
+        month = 6;
+    } else if (values.month === 'July') {
+        month = 7;
+    } else if (values.month === 'August') {
+        month = 8;
+    } else if (values.month === 'September') {
+        month = 9;
+    } else if (values.month === 'October') {
+        month = 10;
+    } else if (values.month === 'November') {
+        month = 11;
+    } else if (values.month === 'December') {
+        month = 12;
+    }
+    const authToken = getState().auth.authToken;
+    const date = `${month}-${values.day}-${values.year}`;
+    const bedTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.bedTime}`);
+    const nextDay = Number(values.day) + 1;
+    const awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
+    const data = {
+        date: date,
+        bedTime: bedTime,
+        awakeTime: awakeTime,
+        alarm: (values.alarm==='Yes'),
+        exercise: (values.exercise==='Yes'),
+        blueLight: (values.blueLight==='Yes'),
+        caffeine: values.caffeine,
+        moodAtWake: values.moodAtWake,
+        moodAtSleep: values.moodAtSleep,
+    }
+    return fetch(`${API_BASE_URL}/sleeps/${date}`, {
+        method: 'PUT',
+        headers: {
+            // Provide our auth token as credentials
+            Authorization: `Bearer ${authToken}`
+        },
+        body: data
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then((data) => dispatch(updateSleepDataSuccess(data)))
+        .catch(err => {
+            dispatch(updateSleepDataError(err));
         });
 };
