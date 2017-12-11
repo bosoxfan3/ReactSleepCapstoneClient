@@ -18,7 +18,7 @@ export class EditingPage extends React.Component {
     return (
       <div>
         <UserNav />
-        <EditingSection />
+        <EditingSection history={this.props.history} />
       </div>
     );
   }

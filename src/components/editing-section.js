@@ -15,8 +15,12 @@ const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 
 export class EditingSection extends React.Component {
   onSubmit(values) {
-    let id = this.props.match.params.id;
-    this.props.dispatch(updateSleepData(values, id));
+    // let id = this.props.match.params.id;
+    // console.log(id);
+    console.log(values);
+    console.log(this.props.sleep.id);
+    this.props.dispatch(updateSleepData(values, this.props.sleep.id));
+    this.props.history.push('/stats');
   }
   // onComponentDidMount() {
   //   // this.props.dispatch(fetchSleepData(this.props.match.params.id));
@@ -30,7 +34,6 @@ export class EditingSection extends React.Component {
 
 
   render() {
-    console.log(this.props.sleep);
     let awakeTimeAdjustment;
     if (this.props.sleep.awakeTime.length < 5) {
       awakeTimeAdjustment = `0${this.props.sleep.awakeTime}`;
@@ -70,15 +73,22 @@ export class EditingSection extends React.Component {
     } else {
       month = '';
     }
-    console.log(month);
     //defaultValue = {month} , {day} , {awakeTimeAdjustment} 
     //{this.props.sleep.bedTime}, etc.
     return (
       <section>
+        <h3>Editing {this.props.sleep.date}</h3>
         <form onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
         )}>
-        {<h3>Editing {this.props.sleep.date}</h3>}
+        <Field
+          name="id" 
+          value={this.props.sleep.id} 
+          type="text"
+          component="input"
+          placeholder={this.props.sleep.id}
+          hidden
+        />
         <fieldset name="date-of-sleep">
             <label htmlFor="month">Month</label>
             <Field

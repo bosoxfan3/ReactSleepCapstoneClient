@@ -38,7 +38,7 @@ export const deleteSleepDataError = error => ({
 });
 
 export const UPDATE_SLEEP_DATA_SUCCESS = 'UPDATE_SLEEP_DATA_SUCCESS';
-export const updateSleepDataSuccess = data => ({
+export const updateSleepDataSuccess = (data) => ({
     type: UPDATE_SLEEP_DATA_SUCCESS,
     data
 });
@@ -139,7 +139,7 @@ export const updateSleepData = (values, id) => (dispatch, getState) => {
         moodAtWake: values.moodAtWake,
         moodAtSleep: values.moodAtSleep,
     }
-    return fetch(`${API_BASE_URL}/sleeps/${id}`, {
+    return fetch(`${API_BASE_URL}/sleeps/${data.id}`, {
         method: 'PUT',
         headers: {
             // Provide our auth token as credentials
