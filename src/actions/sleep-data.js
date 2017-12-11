@@ -79,40 +79,39 @@ export const fetchSleepData = () => (dispatch, getState) => {
 };
 
 export const postSleepData = (values) => (dispatch, getState) => {
-    let month;
-    if (values.month === 'January') {
-        month = 1;
-    } else if (values.month === 'February') {
-        month = 2;
-    } else if (values.month === 'March') {
-        month = 3;
-    } else if (values.month === 'April') {
-        month = 4;
-    } else if (values.month === 'May') {
-        month = 5;
-    } else if (values.month === 'June') {
-        month = 6;
-    } else if (values.month === 'July') {
-        month = 7;
-    } else if (values.month === 'August') {
-        month = 8;
-    } else if (values.month === 'September') {
-        month = 9;
-    } else if (values.month === 'October') {
-        month = 10;
-    } else if (values.month === 'November') {
-        month = 11;
-    } else if (values.month === 'December') {
-        month = 12;
-    }
+    // let month;
+    // if (values.month === 'January') {
+    //     month = 1;
+    // } else if (values.month === 'February') {
+    //     month = 2;
+    // } else if (values.month === 'March') {
+    //     month = 3;
+    // } else if (values.month === 'April') {
+    //     month = 4;
+    // } else if (values.month === 'May') {
+    //     month = 5;
+    // } else if (values.month === 'June') {
+    //     month = 6;
+    // } else if (values.month === 'July') {
+    //     month = 7;
+    // } else if (values.month === 'August') {
+    //     month = 8;
+    // } else if (values.month === 'September') {
+    //     month = 9;
+    // } else if (values.month === 'October') {
+    //     month = 10;
+    // } else if (values.month === 'November') {
+    //     month = 11;
+    // } else if (values.month === 'December') {
+    //     month = 12;
+    // }
     const authToken = getState().auth.authToken;
-    const date = `${month}-${values.day}-${values.year}`;
-    console.log(date);
+    // const date = `${month}-${values.day}-${values.year}`;
+    // console.log(date);
     const bedTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.bedTime}`);
     const nextDay = Number(values.day) + 1;
     const awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
     const data = {
-        date: date,
         bedTime: bedTime,
         awakeTime: awakeTime,
         alarm: (values.alarm==='Yes'),
@@ -123,13 +122,15 @@ export const postSleepData = (values) => (dispatch, getState) => {
         moodAtSleep: values.moodAtSleep,
     }
     console.log(data);
-    return fetch(`${API_BASE_URL}/sleeps/add/new`, {
+    return fetch(`${API_BASE_URL}/sleeps/`, {
         method: 'POST',
         headers: {
             // Provide our auth token as credentials
-            Authorization: `Bearer ${authToken}`
+            Authorization: `Bearer ${authToken}`,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         },
-        body: data
+        body: JSON.stringify(data)
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
