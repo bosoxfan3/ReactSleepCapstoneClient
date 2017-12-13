@@ -15,13 +15,14 @@ const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 
 export class EditingSection extends React.Component {
   onSubmit(values) {
-    console.log(values);
-    console.log(this.props.sleep.id);
+    // console.log(values);
+    // console.log(this.props.sleep.id);
     this.props.dispatch(updateSleepData(values, this.props.sleep.id));
     this.props.history.push('/stats');
   }
 
   render() {
+    console.log(this.props.sleep);
     let awakeTimeAdjustment;
     if (this.props.sleep.awakeTime.length < 5) {
       awakeTimeAdjustment = `0${this.props.sleep.awakeTime}`;
@@ -61,7 +62,7 @@ export class EditingSection extends React.Component {
     } else {
       month = '';
     }
-    //defaultValue = {month} , {day} , {awakeTimeAdjustment} 
+    //defaultValue = {month} , {day} , {awakeTimeAdjustment}
     //{this.props.sleep.bedTime}, etc.
     return (
       <section>
@@ -70,8 +71,8 @@ export class EditingSection extends React.Component {
           this.onSubmit(values)
         )}>
         <Field
-          name="id" 
-          value={this.props.sleep.id} 
+          name="id"
+          value={this.props.sleep.id}
           type="text"
           component="input"
           placeholder={this.props.sleep.id}
@@ -138,7 +139,7 @@ export class EditingSection extends React.Component {
               options={['Yes', 'No']}
               validate={required}
             />
-        </section> 
+        </section>
         <section id="sleep-blue-light">
             <p>Did you use a phone, tablet, computer, or watch TV within 30 minutes of sleep?</p>
             <Field
@@ -156,7 +157,7 @@ export class EditingSection extends React.Component {
               options={[0, 1, 2, 3, 4, 5]}
               validate={required}
             />
-        </section> 
+        </section>
         <section id="sleep-mood-wake">
             <label htmlFor="moodAtWake">Rate your mood from 1 to 10 (10 being best) at waking</label>
             <Field
@@ -177,7 +178,7 @@ export class EditingSection extends React.Component {
         </section>
         <button type="submit">Submit Changes</button>
         </form>
-        <button>Stop Editing</button> 
+        <button>Stop Editing</button>
       </section>
     );
   }

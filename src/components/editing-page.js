@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import {fetchSleepDataById} from '../actions/sleep-data';
 
 import UserNav from './user-nav';
 import EditingSection from './editing-section';
@@ -10,6 +11,7 @@ export class EditingPage extends React.Component {
     if (!this.props.loggedIn) {
       return;
     }
+    this.props.dispatch(fetchSleepDataById(this.props.match.params.id));
   }
   render() {
     if (!this.props.loggedIn) {

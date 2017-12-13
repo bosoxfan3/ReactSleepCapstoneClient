@@ -14,11 +14,13 @@ export class MySleeps extends React.Component {
 
 
   render() {
+
     const sleeps = this.props.sleeps.map((sleep, index) => {
       let exercise = sleep.exercise? 'Yes' : 'No';
       let blueLight = sleep.blueLight? 'Yes' : 'No';
       let alarm  = sleep.alarm? 'Yes' : 'No';
 
+      console.log(sleep);
       return (
         <div key={index}>
           <h3>{sleep.date}</h3>
