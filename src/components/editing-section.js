@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {reduxForm, Field} from 'redux-form';
+import {reduxForm, change, Field} from 'redux-form';
 import {required} from '../validators'
-import {updateSleepData} from '../actions/sleep-data';
+import {updateSleepData, postSleepData} from '../actions/sleep-data';
 
 import Select from './form-components/select';
 import TimeInput from './form-components/time-input';
@@ -15,14 +15,29 @@ const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 
 export class EditingSection extends React.Component {
   onSubmit(values) {
-    // console.log(values);
-    // console.log(this.props.sleep.id);
-    this.props.dispatch(updateSleepData(values, this.props.sleep.id));
+
+    if (this.props.match.params.id) {
+      this.props.dispatch(updateSleepData(values, this.props.sleep.id));
+    }else{
+       this.props.dispatch(postSleepData(values));
+    }
     this.props.history.push('/stats');
   }
 
+  componentDidUpdate(){
+    this.setDefaults()
+  }
+  componentDidMount(){
+     //this.setDefaults()
+  }
+
+  setDefaults(){
+    this.props.dispatch(change('edit', 'moodAtSleep', this.props.sleep.moodAtSleep));
+    this.props.dispatch(change('edit', 'moodAtWake', this.props.sleep.moodAtWake));
+  }
   render() {
-    console.log(this.props.sleep);
+
+
     let awakeTimeAdjustment;
     if (this.props.sleep.awakeTime.length < 5) {
       awakeTimeAdjustment = `0${this.props.sleep.awakeTime}`;
@@ -69,7 +84,7 @@ export class EditingSection extends React.Component {
         <h3>Editing {this.props.sleep.date}</h3>
         <form onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
-        )}>
+        )} >
         <Field
           name="id"
           value={this.props.sleep.id}
@@ -89,7 +104,7 @@ export class EditingSection extends React.Component {
             />
             <label htmlFor="day">Day</label>
             <Field
-              defaultValue={day}
+
               value={day}
               component={Select}
               name="day"
@@ -192,7 +207,7 @@ function mapStateToProps(state) {
 
 EditingSection = connect(mapStateToProps)(EditingSection);
 EditingSection = reduxForm({
-  form: 'edit'
+  form: 'edit',
 })(EditingSection);
 
 export default EditingSection;

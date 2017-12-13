@@ -11,7 +11,11 @@ export class EditingPage extends React.Component {
     if (!this.props.loggedIn) {
       return;
     }
-    this.props.dispatch(fetchSleepDataById(this.props.match.params.id));
+
+    if (this.props.match.params.id) {
+      this.props.dispatch(fetchSleepDataById(this.props.match.params.id));
+    }
+
   }
   render() {
     if (!this.props.loggedIn) {
