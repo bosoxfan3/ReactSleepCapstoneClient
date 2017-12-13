@@ -18,6 +18,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   if (action.type === FETCH_SLEEP_DATA_SUCCESS) {
+    console.log(action.data)
       return Object.assign({}, state, {
           sleeps: action.data,
           error: null

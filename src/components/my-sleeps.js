@@ -5,38 +5,20 @@ import {fetchSleepData, deleteSleepData, saveCurrentSleep} from '../actions/slee
 export class MySleeps extends React.Component {
   onDeleteClick(id) {
     this.props.dispatch(deleteSleepData(id));
-    this.componentDidUpdate();
   }
 
   switchToEditingPage(sleep) {
-    this.props.dispatch(saveCurrentSleep(sleep));
+    // this.props.dispatch(saveCurrentSleep(sleep));
     this.props.history.push(`/sleeps/${sleep.id}`);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    this.props.dispatch(fetchSleepData());
-  }
 
   render() {
     const sleeps = this.props.sleeps.map((sleep, index) => {
-      let alarm;
-      let exercise;
-      let blueLight;
-      if (sleep.alarm === true) {
-        alarm = 'Yes'
-      } else {
-        alarm = 'No'
-      }
-      if (sleep.exercise === true) {
-        exercise = 'Yes'
-      } else {
-        exercise = 'No'
-      }
-      if (sleep.blueLight === true) {
-        blueLight = 'Yes'
-      } else {
-        blueLight = 'No'
-      }
+      let exercise = sleep.exercise? 'Yes' : 'No';
+      let blueLight = sleep.blueLight? 'Yes' : 'No';
+      let alarm  = sleep.alarm? 'Yes' : 'No';
+
       return (
         <div key={index}>
           <h3>{sleep.date}</h3>
