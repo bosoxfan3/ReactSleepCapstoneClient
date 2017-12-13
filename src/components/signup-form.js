@@ -2,8 +2,9 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
-import Input from './form-components/input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+
+import Input from './form-components/input';
 
 export class SignupForm extends React.Component {
     onSubmit(values) {
@@ -37,7 +38,7 @@ export class SignupForm extends React.Component {
                     component={Input}
                     type="password"
                     name="password"
-                    validate={[required, length({min: 10, max: 72}), isTrimmed]}
+                    validate={[required, length({min: 5, max: 72}), isTrimmed]}
                 />
                 <label htmlFor="passwordConfirm">Confirm password</label>
                 <Field

@@ -1,8 +1,9 @@
 import React from 'react';
-import UserNav from './user-nav';
-import SleepForm from './sleep-form';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
+
+import UserNav from './user-nav';
+import SleepForm from './sleep-form';
 
 export class AddSleepPage extends React.Component {
   componentDidMount() {

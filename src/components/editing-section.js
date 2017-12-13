@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
-import {Redirect} from 'react-router-dom';
+import {required} from '../validators'
+import {updateSleepData} from '../actions/sleep-data';
+
 import Select from './form-components/select';
 import TimeInput from './form-components/time-input';
 import Radio from './form-components/radio';
-import {required} from '../validators'
-import {updateSleepData} from '../actions/sleep-data';
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 'August', 'September', 'October', 'November', 'December'];
@@ -15,23 +15,11 @@ const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 
 export class EditingSection extends React.Component {
   onSubmit(values) {
-    // let id = this.props.match.params.id;
-    // console.log(id);
     console.log(values);
     console.log(this.props.sleep.id);
     this.props.dispatch(updateSleepData(values, this.props.sleep.id));
     this.props.history.push('/stats');
   }
-  // onComponentDidMount() {
-  //   // this.props.dispatch(fetchSleepData(this.props.match.params.id));
-  //   console.log(this.props.sleep);
-  // }
-
-  
-  //the fetchByID that would've been done above on mount is taken care of 
-  //by my currentSleep key and value in the store
-
-
 
   render() {
     let awakeTimeAdjustment;
@@ -207,5 +195,3 @@ EditingSection = reduxForm({
 })(EditingSection);
 
 export default EditingSection;
-
-// export default connect(mapStateToProps)(EditingSection);

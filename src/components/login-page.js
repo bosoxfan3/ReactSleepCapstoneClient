@@ -1,8 +1,9 @@
 import React from 'react';
-import LogInPageNav from './login-page-nav';
-import LogInForm from './login-form';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
+
+import LogInPageNav from './login-page-nav';
+import LogInForm from './login-form';
 
 export function LogInPage(props) {
   if (props.loggedIn) {

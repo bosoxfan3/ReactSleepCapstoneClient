@@ -8,7 +8,7 @@ export default class Select extends React.Component {
     const { input, name} = this.props;
     return (
       <div>
-        <select {...input} {...name}>
+        <select {...input} value={this.props.defaultValue} {...name}>
           <option value=""></option>
           {options}
         </select>

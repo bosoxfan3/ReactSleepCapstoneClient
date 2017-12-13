@@ -1,10 +1,11 @@
 import React from 'react';
 import {reduxForm, Field} from 'redux-form';
+import {required} from '../validators'
+import {postSleepData} from '../actions/sleep-data';
+
 import Select from './form-components/select';
 import TimeInput from './form-components/time-input';
 import Radio from './form-components/radio';
-import {required} from '../validators'
-import {postSleepData} from '../actions/sleep-data';
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 'August', 'September', 'October', 'November', 'December'];

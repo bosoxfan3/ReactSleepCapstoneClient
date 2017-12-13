@@ -1,14 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchSleepData, deleteSleepData, saveCurrentSleep} from '../actions/sleep-data';
-import {Redirect} from 'react-router-dom';
-// import {reduxForm, Field} from 'redux-form';
-// import {required} from '../validators'
-// import Select from './editing-form-components/select';
-
-
-// let currentEditIndex;
-// let currentSleepID;
 
 export class MySleeps extends React.Component {
   onDeleteClick(id) {
@@ -16,65 +8,16 @@ export class MySleeps extends React.Component {
     this.componentDidUpdate();
   }
 
-  // createEditingForm(index) {
-  //   let editingForm = (
-  //     <div>
-  //       <form onSubmit={this.props.handleSubmit(values =>
-  //         this.onSubmit(values)
-  //       )}>
-  //       <h3>{this.props.sleeps[index].date}</h3> 
-  //       <section id="sleep-caffeine">
-  //           <label htmlFor="caffeine">How many servings of caffeine did you consume?</label>
-  //           <Field
-  //             component={Select}
-  //             name="caffeine"
-  //             selected={this.props.sleeps[index].caffeine}
-  //             options={[0, 1, 2, 3, 4, 5]}
-  //             validate={required}
-  //           />
-  //         </section> 
-  //       <button type="submit">Submit Changes</button>
-  //       </form>
-  //       <button onClick={this.props.setEditing()}>Stop Editing</button> 
-  //     </div> 
-  //   );
-  //   return (
-  //     <div>
-  //       {editingForm}
-  //     </div>
-  //   )
-  // }
-
   switchToEditingPage(sleep) {
-    console.log(sleep);
     this.props.dispatch(saveCurrentSleep(sleep));
     this.props.history.push(`/sleeps/${sleep.id}`);
-    // this.props.dispatch(turnEditingOn(sleep));
-    // if (editing === false) {
-    //   editing = true;
-    //   currentEditIndex = index;
-    //   this.createEditingForm(index);
-    // } else {
-    //   editing = false;
-    // }
   }
 
   componentDidUpdate(prevProps, prevState) {
     this.props.dispatch(fetchSleepData());
   }
 
-  // onSubmit(values) {
-  //   this.props.dispatch(updateSleepData(values));
-  // }
-
-
-
   render() {
-    
-    // if (this.props.editing === true) {
-    //   return <Redirect to={`/sleeps/${currentSleepID}`} />;
-    // }
-
     const sleeps = this.props.sleeps.map((sleep, index) => {
       let alarm;
       let exercise;

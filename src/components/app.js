@@ -67,6 +67,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-//it wouldn't render without this withRouter function. curric says it
-//is to deal with 'update blocking'
 export default withRouter(connect(mapStateToProps)(App));
