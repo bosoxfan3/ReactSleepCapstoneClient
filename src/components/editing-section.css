@@ -1,0 +1,412 @@
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.row::before,
+.row::after {
+  display: table;
+  content: '';
+}
+
+.row::after {
+  clear: both;
+}
+
+.col-3, .col-4, .col-6, .col-12 {
+  float: left;
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+}
+
+/* Mobile defaults */
+.col-3, .col-4, .col-6, .col-12 {
+  width: 100%;
+}
+
+/* Non-mobile, grid */
+@media only screen and (min-width: 640px) {
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.333333%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}
+
+.background {
+  background-color: rgb(235, 235, 235);
+  padding-bottom: 1000px;
+}
+
+.editing-form-section {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.editing-form {
+  font-size: 14pt;
+}
+
+.editing-form label {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 14pt;
+}
+
+.date-field {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  margin-right: 25px;
+}
+
+.date-field select {
+  background-color: turquoise;
+  color: white;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;	
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+
+.date-field::before,
+.date-field::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.date-field::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.date-field::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.date-field select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.date-field select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.date-field::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.date-field::after {
+  color: rgba(0,0,0,.4);
+}
+
+.time-field {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 25px;
+}
+
+.time-field label {
+  font-size: 14pt;
+}
+
+.time-field input {
+  background-color: turquoise;
+  border-style: none;
+  color: white;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+/* input[type="radio"]:checked + label {
+  background: turquoise;
+}
+
+input[type="radio"] {
+  display: none;
+} */
+
+
+input[type="radio"] {
+  display:none;
+}
+input[type="radio"] + label {
+  color: black;
+  font-family:Arial, sans-serif;
+}
+input[type="radio"] + label span {
+  display:inline-block;
+  width:19px;
+  height:19px;
+  margin:-2px 10px 0 0;
+  vertical-align:middle;
+  background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -38px top no-repeat;
+  cursor:pointer;
+}
+input[type="radio"]:checked + label span {
+  background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -57px top no-repeat;
+}
+Add Comment Collapse
+
+
+
+
+
+.caffeine-field {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  margin-bottom: 20px;
+}
+
+#sleep-caffeine label {
+  display: block;
+  margin-top: 20px;
+}
+
+.caffeine-field select {
+  background-color: turquoise;
+  color: white;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;	
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /*hide default arrow in chrome OSX*/
+}
+
+.caffeine-field::before,
+.caffeine-field::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.caffeine-field::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.caffeine-field::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.caffeine-field select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.caffeine-field select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.caffeine-field::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.caffeine-field::after {
+  color: rgba(0,0,0,.4);
+}
+
+.moodAtWake-field {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  margin-bottom: 20px;
+}
+
+#sleep-mood-wake label {
+  display: block;
+}
+
+.moodAtWake-field select {
+  background-color: turquoise;
+  color: white;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;	
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /*hide default arrow in chrome OSX*/
+}
+
+.moodAtWake-field::before,
+.moodAtWake-field::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.moodAtWake-field::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.moodAtWake-field::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.moodAtWake-field select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.moodAtWake-field select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.moodAtWake-field::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.moodAtWake-field::after {
+  color: rgba(0,0,0,.4);
+}
+
+.moodAtSleep-field {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  margin-bottom: 20px;
+}
+
+#sleep-mood-sleep label {
+  display: block;
+}
+
+.moodAtSleep-field select {
+  background-color: turquoise;
+  color: white;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;	
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /*hide default arrow in chrome OSX*/
+}
+
+.moodAtSleep-field::before,
+.moodAtSleep-field::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.moodAtSleep-field::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.moodAtSleep-field::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.moodAtSleep-field select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.moodAtSleep-field select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.moodAtSleep-field::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.moodAtSleep-field::after {
+  color: rgba(0,0,0,.4);
+}
+
+.submit-edit-button {
+  width: 150px;
+  padding: 5px;
+  border-radius: 2px;
+  border-color: transparent;
+  font-style: bold;
+  font-size: 10pt;
+}
+  
+.submit-edit-button:hover {
+  cursor: pointer;
+}
+
+.stop-edit-button {
+  width: 150px;
+  padding: 5px;
+  border-radius: 2px;
+  border-color: transparent;
+  font-style: bold;
+  font-size: 10pt;
+  margin-top: 10px;
+}
+  
+.stop-edit-button:hover {
+  cursor: pointer;
+}

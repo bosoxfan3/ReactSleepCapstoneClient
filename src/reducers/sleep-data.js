@@ -1,14 +1,14 @@
 import {
   FETCH_SLEEP_DATA_SUCCESS,
-  FETCH_SLEEP_DATA_BY_ID_SUCCESS,
   FETCH_SLEEP_DATA_ERROR,
+  FETCH_SLEEP_DATA_BY_ID_SUCCESS,
+  FETCH_SLEEP_DATA_BY_ID_ERROR,
   POST_SLEEP_DATA_SUCCESS,
   POST_SLEEP_DATA_ERROR,
   DELETE_SLEEP_DATA_SUCCESS,
   DELETE_SLEEP_DATA_ERROR,
   UPDATE_SLEEP_DATA_SUCCESS,
-  UPDATE_SLEEP_DATA_ERROR,
-  SAVE_CURRENT_SLEEP
+  UPDATE_SLEEP_DATA_ERROR
 } from '../actions/sleep-data';
 
 const initialState = {
@@ -20,9 +20,9 @@ const initialState = {
     bedTime:  "00:00",
     blueLight:  false,
     caffeine:  0,
-    date:  "Mar 04 2018",
+    date:  "Jan 01 2017",
     exercise:  false,
-    hours:  24,
+    hours:  0,
     id:  "",
     moodAtSleep:  0,
     moodAtWake: 0
@@ -36,12 +36,19 @@ const initialState = {
         sleeps: action.data,
         error: null
       });
-    }else if (action.type === FETCH_SLEEP_DATA_BY_ID_SUCCESS) {
+    }
+    if (action.type === FETCH_SLEEP_DATA_ERROR) {
+      return Object.assign({}, state, {
+        error: action.error
+      });
+    }
+    if (action.type === FETCH_SLEEP_DATA_BY_ID_SUCCESS) {
       return Object.assign({}, state, {
         currentSleep: action.data,
         error: null
       });
-    } else if (action.type === FETCH_SLEEP_DATA_ERROR) {
+    }
+    if (action.type === FETCH_SLEEP_DATA_BY_ID_ERROR) {
       return Object.assign({}, state, {
         error: action.error
       });
@@ -79,12 +86,6 @@ const initialState = {
     if (action.type === UPDATE_SLEEP_DATA_ERROR) {
       return Object.assign({}, state, {
         error: action.error
-      });
-    }
-    if (action.type === SAVE_CURRENT_SLEEP) {
-      return Object.assign({}, state, {
-        currentSleep: action.data,
-        error: null
       });
     }
     return state;

@@ -7,15 +7,21 @@ export const fetchSleepDataSuccess = data => ({
   data
 });
 
+export const FETCH_SLEEP_DATA_ERROR = 'FETCH_SLEEP_DATA_ERROR';
+export const fetchSleepDataError = error => ({
+  type: FETCH_SLEEP_DATA_ERROR,
+  error
+});
+
 export const FETCH_SLEEP_DATA_BY_ID_SUCCESS = 'FETCH_SLEEP_DATA_BY_ID_SUCCESS';
 export const fetchSleepDataByIdSuccess = data => ({
   type: FETCH_SLEEP_DATA_BY_ID_SUCCESS,
   data
 });
 
-export const FETCH_SLEEP_DATA_ERROR = 'FETCH_SLEEP_DATA_ERROR';
-export const fetchSleepDataError = error => ({
-  type: FETCH_SLEEP_DATA_ERROR,
+export const FETCH_SLEEP_DATA_BY_ID_ERROR = 'FETCH_SLEEP_DATA_BY_ID_ERROR';
+export const fetchSleepDataByIdError = error => ({
+  type: FETCH_SLEEP_DATA_BY_ID_ERROR,
   error
 });
 
@@ -55,12 +61,6 @@ export const updateSleepDataError = error => ({
   error
 });
 
-export const SAVE_CURRENT_SLEEP = 'SAVE_CURRENT_SLEEP';
-export const saveCurrentSleep = (data) => ({
-  type: SAVE_CURRENT_SLEEP,
-  data
-});
-
 export const fetchSleepData = () => (dispatch, getState) => {
 
   const authToken = getState().auth.authToken;
@@ -78,6 +78,7 @@ export const fetchSleepData = () => (dispatch, getState) => {
     dispatch(fetchSleepDataError(err));
   });
 };
+
 export const fetchSleepDataById = (id) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/sleeps/${id}`, {
@@ -91,7 +92,7 @@ export const fetchSleepDataById = (id) => (dispatch, getState) => {
   .then(res => res.json())
   .then((data) => dispatch(fetchSleepDataByIdSuccess(data)))
   .catch(err => {
-    dispatch(fetchSleepDataError(err));
+    dispatch(fetchSleepDataByIdError(err));
   });
 };
 

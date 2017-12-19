@@ -1,0 +1,39 @@
+.user-nav {
+  width: 100%;
+  background-color: turquoise;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.site-links {
+  display: inline-block;
+  padding: 15px;
+  font-size: 14pt;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  padding-right: 10px;
+}
+
+.link:hover {
+  color: purple;
+}
+
+.log-out-button {
+  width: 80px;
+  padding: 5px;
+  border-radius: 2px;
+  border-color: transparent;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-style: bold;
+  font-size: 10pt;
+}
+
+.log-out-button:hover {
+  cursor: pointer;
+}

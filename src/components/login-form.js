@@ -5,49 +5,59 @@ import {required, nonEmpty} from '../validators';
 
 import Input from './form-components/input';
 
-export class LoginForm extends React.Component {
-    onSubmit(values) {
-        return this.props.dispatch(login(values.username, values.password));
-    }
+import './login-form.css';
 
-    render() {
-        let error;
-        if (this.props.error) {
-            error = (
-                <div className="form-error" aria-live="polite">
-                    {this.props.error}
-                </div>
-            );
-        }
-        return (
-            <form
+export class LoginForm extends React.Component {
+  onSubmit(values) {
+    return this.props.dispatch(login(values.username, values.password));
+  }
+  render() {
+    let error;
+    if (this.props.error) {
+      error = (
+        <div className="form-error" aria-live="polite">
+          {this.props.error}
+        </div>
+      );
+    }
+    return (
+      <div className="background">
+        <div className="row">
+          <div className="col-12"> 
+            <div className="login-form-section">
+              <h2>Log In</h2> 
+              <form
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
+                  this.onSubmit(values)
                 )}>
                 {error}
                 <label htmlFor="username">Username</label>
                 <Field
-                    component={Input}
-                    type="text"
-                    name="username"
-                    id="username"
-                    validate={[required, nonEmpty]}
+                  component={Input}
+                  type="text"
+                  name="username"
+                  id="username"
+                  validate={[required, nonEmpty]}
                 />
                 <label htmlFor="password">Password</label>
                 <Field
-                    component={Input}
-                    type="password"
-                    name="password"
-                    id="password"
-                    validate={[required, nonEmpty]}
+                  component={Input}
+                  type="password"
+                  name="password"
+                  id="password"
+                  validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
-                    Log in
+                <button class="login-button" disabled={this.props.pristine || this.props.submitting}>
+                  Log in
                 </button>
-            </form>
-        );
-    }
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default reduxForm({

@@ -6,21 +6,27 @@ import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 
 import Input from './form-components/input';
 
-export class SignupForm extends React.Component {
-    onSubmit(values) {
-        const {username, password, firstName, lastName} = values;
-        const user = {username, password, firstName, lastName};
-        return this.props
-            .dispatch(registerUser(user))
-            .then(() => this.props.dispatch(login(username, password)));
-    }
+import './signup-form.css';
 
-    render() {
-        return (
-            <form
+export class SignupForm extends React.Component {
+  onSubmit(values) {
+    const {username, password, firstName, lastName} = values;
+    const user = {username, password, firstName, lastName};
+    return this.props
+      .dispatch(registerUser(user))
+      .then(() => this.props.dispatch(login(username, password)));
+  }
+  render() {
+    return (
+      <div className="background">
+        <div className="row">
+          <div className="col-12">
+            <div className="signup-form-section">
+              <h2>Sign Up</h2>
+              <form
                 className="signup-form"
                 onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
+                  this.onSubmit(values)
                 )}>
                 <label htmlFor="firstName">First name</label>
                 <Field component={Input} type="text" name="firstName" />
@@ -28,33 +34,38 @@ export class SignupForm extends React.Component {
                 <Field component={Input} type="text" name="lastName" />
                 <label htmlFor="username">Username</label>
                 <Field
-                    component={Input}
-                    type="text"
-                    name="username"
-                    validate={[required, nonEmpty, isTrimmed]}
+                  component={Input}
+                  type="text"
+                  name="username"
+                  validate={[required, nonEmpty, isTrimmed]}
                 />
                 <label htmlFor="password">Password</label>
                 <Field
-                    component={Input}
-                    type="password"
-                    name="password"
-                    validate={[required, length({min: 5, max: 72}), isTrimmed]}
+                  component={Input}
+                  type="password"
+                  name="password"
+                  validate={[required, length({min: 5, max: 72}), isTrimmed]}
                 />
                 <label htmlFor="passwordConfirm">Confirm password</label>
                 <Field
-                    component={Input}
-                    type="password"
-                    name="passwordConfirm"
-                    validate={[required, nonEmpty, matches('password')]}
+                  component={Input}
+                  type="password"
+                  name="passwordConfirm"
+                  validate={[required, nonEmpty, matches('password')]}
                 />
                 <button
-                    type="submit"
-                    disabled={this.props.pristine || this.props.submitting}>
-                    Register
+                  className="signup-button"
+                  type="submit"
+                  disabled={this.props.pristine || this.props.submitting}>
+                    Sign Up
                 </button>
-            </form>
-        );
-    }
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default reduxForm({
