@@ -28,6 +28,12 @@ export class EditingSection extends React.Component {
     this.setDefaults()
   }
   setDefaults(){
+    let bedTimeAdjustment;
+    if (this.props.sleep.bedTime.length < 5) {
+      bedTimeAdjustment = `0${this.props.sleep.bedTime}`
+    } else {
+      bedTimeAdjustment = this.props.sleep.bedTime;
+    }
     let awakeTimeAdjustment;
     if (this.props.sleep.awakeTime.length < 5) {
       awakeTimeAdjustment = `0${this.props.sleep.awakeTime}`;
@@ -73,7 +79,7 @@ export class EditingSection extends React.Component {
     this.props.dispatch(change('edit', 'month', month));
     this.props.dispatch(change('edit', 'day', day));
     this.props.dispatch(change('edit', 'year', year));
-    this.props.dispatch(change('edit', 'bedTime', this.props.sleep.bedTime));
+    this.props.dispatch(change('edit', 'bedTime', bedTimeAdjustment));
     this.props.dispatch(change('edit', 'awakeTime', awakeTimeAdjustment));
     this.props.dispatch(change('edit', 'alarm', alarmValue));
     this.props.dispatch(change('edit', 'exercise', exerciseValue));

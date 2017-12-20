@@ -101,7 +101,13 @@ export const postSleepData = (values) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   const bedTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.bedTime}`);
   const nextDay = Number(values.day) + 1;
-  const awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
+  let awakeTime;
+  if (values.bedTime[0] === '0') {
+    //so it doesn't jump ahead a day if you go to bed at 1am or another time after midnight
+    awakeTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.awakeTime}`);
+  } else {
+    awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
+  }
   const data = {
     bedTime: bedTime,
     awakeTime: awakeTime,
@@ -153,7 +159,13 @@ export const updateSleepData = (values, id) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   const bedTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.bedTime}`);
   const nextDay = Number(values.day) + 1;
-  const awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
+  let awakeTime;
+  if (values.bedTime[0] === '0') {
+    //so it doesn't jump ahead a day if you go to bed at 1am or another time after midnight
+    awakeTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.awakeTime}`);
+  } else {
+    awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
+  }
   const data = {
     id: id,
     bedTime: bedTime,

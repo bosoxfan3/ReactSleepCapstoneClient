@@ -6,7 +6,7 @@ import './radio.css';
 export default function Radio(props) {
   const name=props.input.name;
   const options = props.options.map((option, index) => (
-    <div className="inline-block" key={name+index}>
+    <div className="inline-block" key={index}>
       <Field
         component="input"
         value={option}

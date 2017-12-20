@@ -8,15 +8,15 @@ export class MySleeps extends React.Component {
   onDeleteClick(id) {
     this.props.dispatch(deleteSleepData(id));
   }
-
   switchToEditingPage(sleep) {
     this.props.history.push(`/sleeps/${sleep.id}`);
   }
-
-
   render() {
-
-    const sleeps = this.props.sleeps.map((sleep, index) => {
+    // let sleep;
+    // if (this.props.sleeps.length === 0) {
+    //   sleep = (<div><h3>You don't have any entries!</h3></div>);
+    // }
+    const sleep = this.props.sleeps.map((sleep, index) => {
       let exercise = sleep.exercise? 'Yes' : 'No';
       let blueLight = sleep.blueLight? 'Yes' : 'No';
       let alarm  = sleep.alarm? 'Yes' : 'No';
@@ -46,7 +46,6 @@ export class MySleeps extends React.Component {
       }
       bedTime += (minutes < 10) ? ':0'+minutes : ':'+minutes;
       bedTime += (hours >= 12) ? ' PM' : ' AM';
-      console.log(sleep);
       return (
         <div key={index} className="sleep">
           <div className="sleep-date">
@@ -80,7 +79,7 @@ export class MySleeps extends React.Component {
           <div className="col-12 main-area">
             <h1 className="main-title">Previous Sleeps</h1>
             <div>
-              {sleeps}
+              {sleep}
             </div>
           </div>
         </div>
