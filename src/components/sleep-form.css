@@ -148,6 +148,26 @@
   margin-top: 10px;
 }
 
+input[type="radio"] {
+  position: relative;
+  right: 35px;
+  top: 23px;
+}
+/*because the "No" label needed less moving than the "Yes" to be centered in the box*/
+input[id*="0"] + label {
+  position: relative;
+  right: 65px;
+  top: 5px;
+}
+
+input[type="radio"]:checked + label span{
+  background-color: turquoise;
+}
+
+input[type="radio"]:checked + label {
+  color: white;
+}
+
 .caffeine-field {
   position: relative;
   display: inline-block;

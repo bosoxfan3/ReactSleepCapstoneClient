@@ -140,7 +140,7 @@ export class SleepForm extends React.Component {
                     />
                   </div>
                 </section>
-                <button class="submit-button" type="submit">Submit</button>
+                <button className="submit-button" type="submit">Submit</button>
               </form>
             </section>
           </div>

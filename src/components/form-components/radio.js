@@ -5,31 +5,25 @@ import './radio.css';
 
 export default function Radio(props) {
   const name=props.input.name;
-  // let checked=props.checked;
-  console.log(props.checked);
-  console.log(props.options);
   const options = props.options.map((option, index) => (
-    <div className="block">
-    <Field
-    component="input"
-    value={option}
-    id={name+index}
-    type="radio"
-    name={name}
-    /* checked={option === checked}
-    onClick={function(e) {
-      props.onClick(e.target.value);
-    }} */
-  />
-    <label key={index} htmlFor={name}>
-  <span></span>
-      {option}
-    </label>
-  </div>
- ));
- return (
-  <div>
-    {options}
-  </div>
- );
+    <div className="inline-block" key={name+index}>
+      <Field
+        component="input"
+        value={option}
+        id={name+index}
+        type="radio"
+        name={name}
+      />
+      <label htmlFor={name}>
+        {/* label used to have a key of index but now we use a div with a key instead */}
+      <span className="radio-option"></span>
+        {option}
+      </label>   
+    </div>
+  ));
+  return (
+    <div>
+      {options}
+    </div>
+  );
 }

@@ -168,8 +168,6 @@ export class EditingSection extends React.Component {
                     name="alarm"
                     options={['Yes', 'No']}
                     validate={required}
-                    /* checked={alarmValue}
-                    onClick={value => this.changeAlarm(value)} */
                   />
                 </section>
                 <section id="sleep-exercise">
@@ -179,7 +177,6 @@ export class EditingSection extends React.Component {
                     name="exercise"
                     options={['Yes', 'No']}
                     validate={required}
-                    /* checked={exerciseValue} */
                   />
                 </section>
                 <section id="sleep-blue-light">
@@ -189,7 +186,6 @@ export class EditingSection extends React.Component {
                     name="blueLight"
                     options={['Yes', 'No']}
                     validate={required}
-                    /* checked={blueLightValue} */
                   />
                 </section>
                 <section id="sleep-caffeine">
