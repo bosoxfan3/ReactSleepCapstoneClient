@@ -15,16 +15,7 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-// let alarmValue;
-// let exerciseValue;
-// let blueLightValue;
-
 export class EditingSection extends React.Component {
-  // componentDidMount() {
-  //   alarmValue = (this.props.sleep.alarm === true ? 'Yes' : 'No');
-  //   exerciseValue = (this.props.sleep.exercise === true ? 'Yes' : 'No');
-  //   blueLightValue = (this.props.sleep.blueLight === true ? 'Yes' : 'No');
-  // }
   onSubmit(values) {
     console.log(values);
     this.props.dispatch(updateSleepData(values, this.props.sleep.id));
@@ -91,14 +82,11 @@ export class EditingSection extends React.Component {
     this.props.dispatch(change('edit', 'moodAtWake', this.props.sleep.moodAtWake));
     this.props.dispatch(change('edit', 'moodAtSleep', this.props.sleep.moodAtSleep));
   }
-  // changeAlarm(value) {
-  //   alarmValue = value;
-  // }
   render() {
     return (
       <div className="background">
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 main-area">
             <section className="editing-form-section">
               <h2>Editing {this.props.sleep.date}</h2>
               <form className="editing-form" onSubmit={this.props.handleSubmit(values =>

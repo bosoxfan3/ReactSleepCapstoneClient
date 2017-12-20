@@ -23,7 +23,7 @@ export class SleepForm extends React.Component {
     return (
       <div className="background">
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 main-area">
             <section className="sleep-form-section">
               <h2>New Night of Sleep</h2>
               <form 
