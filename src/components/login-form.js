@@ -21,17 +21,18 @@ export class LoginForm extends React.Component {
       );
     }
     return (
-      <div className="background">
+      <div className="login-background">
         <div className="row">
           <div className="col-12"> 
             <div className="login-form-section">
-              <h2>Log In</h2> 
+ 
               <form
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
                   this.onSubmit(values)
                 )}>
                 {error}
+                <h2>Log In</h2>
                 <label htmlFor="username">Username</label>
                 <Field
                   component={Input}
@@ -49,7 +50,7 @@ export class LoginForm extends React.Component {
                   validate={[required, nonEmpty]}
                 />
                 <button class="login-button" disabled={this.props.pristine || this.props.submitting}>
-                  Log in
+                  Log In
                 </button>
               </form>
             </div>

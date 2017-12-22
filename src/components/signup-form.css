@@ -62,13 +62,17 @@
   }
 }
 
-.background {
-  background-color: rgb(235, 235, 235);
+.signup-background {
+  /* background-color: rgb(235, 235, 235);
+  padding-bottom: 1000px; */
+  background-image: url('https://i.ytimg.com/vi/Wl2sDEpjqQI/maxresdefault.jpg');
+  background-size: cover;
+  width: 100%;
   padding-bottom: 1000px;
 }
 
 .signup-form-section {
-  padding-top: 100px;
+  padding-top: 150px;
   text-align: center;
 }
 
@@ -80,6 +84,14 @@
   position: absolute;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.signup-form h2 {
+  font-family: 'Oswald', sans-serif;
+}
+
+.signup-form label, .signup-form button {
+  font-family: 'Slabo 27px', serif;
 }
 
 .signup-form input#firstName, .signup-form input#lastName,
@@ -98,5 +110,6 @@
   font-size: 10pt;
   width: 50%;
   color: white;
-  background-color: rgb(231, 0, 0);
+  background-color: rgb(10, 115, 141);
+  margin-bottom: 25px;
 }

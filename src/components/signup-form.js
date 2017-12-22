@@ -18,16 +18,16 @@ export class SignupForm extends React.Component {
   }
   render() {
     return (
-      <div className="background">
+      <div className="signup-background">
         <div className="row">
           <div className="col-12">
             <div className="signup-form-section">
-              <h2>Sign Up</h2>
               <form
                 className="signup-form"
                 onSubmit={this.props.handleSubmit(values =>
                   this.onSubmit(values)
                 )}>
+                <h2>Sign Up</h2>
                 <label htmlFor="firstName">First name</label>
                 <Field component={Input} type="text" name="firstName" />
                 <label htmlFor="lastName">Last name</label>

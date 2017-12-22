@@ -4,18 +4,19 @@
   position: fixed;
   top: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1000;
 }
 
 .site-links {
   display: inline-block;
   padding: 15px;
-  font-size: 14pt;
+  font-size: 15pt;
 }
 
 .link {
   text-decoration: none;
   color: white;
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
 .link:hover {

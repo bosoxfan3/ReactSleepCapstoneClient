@@ -24,8 +24,10 @@ export class EditingSection extends React.Component {
   stopEditing() {
     this.props.history.push('/sleeps');
   }
-  componentDidUpdate(){
-    this.setDefaults()
+  componentWillReceiveProps(newProps){
+    if (newProps.sleep.id) {
+      this.setDefaults()
+    }
   }
   setDefaults(){
     let bedTimeAdjustment;
@@ -89,6 +91,7 @@ export class EditingSection extends React.Component {
     this.props.dispatch(change('edit', 'moodAtSleep', this.props.sleep.moodAtSleep));
   }
   render() {
+    console.log(this.props.sleep)
     return (
       <div className="background">
         <div className="row">

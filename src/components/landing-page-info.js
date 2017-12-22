@@ -5,49 +5,66 @@ import './landing-page-info.css';
 
 export function LandingPageInfo() {
   return (
-    <div className="landing-page-area">
-      <div className="row">
-        <div className="col-12">
-          <section>
-            <h1>Sleep App</h1>
-            <h2>Find better sleep habits and improve your life</h2>
-          </section>
+    <div id="about">
+      <div className="title-area">
+        <div className="row">
+          <div className="col-12">
+            <section className="title-section">
+              <h1>RestFull</h1>
+              <h2>Find Better Sleep Habits and Improve Your Life</h2>
+            </section>
+          </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col-6">
-          <header>
-            <h3>Purpose</h3>
-          </header>
-          <p>This app exists because...</p>
-        </div>
-        <div className="col-6">
-          <p>Image of sleep clip art or something</p>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-6">
-          <header>
-            <h3>How to Use</h3>
-          </header>
-          <p>Put in your sleep stats and we'll keep track of the rest</p>
-        </div>
-        <div className="col-6">
-          <p>Screenshot of adding new night of sleep</p>
+      <div className="landing-page-section">
+        <div className="row first-section">
+          <div className="col-6 text-area">
+            <header>
+              <h2>Purpose</h2>
+            </header>
+            <p>Ever wake up one day feeling great and another feeling terrible
+              and can't figure out why? RestFull will help you find
+              correlations between actions, sleep quality, and mood, in turn allowing
+              you to build beneficial habits!
+            </p>
+          </div>
+          <div className="col-6 first-image">
+            <img src="https://www.canlearnsociety.ca/wp-content/uploads/2017/08/how-to-sleep-better.png" alt="sleeping boy"/>
+          </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col-6">
-          <header>
-            <h3>See Your Stats</h3>
-          </header>
-          <p>See your stats and use them to make better choices</p>
-        </div>
-        <div className="col-6">
-          <p>Screenshot of stats page</p>
+      <div className="landing-page-section">
+        <div className="row second-section">
+          <div className="col-6 second-image">
+            <img className="form-screenshot" src={require("../screenshots/1.png")} alt="why isn't this working"/>
+          </div>
+          <div className="col-6 text-area">
+            <header>
+              <h2>How to Use RestFull</h2>
+            </header>
+            <p>Fill out our form with details about your sleep from the basics (bed time, wake time),
+            to answering questions such as whether you were exposed to light from a screen before sleeping
+            or rating your mood at bed time.
+            </p>
+          </div>
         </div>
       </div>
-    </div>        
+      <div className="landing-page-section">
+        <div className="row third-section">
+          <div className="col-6 text-area">
+            <header>
+              <h2>See Your Stats</h2>
+            </header>
+            <p>The data from your sleep submissions is then displayed, allowing you to
+              find direct correlations between your habits and your sleep and overall well-being!
+            </p>
+          </div>
+          <div className="col-6">
+            <p>Screenshot of stats page</p>
+          </div>
+        </div>
+      </div>
+    </div>     
   );
 }
 

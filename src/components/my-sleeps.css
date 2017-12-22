@@ -64,11 +64,17 @@
   border-color: rgb(111, 191, 216);
   border-width: 3px;
   margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .main-title {
   text-align: center;
   padding-top: 20px;
+}
+
+.no-sleep {
+  text-align: center;
 }
 
 .sleep-date {

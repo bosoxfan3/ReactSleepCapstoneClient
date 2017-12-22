@@ -12,10 +12,6 @@ export class MySleeps extends React.Component {
     this.props.history.push(`/sleeps/${sleep.id}`);
   }
   render() {
-    // let sleep;
-    // if (this.props.sleeps.length === 0) {
-    //   sleep = (<div><h3>You don't have any entries!</h3></div>);
-    // }
     const sleep = this.props.sleeps.map((sleep, index) => {
       let exercise = sleep.exercise? 'Yes' : 'No';
       let blueLight = sleep.blueLight? 'Yes' : 'No';
@@ -79,7 +75,7 @@ export class MySleeps extends React.Component {
           <div className="col-12 main-area">
             <h1 className="main-title">Previous Sleeps</h1>
             <div>
-              {sleep}
+              {sleep.length? sleep : <p className="no-sleep">No previous nights of sleep have been recorded!</p>}
             </div>
           </div>
         </div>

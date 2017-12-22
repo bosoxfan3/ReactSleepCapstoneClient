@@ -17,7 +17,7 @@ export class SleepStatsPage extends React.Component {
     if (!this.props.loggedIn) {
       return <Redirect to="/" />;
     }
-    console.log(this.props.sleepData);
+    // console.log(this.props.sleepData);
     return (
       <div>
         <UserNav />

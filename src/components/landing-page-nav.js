@@ -9,8 +9,8 @@ export function LandingPageNav() {
     <header>
       <nav className="landing-page-nav">
         <div className="site-links">
-          <Link className="link" to="/">SleepApp</Link>
-          <Link className="link" to="/">About</Link>
+          <Link className="link" to="/">RestFull</Link>
+          <Link className="link" to="#about">About</Link>
           <Link className="link" to="/signup">Sign Up</Link>
           <Link className="link" to="/login">Log In</Link>
         </div>
