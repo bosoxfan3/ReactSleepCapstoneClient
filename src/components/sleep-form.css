@@ -64,6 +64,10 @@
   text-align: center;
 }
 
+.sleep-form-section h1 {
+  font-family: 'Oswald', sans-serif;
+}
+
 .sleep-form {
   font-size: 14pt;
 }
@@ -72,6 +76,7 @@
   padding-left: 5px;
   padding-right: 5px;
   font-size: 14pt;
+  font-family: 'Slabo 27px', serif;
 }
 
 .date-field {
@@ -137,6 +142,10 @@
   color: rgba(0,0,0,.4);
 }
 
+#sleep-times {
+  font-family: 'Slabo 27px', serif;
+}
+
 .time-field {
   display: inline-block;
   margin-left: 10px;
@@ -158,6 +167,10 @@
   font-family: 'Roboto';
 }
 
+#sleep-alarm, #sleep-exercise, #sleep-blue-light {
+  font-family: 'Slabo 27px', serif;
+}
+
 input[type="radio"] {
   position: relative;
   right: 35px;
@@ -166,7 +179,7 @@ input[type="radio"] {
 
 input[id*="0"] + label {
   position: relative;
-  right: 65px;
+  right: 62px;
   top: 5px;
 }
 /*because the "No" label needed less moving than the "Yes" to be centered in the box*/

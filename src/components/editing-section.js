@@ -97,7 +97,7 @@ export class EditingSection extends React.Component {
         <div className="row">
           <div className="col-12 main-area">
             <section className="editing-form-section">
-              <h2>Editing {this.props.sleep.date}</h2>
+              <h1>Editing {this.props.sleep.date}</h1>
               <form className="editing-form" onSubmit={this.props.handleSubmit(values =>
                 this.onSubmit(values)
                 )} >

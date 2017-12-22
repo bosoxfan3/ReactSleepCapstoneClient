@@ -26,7 +26,7 @@ export class SleepForm extends React.Component {
         <div className="row">
           <div className="col-12 main-area">
             <section className="sleep-form-section">
-              <h2>New Night of Sleep</h2>
+              <h1>New Night of Sleep</h1>
               <form 
                 className="sleep-form" 
                 onSubmit={this.props.handleSubmit(values =>
