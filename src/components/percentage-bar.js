@@ -47,37 +47,41 @@ import './percentage-bar.css';
           "label" : "B" ,
           "value" : 0
         } ,
-        {
-          "label" : "C" ,
-          "value" : 32.807804682612
-        } ,
-        {
-          "label" : "D" ,
-          "value" : 196.45946739256
-        } ,
-        {
-          "label" : "E" ,
-          "value" : 0.19434030906893
-        } ,
-        {
-          "label" : "F" ,
-          "value" : -98.079782601442
-        } ,
-        {
-          "label" : "G" ,
-          "value" : -13.925743130903
-        } ,
-        {
-          "label" : "H" ,
-          "value" : -5.1387322875705
-        }
       ]
     }
   ];
 
   // Unmounting example
-  export default class PercentageBar extends React.Component {
-
+class PercentageBar extends React.Component {
+    calculateData(sleeps) {
+      
+        let totalSleeps = sleeps.length;
+        let positiveMornings = 0;
+        let negativeMornings = 0;
+        
+        for (let i=0; i<sleeps.length; i++) {
+          if (sleeps[i].moodAtWake < 6) {
+            negativeMornings++
+          } else {
+            positiveMornings++
+          }
+        }
+        var datum = [{
+          key: "Cumulative Return",
+          values: [
+            {
+              "label" : "Positive Sleeps" ,
+              "value" : positiveMornings
+            } ,
+            {
+              "label" : "Negative Sleeps" ,
+              "value" : negativeMornings
+            } ,
+          ]
+        }
+      ];
+      return datum;
+    }
     constructor(props) {
       super(props);
       this.state = {
@@ -91,6 +95,8 @@ import './percentage-bar.css';
     }
 
     render() {
+      console.log(this.props);
+      var datum = this.calculateData(this.props.sleeps);
       var chart;
       var context = {
         getColor: function(i){
@@ -111,6 +117,10 @@ import './percentage-bar.css';
     }
   }
 
+  const mapStateToProps = state => ({
+      sleeps: state.sleepData.sleeps
+    });
+
   // ReactDOM.render(
   //   <Chart />,
   //   document.getElementById('barChart')
@@ -120,4 +130,4 @@ import './percentage-bar.css';
   //   document.getElementById('barChart')
   // );
 
-// export default connect()(PercentageBar);
+export default connect(mapStateToProps)(PercentageBar);
