@@ -4,6 +4,9 @@ import {Redirect} from 'react-router-dom';
 import {fetchSleepData} from '../actions/sleep-data';
 
 import UserNav from './user-nav';
+import PercentageBar from './percentage-bar';
+
+import './sleep-stats-page.css';
 
 
 export class SleepStatsPage extends React.Component {
@@ -17,11 +20,24 @@ export class SleepStatsPage extends React.Component {
     if (!this.props.loggedIn) {
       return <Redirect to="/" />;
     }
-    // console.log(this.props.sleepData);
+    let totalSleeps = this.props.sleepData.length;
+    let positiveMornings = 0;
+    let negativeMornings = 0;
+    for (let i=0; i<this.props.sleepData.length; i++) {
+      if (this.props.sleepData[i].moodAtWake < 6) {
+        negativeMornings++
+      } else {
+        positiveMornings++
+      }
+    }
+    let positivePercentage = (positiveMornings / totalSleeps)*100+'%';
+    let negativePercentage = (negativeMornings / totalSleeps)*100+'%';
     return (
       <div>
         <UserNav />
-        <h1>'sleep data':</h1>
+        <div className="percentage-bar">
+          <PercentageBar />
+        </div>
       </div>
     );
   }
