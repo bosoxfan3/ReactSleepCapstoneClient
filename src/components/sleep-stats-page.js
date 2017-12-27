@@ -5,6 +5,7 @@ import {fetchSleepData} from '../actions/sleep-data';
 
 import UserNav from './user-nav';
 import PercentageBar from './percentage-bar';
+import SleepsBar from './sleeps-bar';
 
 import './sleep-stats-page.css';
 
@@ -37,6 +38,9 @@ export class SleepStatsPage extends React.Component {
         <UserNav />
         <div className="percentage-bar">
           <PercentageBar />
+        </div>
+        <div className="sleeps-bar">
+          <SleepsBar />
         </div>
       </div>
     );
