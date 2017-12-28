@@ -6,8 +6,11 @@ import {fetchSleepData} from '../actions/sleep-data';
 import UserNav from './user-nav';
 import PercentageBar from './percentage-bar';
 import SleepsBar from './sleeps-bar';
+import CaffeineChart from './caffeine-chart';
+import EveningMoodDonut from './evening-mood-donut';
 
 import './sleep-stats-page.css';
+import '../../node_modules/nvd3/build/nv.d3.min.css';
 
 
 export class SleepStatsPage extends React.Component {
@@ -41,6 +44,12 @@ export class SleepStatsPage extends React.Component {
         </div>
         <div className="sleeps-bar">
           <SleepsBar />
+        </div>
+        <div className="caffeine-chart">
+          <CaffeineChart />
+        </div>
+        <div className="evening-mood-donut">
+          <EveningMoodDonut />
         </div>
       </div>
     );
