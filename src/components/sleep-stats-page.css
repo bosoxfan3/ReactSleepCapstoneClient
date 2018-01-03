@@ -1,4 +1,79 @@
-.percentage-bar {
-  padding-top: 200px;
-  width: 300px;
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.row::before,
+.row::after {
+  display: table;
+  content: '';
+}
+
+.row::after {
+  clear: both;
+}
+
+.col-3, .col-4, .col-6, .col-8, .col-9, .col-12 {
+  float: left;
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+}
+
+/* Mobile defaults */
+.col-3, .col-4, .col-6, .col-8, .col-9, .col-12 {
+  width: 100%;
+}
+
+/* Non-mobile, grid */
+@media only screen and (min-width: 640px) {
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.333333%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-8 {
+    width: 66.666666%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}
+
+.stats-page-background {
+  /* background-color: rgb(235, 235, 235);
+  padding-bottom: 1000px !important; */
+  background-image: url('https://i.ytimg.com/vi/Wl2sDEpjqQI/maxresdefault.jpg');
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 1000px;
+}
+
+.stats-background {
+  background-color: rgb(235, 235, 235);
+}
+
+h1 {
+  padding-top: 100px;
+  text-align: center;
+}
+
+#percentage-bar {
+  text-align: center;
+}
+
+#sleeps-bar-chart {
+  padding-top: 50px;
 }

@@ -1,0 +1,16 @@
+/*Trying to take out the "left axis" and "right axis" text*/
+/* g.nv-series[transform="translate(0,5)"] text.nv-legend-text {
+  visibility: hidden;
+}
+
+g.nv-series[transform="translate(0,5)"] text.nv-legend-text:after {
+  content: "Caffeine";
+  color: black;
+  visibility: visible;
+  display: block;
+  line-height: normal;
+} */
+
+g.tick line {
+  display: none;
+}

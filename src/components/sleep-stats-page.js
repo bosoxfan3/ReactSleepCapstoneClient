@@ -5,9 +5,11 @@ import {fetchSleepData} from '../actions/sleep-data';
 
 import UserNav from './user-nav';
 import PercentageBar from './percentage-bar';
-import SleepsBar from './sleeps-bar';
+import SleepsBarChart from './sleeps-bar-chart';
+import AverageHours from './average-hours';
 import CaffeineChart from './caffeine-chart';
-import EveningMoodDonut from './evening-mood-donut';
+import ExerciseChart from './exercise-chart';
+import EveningMoodPie from './evening-mood-pie';
 
 import './sleep-stats-page.css';
 import '../../node_modules/nvd3/build/nv.d3.min.css';
@@ -24,32 +26,37 @@ export class SleepStatsPage extends React.Component {
     if (!this.props.loggedIn) {
       return <Redirect to="/" />;
     }
-    let totalSleeps = this.props.sleepData.length;
-    let positiveMornings = 0;
-    let negativeMornings = 0;
-    for (let i=0; i<this.props.sleepData.length; i++) {
-      if (this.props.sleepData[i].moodAtWake < 6) {
-        negativeMornings++
-      } else {
-        positiveMornings++
-      }
-    }
-    let positivePercentage = (positiveMornings / totalSleeps)*100+'%';
-    let negativePercentage = (negativeMornings / totalSleeps)*100+'%';
     return (
       <div>
         <UserNav />
-        <div className="percentage-bar">
-          <PercentageBar />
-        </div>
-        <div className="sleeps-bar">
-          <SleepsBar />
-        </div>
-        <div className="caffeine-chart">
-          <CaffeineChart />
-        </div>
-        <div className="evening-mood-donut">
-          <EveningMoodDonut />
+        <div className="stats-page-background">
+          <div className="col-12 stats-background">
+          <h1>Sleep Statistics</h1>
+          <div className="col-12" id="percentage-bar">
+            <h2>Waking Mood Percentage</h2>
+            <h3>Sleep % Above 5 Waking Mood</h3>
+            <PercentageBar />
+          </div>
+          <div className="col-12" id="hours-section">
+            <div className="col-9" id="sleeps-bar-chart">
+              <SleepsBarChart />
+            </div>
+            <div className="col-3" id="average-hours">
+              <AverageHours />
+            </div>
+          </div>
+          <div className="col-12" id="chart-section">
+            <div className="col-4" id="caffeine-chart">
+              <CaffeineChart />
+            </div>
+            <div className="col-8" id="exercise-chart">
+              <ExerciseChart />
+            </div>
+          </div>
+          <div className="col-6" id="evening-mood-pie">
+            <EveningMoodPie />
+          </div>
+          </div>
         </div>
       </div>
     );

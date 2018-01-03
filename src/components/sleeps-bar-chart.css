@@ -1,0 +1,11 @@
+.sleeps-bar-chart {
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+g.tick.zero line {
+  display: none;
+}

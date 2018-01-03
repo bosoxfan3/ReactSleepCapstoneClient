@@ -1,133 +1,47 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import d3 from 'd3';
-import NVD3Chart from 'react-nvd3';
-import ReactDOM from 'react-dom';
-
 
 import './percentage-bar.css';
 
-// export function PercentageBar(props) {
-//   let totalSleeps = props.sleeps.length;
-//   let positiveMornings = 0;
-//   let negativeMornings = 0;
-//   for (let i=0; i<props.sleeps.length; i++) {
-//     if (props.sleeps[i].moodAtWake < 6) {
-//       negativeMornings++
-//     } else {
-//       positiveMornings++
-//     }
-//   }
-//   let positivePercentage = (positiveMornings / totalSleeps)*100+'%';
-//   let negativePercentage = (negativeMornings / totalSleeps)*100+'%';
-//   return (
-//     <div className="percentage-bar2">
-//       <div className="positive-sleeps" width={positivePercentage}>
-//         <p>{positivePercentage}</p>
-//       </div>
-//       <div className="negative-sleeps" width={negativePercentage}>
-//         <p>{negativePercentage}</p>
-//       </div>
-//     </div>
-//   );
-// }
-
-// const mapStateToProps = state => ({
-//   sleeps: state.sleepData.sleeps
-// });
-
-  var datum = [{
-      key: "Cumulative Return",
-      values: [
-        {
-          "label" : "A" ,
-          "value" : -29.765957771107
-        } ,
-        {
-          "label" : "B" ,
-          "value" : 0
-        } ,
-      ]
-    }
-  ];
-
-  // Unmounting example
 class PercentageBar extends React.Component {
-    calculateData(sleeps) {
-      
-        let totalSleeps = sleeps.length;
-        let positiveMornings = 0;
-        let negativeMornings = 0;
-        
-        for (let i=0; i<sleeps.length; i++) {
-          if (sleeps[i].moodAtWake < 6) {
-            negativeMornings++
-          } else {
-            positiveMornings++
-          }
-        }
-        var datum = [{
-          key: "Cumulative Return",
-          values: [
-            {
-              "label" : "Positive Sleeps" ,
-              "value" : positiveMornings
-            } ,
-            {
-              "label" : "Negative Sleeps" ,
-              "value" : negativeMornings
-            } ,
-          ]
-        }
-      ];
-      return datum;
-    }
-    constructor(props) {
-      super(props);
-      this.state = {
-        visible: true
-      };
-      this.toggleVisibility = this.toggleVisibility.bind(this);
-    }
-
-    toggleVisibility() {
-      this.setState({ visible: !this.state.visible });
-    }
-
-    render() {
-      console.log(this.props);
-      var datum = this.calculateData(this.props.sleeps);
-      var chart;
-      var context = {
-        getColor: function(i){
-          var colors = d3.scale.category20().range().slice(10);
-          return colors[Math.floor(Math.random() * colors.length)];
-        }
-      };
-      if(this.state.visible) {
-        chart = <NVD3Chart context={context} color={{name:'getColor', type:'function'}} tooltip={{enabled: true}} type="discreteBarChart" datum={datum} x="label" y="value" />;
+  render() {
+    let totalSleeps = this.props.sleeps.length;
+    let positiveMornings = 0;
+    let negativeMornings = 0;
+    for (let i=0; i<this.props.sleeps.length; i++) {
+      if (this.props.sleeps[i].moodAtWake < 6) {
+        negativeMornings++
+      } else {
+        positiveMornings++
       }
-
-      return (
-        <div>
-          <button onClick={this.toggleVisibility}>Toggle Visibility</button>
-          {chart}
-        </div>
-      );
     }
+    let positivePercentage = (positiveMornings / totalSleeps)*100+'%';
+    let positivePercentageDisplay = positivePercentage.slice(0, 5)+'%';
+    let negativePercentage = (negativeMornings / totalSleeps)*100+'%';
+    let negativePercentageDisplay = negativePercentage.slice(0, 5)+'%';
+    let positivePercentageBarStyle = {
+      width: `${positivePercentage}`
+    }
+    let negativePercentageBarStyle = {
+      width: `${negativePercentage}`
+    } 
+    return (
+      <div className="percentage-bar">
+        <p>Positive: {positivePercentageDisplay}</p>
+        <div style={positivePercentageBarStyle} id="positive-percentage-bar">
+          <span hidden>Positive: {positivePercentageDisplay}</span>
+        </div>
+        {/* <p>Negative: {negativePercentageDisplay}</p> */}
+        <div style={negativePercentageBarStyle} id="negative-percentage-bar">
+          <span hidden>Negative: {negativePercentageDisplay}</span>
+        </div>
+      </div>
+    )
   }
+}
 
-  const mapStateToProps = state => ({
-      sleeps: state.sleepData.sleeps
-    });
-
-  // ReactDOM.render(
-  //   <Chart />,
-  //   document.getElementById('barChart')
-  // );
-  // ReactDOM.render(
-  //   <Chart />,
-  //   document.getElementById('barChart')
-  // );
+const mapStateToProps = state => ({
+  sleeps: state.sleepData.sleeps
+});
 
 export default connect(mapStateToProps)(PercentageBar);

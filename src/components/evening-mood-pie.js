@@ -1,8 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import d3 from 'd3';
 import NVD3Chart from 'react-nvd3';
-import ReactDOM from 'react-dom';
 
 var data = [
   {key: "One", y: 0},
@@ -17,7 +15,7 @@ var data = [
   {key: "Ten", y: 0},
 ];
 
-class EveningMoodDonut extends React.Component {
+class EveningMoodPie extends React.Component {
   calculateData(sleeps) {
     for (let i=0; i<sleeps.length; i++) {
       if (sleeps[i].moodAtSleep === 1) {
@@ -55,7 +53,6 @@ class EveningMoodDonut extends React.Component {
   }
   render() {
     const datum = this.calculateData(this.props.sleeps);
-    console.log(datum);
     return (
     <div>
     <NVD3Chart
@@ -76,4 +73,4 @@ const mapStateToProps = state => ({
   sleeps: state.sleepData.sleeps
 });
 
-export default connect(mapStateToProps)(EveningMoodDonut);
+export default connect(mapStateToProps)(EveningMoodPie);

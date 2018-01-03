@@ -1,3 +1,17 @@
-#barChart svg {
-  height: 400px;
+.percentage-bar {
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#positive-percentage-bar {
+  background-color: green;
+  display: inline-block;
+  height: 30px;
+}
+
+#negative-percentage-bar {
+  background-color: red;
+  display: inline-block;
+  height: 30px;
 }
