@@ -176,22 +176,26 @@ input[type="radio"] {
   position: relative;
   right: 35px;
   top: 23px;
+  z-index: 2;
 }
 
 input[id*="0"] + label {
   position: relative;
   right: 62px;
   top: 5px;
+  z-index: 1;
 }
 /*because the "No" label needed less moving than the "Yes" to be centered in the box*/
 input[id*="1"] + label {
   position: relative;
   right: 60px;
   top: 5px;
+  z-index: 1;
 }
 
 input[type="radio"]:checked + label span{
   background-color: turquoise;
+  z-index: -1000;
 }
 
 input[type="radio"]:checked + label {
