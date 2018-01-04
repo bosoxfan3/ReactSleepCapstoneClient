@@ -1,7 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
-import {fetchSleepData} from '../actions/sleep-data';
 
 import UserNav from './user-nav';
 import PercentageBar from './percentage-bar';
@@ -11,44 +9,11 @@ import CaffeineChart from './caffeine-chart';
 import ExerciseChart from './exercise-chart';
 import EveningMoodPie from './evening-mood-pie';
 import MorningMoodPie from './morning-mood-pie';
-import SleepStatsSection from './sleep-stats-section';
 
-import './sleep-stats-page.css';
-import '../../node_modules/nvd3/build/nv.d3.min.css';
-
-
-export class SleepStatsPage extends React.Component {
-  componentDidMount() {
-    if (!this.props.loggedIn) {
-      return;
-    }
-    this.props.dispatch(fetchSleepData());
-  }
-  render() {
-    if (!this.props.loggedIn) {
-      return <Redirect to="/" />;
-    }
-    return (
-      <div className="stats-page-background">
-        <UserNav />
-        <div className="row">
-          <div className="col-12 stats-background">
-            <SleepStatsSection />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null,
-  sleepData: state.sleepData.sleeps
-});
-
-export default connect(mapStateToProps)(SleepStatsPage);
-
-          {/* <h1>Sleep Statistics</h1>
+function SleepStatsSection() {
+  return (
+    <div>
+          <h1>Sleep Statistics</h1>
           <div className="col-12" id="percentage-bar">
             <h2>Waking Mood Percentage</h2>
             <h3>Sleep % Above 5 Waking Mood</h3>
@@ -75,4 +40,9 @@ export default connect(mapStateToProps)(SleepStatsPage);
           </div>
           <div className="col-6" id="morning-mood-pie">
             <MorningMoodPie />
-          </div> */}
+          </div>
+          </div>
+  )
+}
+
+export default connect()(SleepStatsSection);
