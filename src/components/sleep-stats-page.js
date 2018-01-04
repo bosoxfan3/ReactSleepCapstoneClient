@@ -10,6 +10,7 @@ import AverageHours from './average-hours';
 import CaffeineChart from './caffeine-chart';
 import ExerciseChart from './exercise-chart';
 import EveningMoodPie from './evening-mood-pie';
+import MorningMoodPie from './morning-mood-pie';
 
 import './sleep-stats-page.css';
 import '../../node_modules/nvd3/build/nv.d3.min.css';
@@ -27,10 +28,8 @@ export class SleepStatsPage extends React.Component {
       return <Redirect to="/" />;
     }
     return (
-      <div>
+      <div className="stats-page-background">
         <UserNav />
-        <div className="stats-page-background">
-          <div className="col-12 stats-background">
           <h1>Sleep Statistics</h1>
           <div className="col-12" id="percentage-bar">
             <h2>Waking Mood Percentage</h2>
@@ -56,8 +55,9 @@ export class SleepStatsPage extends React.Component {
           <div className="col-6" id="evening-mood-pie">
             <EveningMoodPie />
           </div>
+          <div className="col-6" id="morning-mood-pie">
+            <MorningMoodPie />
           </div>
-        </div>
       </div>
     );
   }

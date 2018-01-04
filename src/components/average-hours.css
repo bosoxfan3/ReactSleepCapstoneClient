@@ -1,0 +1,25 @@
+#average-hours-div {
+  text-align: center;
+}
+
+#average-hours-div p{
+  font-size: 50pt;
+  background-color: #80b3ff;
+  border: transparent;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 200px;
+  width: 70%;
+  position: relative;
+  left: 15%;
+  border-radius: 50%;
+  border-color: transparent;
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+}
+
+span {
+  position: relative;
+  top: 20%;
+}

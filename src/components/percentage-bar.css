@@ -5,13 +5,13 @@
 }
 
 #positive-percentage-bar {
-  background-color: green;
+  background-color: rgb(75, 199, 75);
   display: inline-block;
   height: 30px;
 }
 
 #negative-percentage-bar {
-  background-color: red;
+  background-color: rgb(255, 46, 46);
   display: inline-block;
   height: 30px;
 }

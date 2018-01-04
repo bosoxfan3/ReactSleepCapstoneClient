@@ -28,13 +28,13 @@ class SleepsBar extends React.Component {
       var datum = this.calculateData(this.props.sleeps);
       var context = {
         getColor: function(i){
-          var colors = ['blue']
+          var colors = ['#ff944d']
           return colors[Math.floor(Math.random() * colors.length)];
         }
       };
       return (
         <div className="sleeps-bar-chart">
-          <h2>Hours Slept</h2>
+          <h2>Hours Slept By Day</h2>
           <NVD3Chart
             height={300}
             context={context}

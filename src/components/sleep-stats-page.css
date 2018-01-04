@@ -53,8 +53,6 @@
 }
 
 .stats-page-background {
-  /* background-color: rgb(235, 235, 235);
-  padding-bottom: 1000px !important; */
   background-image: url('https://i.ytimg.com/vi/Wl2sDEpjqQI/maxresdefault.jpg');
   background-size: cover;
   width: 100%;
@@ -68,12 +66,22 @@
 h1 {
   padding-top: 100px;
   text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+}
+
+h3, p {
+  font-family: 'Slabo 27px', serif;
 }
 
 #percentage-bar {
   text-align: center;
 }
 
-#sleeps-bar-chart {
+#sleeps-bar-chart, #average-hours {
   padding-top: 50px;
 }
+

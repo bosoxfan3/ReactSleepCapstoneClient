@@ -9,3 +9,7 @@ h2 {
 g.tick.zero line {
   display: none;
 }
+
+g.tick.zero text {
+  display: none;
+}

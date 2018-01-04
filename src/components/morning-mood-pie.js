@@ -15,37 +15,37 @@ var data = [
   {key: "Ten", y: 0},
 ];
 
-class EveningMoodPie extends React.Component {
+class MorningMoodPie extends React.Component {
   calculateData(sleeps) {
     for (let i=0; i<sleeps.length; i++) {
-      if (sleeps[i].moodAtSleep === 1) {
+      if (sleeps[i].moodAtWake === 1) {
         data[0].y++;
       }
-      if (sleeps[i].moodAtSleep === 2) {
+      if (sleeps[i].moodAtWake === 2) {
         data[1].y++
       }
-      if (sleeps[i].moodAtSleep === 3) {
+      if (sleeps[i].moodAtWake === 3) {
         data[2].y++
       }
-      if (sleeps[i].moodAtSleep === 4) {
+      if (sleeps[i].moodAtWake === 4) {
         data[3].y++
       }
-      if (sleeps[i].moodAtSleep === 5) {
+      if (sleeps[i].moodAtWake === 5) {
         data[4].y++
       }
-      if (sleeps[i].moodAtSleep === 6) {
+      if (sleeps[i].moodAtWake === 6) {
         data[5].y++
       }
-      if (sleeps[i].moodAtSleep === 7) {
+      if (sleeps[i].moodAtWake === 7) {
         data[6].y++
       }
-      if (sleeps[i].moodAtSleep === 8) {
+      if (sleeps[i].moodAtWake === 8) {
         data[7].y++
       }
-      if (sleeps[i].moodAtSleep === 9) {
+      if (sleeps[i].moodAtWake === 9) {
         data[8].y++
       }
-      if (sleeps[i].moodAtSleep === 10) {
+      if (sleeps[i].moodAtWake === 10) {
         data[9].y++
       }
     }
@@ -55,7 +55,7 @@ class EveningMoodPie extends React.Component {
     const datum = this.calculateData(this.props.sleeps);
     return (
     <div>
-      <h2>Evening Mood Frequencies</h2>
+      <h2>Morning Mood Frequencies</h2>
     <NVD3Chart
       id="chart"
       width={600}
@@ -74,4 +74,4 @@ const mapStateToProps = state => ({
   sleeps: state.sleepData.sleeps
 });
 
-export default connect(mapStateToProps)(EveningMoodPie);
+export default connect(mapStateToProps)(MorningMoodPie);
