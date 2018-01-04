@@ -4,13 +4,6 @@ import {Redirect} from 'react-router-dom';
 import {fetchSleepData} from '../actions/sleep-data';
 
 import UserNav from './user-nav';
-import PercentageBar from './percentage-bar';
-import SleepsBarChart from './sleeps-bar-chart';
-import AverageHours from './average-hours';
-import CaffeineChart from './caffeine-chart';
-import ExerciseChart from './exercise-chart';
-import EveningMoodPie from './evening-mood-pie';
-import MorningMoodPie from './morning-mood-pie';
 import SleepStatsSection from './sleep-stats-section';
 
 import './sleep-stats-page.css';
@@ -48,7 +41,7 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps)(SleepStatsPage);
 
-          {/* <h1>Sleep Statistics</h1>
+          /* <h1>Sleep Statistics</h1>
           <div className="col-12" id="percentage-bar">
             <h2>Waking Mood Percentage</h2>
             <h3>Sleep % Above 5 Waking Mood</h3>
@@ -75,4 +68,4 @@ export default connect(mapStateToProps)(SleepStatsPage);
           </div>
           <div className="col-6" id="morning-mood-pie">
             <MorningMoodPie />
-          </div> */}
+          </div> */

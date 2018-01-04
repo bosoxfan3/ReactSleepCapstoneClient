@@ -48,7 +48,7 @@ export class MySleeps extends React.Component {
             <h3>{sleep.date}</h3>
           </div>
           <div className="sleep-section">
-            <p>Hours: {sleep.hours}</p>
+            <p>Hours: {sleep.hours.toFixed(2)}</p>
             <p>Bed Time: {bedTime}</p>
             <p>Wake Time: {awakeTime}</p>
           </div>

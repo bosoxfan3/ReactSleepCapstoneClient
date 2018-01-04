@@ -14,8 +14,7 @@ export default function Radio(props) {
         type="radio"
         name={name}
       />
-      <label htmlFor={name}>
-        {/* label used to have a key of index but now we use a div with a key instead */}
+      <label htmlFor={name} key={index}>
       <span className="radio-option"></span>
         {option}
       </label>   

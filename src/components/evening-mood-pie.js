@@ -58,7 +58,6 @@ class EveningMoodPie extends React.Component {
       <h2>Evening Mood Frequencies</h2>
     <NVD3Chart
       id="chart"
-      width={600}
       height={370}
       type="pieChart"
       datum={datum}

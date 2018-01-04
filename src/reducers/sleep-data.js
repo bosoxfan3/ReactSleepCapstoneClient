@@ -12,7 +12,7 @@ import {
 } from '../actions/sleep-data';
 
 const initialState = {
-  sleeps: [],
+  sleeps: [{moodAtWake: 0}],
   error: null,
   currentSleep: {
     awakeTime: "00:00",

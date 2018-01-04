@@ -27,7 +27,7 @@ class PercentageBar extends React.Component {
     } 
     return (
       <div className="percentage-bar">
-        <p>Positive: {positivePercentageDisplay}</p>
+        <h4>{positivePercentageDisplay}</h4>
         <div style={positivePercentageBarStyle} id="positive-percentage-bar">
           <span hidden>Positive: {positivePercentageDisplay}</span>
         </div>

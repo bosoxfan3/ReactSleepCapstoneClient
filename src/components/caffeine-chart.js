@@ -14,19 +14,20 @@ class CaffeineChart extends React.Component {
         "key": "Caffeine",
         "bar": true,
         "color": "#ccf",
-        "values": []
+        "values": [[0, 0]]
       },
       {
         "key": "Morning Mood",
         "color": "#333",
-        "values": []
+        "values": [[0, sleeps[0].moodAtWake]]
       }
     ];
     for (let i=0; i<sleeps.length; i++) {
       datum[0].values.push([sleeps[i].date, sleeps[i].caffeine]);
       datum[1].values.push([sleeps[i].date, sleeps[i].moodAtWake]);
     }
-    console.log(datum);
+    datum[0].values.push([0, 0]);
+    datum[1].values.push([0, sleeps[sleeps.length-1].moodAtWake]);
     return datum;
   }
   render() {

@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import UserNav from './user-nav';
 import PercentageBar from './percentage-bar';
 import SleepsBarChart from './sleeps-bar-chart';
 import AverageHours from './average-hours';
