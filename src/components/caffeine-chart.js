@@ -35,9 +35,10 @@ class CaffeineChart extends React.Component {
     const xdata = function(d,i) {return i};
     const ydata = function(d,i) {return d[1]};
     return (
-      <div>
+      <div className="caffeine-chart">
+        <h2>Caffeine Chart</h2>
         <NVD3Chart
-          height={430}
+          height={325}
           type="linePlusBarChart"
           datum={data}
           x= {xdata}
