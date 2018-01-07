@@ -2,17 +2,13 @@ import {
   FETCH_SLEEP_DATA_SUCCESS,
   FETCH_SLEEP_DATA_ERROR,
   FETCH_SLEEP_DATA_BY_ID_SUCCESS,
-  FETCH_SLEEP_DATA_BY_ID_ERROR,
   POST_SLEEP_DATA_SUCCESS,
-  POST_SLEEP_DATA_ERROR,
-  DELETE_SLEEP_DATA_SUCCESS,
-  DELETE_SLEEP_DATA_ERROR,
+  // DELETE_SLEEP_DATA_SUCCESS,
   UPDATE_SLEEP_DATA_SUCCESS,
-  UPDATE_SLEEP_DATA_ERROR
 } from '../actions/sleep-data';
 
 const initialState = {
-  sleeps: [{moodAtWake: 0}],
+  sleeps: [],
   error: null,
   currentSleep: {
     awakeTime: "00:00",
@@ -48,44 +44,24 @@ const initialState = {
         error: null
       });
     }
-    if (action.type === FETCH_SLEEP_DATA_BY_ID_ERROR) {
-      return Object.assign({}, state, {
-        error: action.error
-      });
-    }
     if (action.type === POST_SLEEP_DATA_SUCCESS) {
       return Object.assign({}, state, {
         sleeps: [...state.sleeps, action.data],
         error: null
       });
     }
-    if (action.type === POST_SLEEP_DATA_ERROR) {
-      return Object.assign({}, state, {
-        error: action.error
-      });
-    }
-    if (action.type === DELETE_SLEEP_DATA_SUCCESS) {
-      return Object.assign({}, state, {
-        sleeps: state.sleeps.filter(sleep => sleep.id !== action.data.id),
-        error: null
-      });
-    }
-    if (action.type === DELETE_SLEEP_DATA_ERROR) {
-      return Object.assign({}, state, {
-        error: action.error
-      });
-    }
+    // if (action.type === DELETE_SLEEP_DATA_SUCCESS) {
+    //   return Object.assign({}, state, {
+    //     sleeps: state.sleeps.filter(sleep => sleep.id !== action.data.id),
+    //     error: null
+    //   });
+    // }
     if (action.type === UPDATE_SLEEP_DATA_SUCCESS) {
       return Object.assign({}, state, {
         sleeps: state.sleeps.map(sleep =>
           sleep.id === action.sleep.id ? action.data : sleep
         ),
         error: null
-      });
-    }
-    if (action.type === UPDATE_SLEEP_DATA_ERROR) {
-      return Object.assign({}, state, {
-        error: action.error
       });
     }
     return state;

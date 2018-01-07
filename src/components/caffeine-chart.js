@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import NVD3Chart from 'react-nvd3';
 
 import './caffeine-chart.css';
-// import '../../node_modules/nvd3/build/nv.d3.min.css';
+import '../../node_modules/nvd3/build/nv.d3.min.css';
 
 
 
@@ -12,22 +12,20 @@ class CaffeineChart extends React.Component {
     var datum = [
       {
         "key": "Caffeine",
-        "bar": true,
+        
         "color": "#ccf",
-        "values": [[0, 0]]
+        "values": []
       },
       {
         "key": "Morning Mood",
         "color": "#333",
-        "values": [[0, sleeps[0].moodAtWake]]
+        "values": []
       }
     ];
     for (let i=0; i<sleeps.length; i++) {
       datum[0].values.push([sleeps[i].date, sleeps[i].caffeine]);
       datum[1].values.push([sleeps[i].date, sleeps[i].moodAtWake]);
     }
-    datum[0].values.push([0, 0]);
-    datum[1].values.push([0, sleeps[sleeps.length-1].moodAtWake]);
     return datum;
   }
   render() {

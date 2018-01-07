@@ -19,46 +19,22 @@ export const fetchSleepDataByIdSuccess = data => ({
   data
 });
 
-export const FETCH_SLEEP_DATA_BY_ID_ERROR = 'FETCH_SLEEP_DATA_BY_ID_ERROR';
-export const fetchSleepDataByIdError = error => ({
-  type: FETCH_SLEEP_DATA_BY_ID_ERROR,
-  error
-});
-
 export const POST_SLEEP_DATA_SUCCESS = 'POST_SLEEP_DATA_SUCCESS';
 export const postSleepDataSuccess = data => ({
   type: POST_SLEEP_DATA_SUCCESS,
   data
 });
 
-export const POST_SLEEP_DATA_ERROR = 'POST_SLEEP_DATA_ERROR';
-export const postSleepDataError = error => ({
-  type: POST_SLEEP_DATA_ERROR,
-  error
-});
-
-export const DELETE_SLEEP_DATA_SUCCESS = 'DELETE_SLEEP_DATA_SUCCESS';
-export const deleteSleepDataSuccess = data => ({
-  type: DELETE_SLEEP_DATA_SUCCESS,
-  data
-});
-
-export const DELETE_SLEEP_DATA_ERROR = 'DELETE_SLEEP_DATA_ERROR';
-export const deleteSleepDataError = error => ({
-  type: DELETE_SLEEP_DATA_ERROR,
-  error
-});
+// export const DELETE_SLEEP_DATA_SUCCESS = 'DELETE_SLEEP_DATA_SUCCESS';
+// export const deleteSleepDataSuccess = data => ({
+//   type: DELETE_SLEEP_DATA_SUCCESS,
+//   data
+// });
 
 export const UPDATE_SLEEP_DATA_SUCCESS = 'UPDATE_SLEEP_DATA_SUCCESS';
 export const updateSleepDataSuccess = (data) => ({
   type: UPDATE_SLEEP_DATA_SUCCESS,
   data
-});
-
-export const UPDATE_SLEEP_DATA_ERROR = 'UPDATE_SLEEP_DATA_ERROR';
-export const updateSleepDataError = error => ({
-  type: UPDATE_SLEEP_DATA_ERROR,
-  error
 });
 
 export const fetchSleepData = () => (dispatch, getState) => {
@@ -92,7 +68,7 @@ export const fetchSleepDataById = (id) => (dispatch, getState) => {
   .then(res => res.json())
   .then((data) => dispatch(fetchSleepDataByIdSuccess(data)))
   .catch(err => {
-    dispatch(fetchSleepDataByIdError(err));
+    dispatch(fetchSleepDataError(err));
   });
 };
 
@@ -133,13 +109,11 @@ export const postSleepData = (values) => (dispatch, getState) => {
   .then(res => res.json())
   .then((data) => dispatch(postSleepDataSuccess(data)))
   .catch(err => {
-    dispatch(postSleepDataError(err));
+    dispatch(fetchSleepDataError(err));
   });
 };
 
 export const deleteSleepData = (id) => (dispatch, getState) => {
-
-
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/sleeps/${id}`, {
     method: 'DELETE',
@@ -191,6 +165,6 @@ export const updateSleepData = (values, id) => (dispatch, getState) => {
   .then(res => res.json())
   .then((data) => dispatch(updateSleepDataSuccess(data)))
   .catch(err => {
-    dispatch(updateSleepDataError(err));
+    dispatch(fetchSleepDataError(err));
   });
 };
