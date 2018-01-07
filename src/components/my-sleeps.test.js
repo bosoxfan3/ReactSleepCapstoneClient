@@ -6,6 +6,6 @@ import {deleteSleepData} from '../actions/sleep-data';
 
 describe('<MySleeps />', () => {
   it('Renders without crashing', () => {
-    shallow(<MySleeps />);
+    shallow(<MySleeps sleeps={[]}/>);
   });
 });
