@@ -9,7 +9,6 @@
     "enzyme-adapter-react-16": "^1.1.0",
     "jwt-decode": "^2.2.0",
     "react": "^16.2.0",
-    "react-d3-basic": "^1.6.11",
     "react-dom": "^16.2.0",
     "react-nvd3": "^0.5.7",
     "react-redux": "^5.0.6",

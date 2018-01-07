@@ -5,7 +5,6 @@ import './radio.css';
 
 export default function Radio(props) {
   const name=props.input.name;
-  const input=props.input;
   const options = props.options.map((option, index) => (
     <div className="inline-block" key={index}>
       <Field
@@ -28,4 +27,3 @@ export default function Radio(props) {
     </div>
   );
 }
-//    onChange={event => input.onChange(option)}
