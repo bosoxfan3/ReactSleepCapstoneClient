@@ -17,6 +17,7 @@ import {
   deleteSleepData,
   updateSleepData
 } from './sleep-data';
+import {API_BASE_URL} from '../config';
 
 describe('fetchSleepDataSuccess', () => {
   it('Should return the action', () => {
@@ -26,15 +27,6 @@ describe('fetchSleepDataSuccess', () => {
       currentSleep: {
         awakeTime: "00:00",
         alarm: false,
-        bedTime:  "00:00",
-        blueLight:  false,
-        caffeine:  0,
-        date:  "Jan 01 2017",
-        exercise:  false,
-        hours:  0,
-        id:  "",
-        moodAtSleep:  0,
-        moodAtWake: 0
       }
     };
     const action = fetchSleepDataSuccess(data);
@@ -58,15 +50,6 @@ describe('fetchSleepDataByIdSuccess', () => {
       currentSleep: {
         awakeTime: "00:00",
         alarm: false,
-        bedTime:  "00:00",
-        blueLight:  false,
-        caffeine:  0,
-        date:  "Jan 01 2017",
-        exercise:  false,
-        hours:  0,
-        id:  "",
-        moodAtSleep:  0,
-        moodAtWake: 0
       }
     };
     const action = fetchSleepDataByIdSuccess(data);
@@ -80,15 +63,6 @@ describe('postSleepDataSuccess', () => {
     const data = {
       awakeTime: "00:00",
       alarm: false,
-      bedTime:  "00:00",
-      blueLight:  false,
-      caffeine:  0,
-      date:  "Jan 01 2017",
-      exercise:  false,
-      hours:  0,
-      id:  "",
-      moodAtSleep:  0,
-      moodAtWake: 0
     };
     const action = postSleepDataSuccess(data);
     expect(action.type).toEqual(POST_SLEEP_DATA_SUCCESS);
@@ -101,15 +75,6 @@ describe('updateSleepDataSuccess', () => {
     const data = {
       awakeTime: "00:00",
       alarm: false,
-      bedTime:  "00:00",
-      blueLight:  false,
-      caffeine:  0,
-      date:  "Jan 01 2017",
-      exercise:  false,
-      hours:  0,
-      id:  "",
-      moodAtSleep:  0,
-      moodAtWake: 1
     };
     const action = updateSleepDataSuccess(data);
     expect(action.type).toEqual(UPDATE_SLEEP_DATA_SUCCESS);
@@ -117,38 +82,44 @@ describe('updateSleepDataSuccess', () => {
   });
 });
 
-// describe('fetchSleepData', () => {
-//   it('Should dispatch fetchSleepDataSuccess', () => {
-//     const data = {
-//       sleeps: [],
-//       error: null,
-//       currentSleep: {
-//         awakeTime: "00:00",
-//         alarm: false,
-//         bedTime:  "00:00",
-//         blueLight:  false,
-//         caffeine:  0,
-//         date:  "Jan 01 2017",
-//         exercise:  false,
-//         hours:  0,
-//         id:  "",
-//         moodAtSleep:  0,
-//         moodAtWake: 0
-//       }
-//     };
-//     global.fetch = jest.fn().mockImplementation(() =>
-//       Promise.resolve({
-//         ok: true,
-//         json() {
-//           return data;
-//         }
-//       })
-//     );
-//     const dispatch = jest.fn();
-//     const getState = getState();
-//     return fetchSleepData()(dispatch, getState).then(() => {
-//       expect(fetch).toHaveBeenCalledWith('/sleeps');
-//       expect(dispatch).toHaveBeenCalledWith(fetchSleepDataSuccess(data));
-//     });
-//   });
-// });
+describe('fetchSleepData', () => {
+  it('Should dispatch fetchSleepDataSuccess', () => {
+    const data = {
+      sleeps: [],
+      error: null,
+      currentSleep: {
+        awakeTime: "00:00",
+        alarm: false,
+        bedTime:  "00:00",
+        blueLight:  false,
+        caffeine:  0,
+        date:  "Jan 01 2017",
+        exercise:  false,
+        hours:  0,
+        id:  "",
+        moodAtSleep:  0,
+        moodAtWake: 0
+      }
+    };
+    global.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        ok: true,
+        json() {
+          return data;
+        }
+      })
+    );
+    const dispatch = jest.fn();
+    const getState = jest.fn();
+    getState.mockReturnValue({auth: {authToken: 'aadf'}});
+    return fetchSleepData()(dispatch, getState).then(() => {
+      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/sleeps`, {
+        'headers': {'Authorization': 'Bearer aadf'}, 
+        'method': 'GET'
+      });
+      expect(dispatch).toHaveBeenCalledWith(fetchSleepDataSuccess(data));
+    });
+  });
+});
+
+//DATA DOESN't MATTER FOR ANY OF THESE

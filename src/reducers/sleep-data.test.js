@@ -82,8 +82,30 @@ describe('sleepDataReducer', () => {
       expect(state).toEqual(sleepData);
     });
   });
-
-  //How do I test for fetchSleepDataError?
+  describe('fetchSleepDataError', () => {
+    it('Should return an error', () => {
+      const sleepData = {
+        sleeps: [sleep1, sleep2],
+        error: null,
+        currentSleep: {
+          awakeTime: "00:00",
+          alarm: false,
+          bedTime:  "00:00",
+          blueLight:  false,
+          caffeine:  0,
+          date:  "Jan 01 2017",
+          exercise:  false,
+          hours:  0,
+          id:  "",
+          moodAtSleep:  0,
+          moodAtWake: 0
+        }
+      };
+      const error = {error: 'Error fetching data'};
+      const state = sleepDataReducer(undefined, fetchSleepDataError(error));
+      expect(state.error).toEqual(error);
+    });
+  });
 
   describe('fetchSleepDataByIdSuccess', () => {
     it('Should update currentSleep with the given data', () => {
@@ -115,42 +137,40 @@ describe('sleepDataReducer', () => {
     });
   });
 
-  //Says it can't match the ids even though they are the same
-
-  // describe('updateSleepDataSuccess', () => {
-  //   it('Should update data with the given id', () => {
-  //     const sleepData = {
-  //       sleeps: [sleep1, sleep2],
-  //       error: null,
-  //       currentSleep: {
-  //         awakeTime: "00:00",
-  //         alarm: false,
-  //         bedTime:  "00:00",
-  //         blueLight:  false,
-  //         caffeine:  0,
-  //         date:  "Jan 01 2017",
-  //         exercise:  false,
-  //         hours:  0,
-  //         id:  "",
-  //         moodAtSleep:  0,
-  //         moodAtWake: 0
-  //       }
-  //     };
-  //     const updatedSleep2 = {
-  //       awakeTime: "23:00",
-  //       alarm: true,
-  //       bedTime:  "10:00",
-  //       blueLight:  false,
-  //       caffeine:  1,
-  //       date:  "Jan 02 2017",
-  //       exercise:  false,
-  //       hours:  8,
-  //       id:  "124",
-  //       moodAtSleep:  5,
-  //       moodAtWake: 5
-  //     };
-  //     const state = sleepDataReducer(sleepData, updateSleepDataSuccess(updatedSleep2));
-  //     expect(state.sleeps[1]).toEqual(updatedSleep2);
-  //   });
-  // });
+  describe('updateSleepDataSuccess', () => {
+    it('Should update data with the given id', () => {
+      const sleepData = {
+        sleeps: [sleep1, sleep2],
+        error: null,
+        currentSleep: {
+          awakeTime: "00:00",
+          alarm: false,
+          bedTime:  "00:00",
+          blueLight:  false,
+          caffeine:  0,
+          date:  "Jan 01 2017",
+          exercise:  false,
+          hours:  0,
+          id:  "",
+          moodAtSleep:  0,
+          moodAtWake: 0
+        }
+      };
+      const updatedSleep2 = {
+        awakeTime: "23:00",
+        alarm: true,
+        bedTime:  "10:00",
+        blueLight:  false,
+        caffeine:  1,
+        date:  "Jan 02 2017",
+        exercise:  false,
+        hours:  8,
+        id:  sleep2.id,
+        moodAtSleep:  5,
+        moodAtWake: 5
+      };
+      const state = sleepDataReducer(sleepData, updateSleepDataSuccess(updatedSleep2));
+      expect(state.sleeps[1]).toEqual(updatedSleep2);
+    });
+  });
 });

@@ -27,11 +27,11 @@ function SleepStatsSection() {
             </div>
           </div>
           <div className="col-12" id="chart-section">
+          <div className="col-8" id="exercise-chart">
+              <ExerciseChart />
+            </div>
             <div className="col-4" id="caffeine-chart">
               <CaffeineChart />
-            </div>
-            <div className="col-8" id="exercise-chart">
-              <ExerciseChart />
             </div>
           </div>
           <div className="col-6" id="evening-mood-pie">

@@ -59,7 +59,7 @@ const initialState = {
     if (action.type === UPDATE_SLEEP_DATA_SUCCESS) {
       return Object.assign({}, state, {
         sleeps: state.sleeps.map(sleep =>
-          sleep.id === action.sleep.id ? action.data : sleep
+          sleep.id === action.data.id ? action.data : sleep
         ),
         error: null
       });
