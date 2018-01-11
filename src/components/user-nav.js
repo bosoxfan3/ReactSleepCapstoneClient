@@ -21,7 +21,7 @@ export class UserNav extends React.Component {
             <Link className="link" to="/sleeps">My Sleeps</Link>
             <Link className="link" to="/sleeps/add/new">Add Sleep</Link>
           </div>
-          <button className="log-out-button" onClick={() => this.logOut()}>Log Out</button>
+          <a className="log-out-button" onClick={() => this.logOut()}>Log Out</a>
         </nav>
       </header>
     );

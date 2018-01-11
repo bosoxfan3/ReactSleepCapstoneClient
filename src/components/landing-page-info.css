@@ -1,7 +1,9 @@
 .title-area {
   padding-top: 50px;
   background: url('https://media.giphy.com/media/3oEjHLLDFTNrtdeJq0/giphy.gif');
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   padding-bottom: 150px;
 }
 
@@ -41,13 +43,18 @@
   height: 300px;
 }
 
-.first-image, .second-image {
+.first-image, .second-image, .third-image {
   text-align: center;
 }
 
 .form-screenshot {
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+}
+
+.stats-screenshot {
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .text-area {

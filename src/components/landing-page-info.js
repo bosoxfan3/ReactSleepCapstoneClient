@@ -36,7 +36,7 @@ export function LandingPageInfo() {
       <div className="landing-page-section">
         <div className="row second-section">
           <div className="col-6 second-image">
-            <img className="form-screenshot" src={require("../screenshots/1.png")} alt="why isn't this working"/>
+            <img className="form-screenshot" src={require("../screenshots/1.png")} alt="Screenshot of sleep form page"/>
           </div>
           <div className="col-6 text-area">
             <header>
@@ -59,8 +59,8 @@ export function LandingPageInfo() {
               find direct correlations between your habits and your sleep and overall well-being!
             </p>
           </div>
-          <div className="col-6">
-            <p>Screenshot of stats page</p>
+          <div className="col-6 third-image">
+            <img className="stats-screenshot" src={require("../screenshots/3.png")} alt="Screenshot of sleep stats page" />
           </div>
         </div>
       </div>

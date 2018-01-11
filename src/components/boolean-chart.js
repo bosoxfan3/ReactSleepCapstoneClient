@@ -5,7 +5,7 @@ import NVD3Chart from 'react-nvd3';
 // import BarChart from 'react-d3-basic';
 
 
-import './caffeine-chart.css';
+import './boolean-chart.css';
 
 class ExerciseChart extends React.Component {
   generateData(sleeps) {
@@ -69,9 +69,7 @@ class ExerciseChart extends React.Component {
       } else {
         data[7].values.push(sleeps[i].moodAtWake);
       }
-      // return data;
     }
-    console.log(data);
     for (let j=0; j<data.length; j++) {
       if (data[j].values.length === 0) {
         data[j].average = 0;
@@ -83,7 +81,6 @@ class ExerciseChart extends React.Component {
         data[j].average = total / data[j].values.length;
       }
     }
-    console.log(data);
     let datum = [{
       key: "Cumulative Return",
       values: [
@@ -95,7 +92,6 @@ class ExerciseChart extends React.Component {
         "value" : data[i].average
       });
     }
-    console.log(datum);
     return datum;
   }
   render() {
@@ -103,7 +99,7 @@ class ExerciseChart extends React.Component {
     console.log(data)
     var context = {
       getColor: function(i){
-        var colors = ['#ff3333', '#ff80000', '#ffe066', '#99e600', '#ff99ff', '#8080ff', '#d279d2', '#bfbfbf'];
+        var colors = ['#ff3333'];
         for (let i=0; i<colors.length; i++) {
           return colors[i];
         }
@@ -111,7 +107,8 @@ class ExerciseChart extends React.Component {
     };
     return (
     <div className="boolean-chart">
-      <h2>Boolean Sleep Factors Chart</h2>
+      <h2>External Factors Chart</h2>
+      <h4>How Combinations of Exercise, Using an Alarm, and Exposing Yourself to Blue Light Affect Your Morning Mood</h4>
       <NVD3Chart
             height={300}
             context={context}

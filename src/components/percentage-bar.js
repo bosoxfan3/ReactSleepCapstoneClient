@@ -16,9 +16,8 @@ class PercentageBar extends React.Component {
       }
     }
     let positivePercentage = (positiveMornings / totalSleeps)*100+'%';
-    let positivePercentageDisplay = positivePercentage.slice(0, 5)+'%';
+    let positivePercentageDisplay = ((positiveMornings / totalSleeps)*100).toFixed(2)+'%';
     let negativePercentage = (negativeMornings / totalSleeps)*100+'%';
-    let negativePercentageDisplay = negativePercentage.slice(0, 5)+'%';
     let positivePercentageBarStyle = {
       width: `${positivePercentage}`
     }
@@ -29,11 +28,10 @@ class PercentageBar extends React.Component {
       <div className="percentage-bar">
         <h4>{positivePercentageDisplay}</h4>
         <div style={positivePercentageBarStyle} id="positive-percentage-bar">
-          <span hidden>Positive: {positivePercentageDisplay}</span>
+          <span hidden>Positive</span>
         </div>
-        {/* <p>Negative: {negativePercentageDisplay}</p> */}
         <div style={negativePercentageBarStyle} id="negative-percentage-bar">
-          <span hidden>Negative: {negativePercentageDisplay}</span>
+          <span hidden>Negative</span>
         </div>
       </div>
     )

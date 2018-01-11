@@ -12,6 +12,7 @@ export class MySleeps extends React.Component {
     this.props.history.push(`/sleeps/${sleep.id}`);
   }
   render() {
+    console.log(this.props.sleeps);
     const sleep = this.props.sleeps.map((sleep, index) => {
       let exercise = sleep.exercise? 'Yes' : 'No';
       let blueLight = sleep.blueLight? 'Yes' : 'No';
@@ -63,8 +64,8 @@ export class MySleeps extends React.Component {
             <p>Night Mood: {sleep.moodAtSleep}</p>
           </div>
           <div className="button-section">
-            <button className="button" onClick={() => this.switchToEditingPage(sleep)}>Edit</button>
-            <button className="button" onClick={() => this.onDeleteClick(sleep.id)}>Delete</button>
+            <button className="button" id="edit-button" onClick={() => this.switchToEditingPage(sleep)}>Edit</button>
+            <button className="button" id="delete-button" onClick={() => this.onDeleteClick(sleep.id)}>Delete</button>
           </div>
         </div>
       );
@@ -74,7 +75,7 @@ export class MySleeps extends React.Component {
         <div className="row">
           <div className="col-12 main-area">
             <h1 className="main-title">Previous Sleeps</h1>
-            <div>
+            <div id="sleeps-div">
               {sleep.length? sleep : <p className="no-sleep">No previous nights of sleep have been recorded!</p>}
             </div>
           </div>

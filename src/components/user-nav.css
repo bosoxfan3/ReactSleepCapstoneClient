@@ -24,15 +24,16 @@
 }
 
 .log-out-button {
-  width: 80px;
-  padding: 5px;
-  border-radius: 2px;
-  border-color: transparent;
+  padding: 15px;
+  font-size: 15pt;
   float: right;
-  margin-top: 10px;
-  margin-right: 10px;
-  font-style: bold;
-  font-size: 10pt;
+  text-decoration: none;
+  color: white;
+  font-family: 'Acme', sans-serif;
+}
+
+.log-out-button:hover {
+  color: purple;
 }
 
 .log-out-button:hover {

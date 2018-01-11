@@ -13,7 +13,7 @@ class CaffeineChart extends React.Component {
       {
         "key": "Caffeine",
         
-        "color": "#ccf",
+        "color": "#9f5dfc",
         "values": []
       },
       {
@@ -35,8 +35,9 @@ class CaffeineChart extends React.Component {
     return (
       <div className="caffeine-chart">
         <h2>Caffeine Chart</h2>
+        <h4>Plots Daily Caffeine Servings (0-5) Along With Corresponding Morning Mood(1-10)</h4>
         <NVD3Chart
-          height={325}
+          height={275}
           type="linePlusBarChart"
           datum={data}
           x= {xdata}
