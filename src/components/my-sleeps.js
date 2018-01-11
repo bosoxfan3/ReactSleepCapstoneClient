@@ -12,7 +12,6 @@ export class MySleeps extends React.Component {
     this.props.history.push(`/sleeps/${sleep.id}`);
   }
   render() {
-    console.log(this.props.sleeps);
     const sleep = this.props.sleeps.map((sleep, index) => {
       let exercise = sleep.exercise? 'Yes' : 'No';
       let blueLight = sleep.blueLight? 'Yes' : 'No';
