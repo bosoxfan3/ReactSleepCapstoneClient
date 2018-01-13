@@ -1,3 +1,53 @@
+/* because of react's transitive properties with css, this is the only place
+that I will writing the base responsive design code */
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.row::before,
+.row::after {
+  display: table;
+  content: '';
+}
+
+.row::after {
+  clear: both;
+}
+
+.col-3, .col-4, .col-6, .col-12 {
+  float: left;
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+}
+
+/* Mobile defaults */
+.col-3, .col-4, .col-6, .col-12 {
+  width: 100%;
+}
+
+/* Non-mobile, grid */
+@media only screen and (min-width: 640px) {
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.333333%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}
+
 #landing-page-info .title-area {
   /* padding-top: 50px; */
   background: url('https://images.unsplash.com/photo-1498681353033-e5632ec6decd?auto=format&fit=crop&w=1080&q=80');
@@ -32,10 +82,6 @@
 #landing-page-info .first-section, .second-section, .third-section {
   padding-top: 20px;
   padding-bottom: 20px;
-}
-
-#landing-page-info .second-section {
-  height: 400px;
 }
 
 #landing-page-info .first-image img {
@@ -78,4 +124,66 @@
 
 #landing-page-info .third-text-area {
   padding-top: 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #landing-page-info .second-text-area {
+    padding-top: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #landing-page-info .second-image {
+    padding-top: 20px !important;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  #landing-page-info .text-area h2 {
+    font-size: 20pt !important;
+  }
+  
+  #landing-page-info .text-area p {
+    font-size: 14pt !important;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #landing-page-info .first-image, .third-image {
+    padding-top: 50px !important;
+  }
+  #landing-page-info .second-image {
+    padding-top: 60px !important;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #landing-page-info .first-image, .third-image {
+    padding-top: 0 !important;
+  }
+  #landing-page-info .second-image {
+    padding-top: 0 !important;
+  }
+  #landing-page-info .first-image img {
+    padding-top: 0 !important;
+    padding-bottom: 40px !important;
+  }
+  #landing-page-info .second-text-area {
+    padding-top: 0 !important;
+  }
+  
+  #landing-page-info .third-text-area {
+    padding-top: 0 !important;
+  }
+  #landing-page-info .second-section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  #landing-page-info .third-section {
+    padding-top: 0 !important;
+  }
+  #landing-page-info .landing-page-section {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
 }
