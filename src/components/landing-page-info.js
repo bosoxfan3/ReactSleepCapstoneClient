@@ -5,7 +5,7 @@ import './landing-page-info.css';
 
 export function LandingPageInfo() {
   return (
-    <div id="about">
+    <div id="landing-page-info">
       <div className="title-area">
         <div className="row">
           <div className="col-12">
@@ -38,7 +38,7 @@ export function LandingPageInfo() {
           <div className="col-6 second-image">
             <img className="form-screenshot" src={require("../screenshots/1.png")} alt="Screenshot of sleep form page"/>
           </div>
-          <div className="col-6 text-area">
+          <div className="col-6 text-area second-text-area">
             <header>
               <h2>How to Use RestFull</h2>
             </header>
@@ -51,7 +51,7 @@ export function LandingPageInfo() {
       </div>
       <div className="landing-page-section">
         <div className="row third-section">
-          <div className="col-6 text-area">
+          <div className="col-6 text-area third-text-area">
             <header>
               <h2>See Your Stats</h2>
             </header>

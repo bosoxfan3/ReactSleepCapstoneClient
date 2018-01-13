@@ -9,7 +9,7 @@ export function LogInPageNav() {
     <header>
       <nav className="login-nav">
         <div className="login-links">
-          <Link className="link" to="/">Back To Home</Link>
+          <Link className="link" to="/">Home</Link>
           <Link className="link" to="/signup">Sign Up</Link>
         </div>
       </nav>

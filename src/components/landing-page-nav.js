@@ -9,8 +9,8 @@ export function LandingPageNav() {
     <header>
       <nav className="landing-page-nav">
         <div className="site-links">
-          <Link className="link" to="/">RestFull</Link>
-          <Link className="link" to="/#about">About</Link>
+          <Link className="link main-link" to="/">RestFull</Link>
+          <img className="logo" src="https://image.flaticon.com/icons/svg/209/209714.svg" />
           <Link className="link" to="/signup">Sign Up</Link>
           <Link className="link" to="/login">Log In</Link>
         </div>

@@ -1,73 +1,81 @@
-.title-area {
-  padding-top: 50px;
-  background: url('https://media.giphy.com/media/3oEjHLLDFTNrtdeJq0/giphy.gif');
-  background-size: contain;
+#landing-page-info .title-area {
+  /* padding-top: 50px; */
+  background: url('https://images.unsplash.com/photo-1498681353033-e5632ec6decd?auto=format&fit=crop&w=1080&q=80');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-bottom: 150px;
+  padding-bottom: 200px;
 }
 
-.title-section {
+#landing-page-info .title-section {
   text-align: center;
   color: white;
 }
 
-.title-section h1 {
+#landing-page-info .title-section h1 {
   font-family: 'Acme', sans-serif;
   font-size: 70pt;
 }
 
-.title-section h2 {
-  padding-top: 40px;
+#landing-page-info .title-section h2 {
+  padding-top: 70px;
   font-family: 'Acme', 'sans-serif';
   font-size: 36pt;
 }
 
-.landing-page-section {
+#landing-page-info .landing-page-section {
   background-color: rgb(223, 221, 221);
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.first-section, .second-section, .third-section {
+#landing-page-info .first-section, .second-section, .third-section {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.second-section {
+#landing-page-info .second-section {
   height: 400px;
 }
 
-.first-image img {
-  width: 300px;
-  height: 300px;
+#landing-page-info .first-image img {
+  width: 70%;
+  padding-top: 30px;
 }
 
-.first-image, .second-image, .third-image {
+#landing-page-info .first-image, .second-image, .third-image {
   text-align: center;
 }
 
-.form-screenshot {
+#landing-page-info .form-screenshot {
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
 }
 
-.stats-screenshot {
+#landing-page-info .stats-screenshot {
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.text-area {
+#landing-page-info .text-area {
   text-align: center;
   line-height: 30pt;
 }
 
-.text-area h2 {
+#landing-page-info .text-area h2 {
   font-size: 24pt;
   font-family: 'Oswald', sans-serif;
 }
 
-.text-area p {
+#landing-page-info .text-area p {
   font-size: 16pt;
   font-family: 'Slabo 27px', serif;
+}
+
+#landing-page-info .second-text-area {
+  padding-top: 20px;
+}
+
+#landing-page-info .third-text-area {
+  padding-top: 30px;
 }
