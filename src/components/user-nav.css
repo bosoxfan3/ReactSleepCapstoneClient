@@ -7,35 +7,36 @@
   z-index: 1000;
 }
 
-.site-links {
+.user-nav .site-links {
   display: inline-block;
-  padding: 15px;
-  font-size: 15pt;
+  padding: 12px;
 }
 
-.link {
+.user-nav .link {
   text-decoration: none;
   color: white;
   padding-right: 15px;
+  font-size: 17pt;
+  font-family: 'Acme', sans-serif;
 }
 
-.link:hover {
+.user-nav .link:hover {
   color: purple;
 }
 
-.log-out-button {
-  padding: 15px;
-  font-size: 15pt;
+.user-nav .log-out-button {
+  padding: 12px;
+  font-size: 17pt;
   float: right;
   text-decoration: none;
   color: white;
   font-family: 'Acme', sans-serif;
 }
 
-.log-out-button:hover {
+.user-nav .log-out-button:hover {
   color: purple;
 }
 
-.log-out-button:hover {
+.user-nav .log-out-button:hover {
   cursor: pointer;
 }

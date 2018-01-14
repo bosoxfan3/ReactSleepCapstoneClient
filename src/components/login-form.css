@@ -1,82 +1,16 @@
-* {
-  box-sizing: border-box;
-}
-
-.row {
-  max-width: 1000px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-}
-
-.row::before,
-.row::after {
-  display: table;
-  content: '';
-}
-
-.row::after {
-  clear: both;
-}
-
-.col-3, .col-4, .col-6, .col-12 {
-  float: left;
-  padding-left: 1.04166666%;
-  padding-right: 1.04166666%;
-}
-
-/* Mobile defaults */
-.col-3, .col-4, .col-6, .col-12 {
-  width: 100%;
-}
-
-/* Non-mobile, grid */
-@media only screen and (min-width: 640px) {
-  .col-3 {
-    width: 25%;
-  }
-  .col-4 {
-    width: 33.333333%;
-  }
-  .col-6 {
-    width: 50%;
-  }
-  .col-12 {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .login-form {
-    width: 50% !important;
-    left: 25% !important;
-    position: absolute !important;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  .login-form {
-    width: 80% !important;
-    left: 10% !important;
-    position: absolute !important;
-  }
-}
-
 .login-background {
-  /* background-color: rgb(235, 235, 235);
-  padding-bottom: 1000px !important; */
   background-image: url('https://i.ytimg.com/vi/Wl2sDEpjqQI/maxresdefault.jpg');
   background-size: cover;
   width: 100%;
   padding-bottom: 1000px;
 }
 
-.login-form-section {
+.login-background .login-form-section {
   padding-top: 150px;
   text-align: center;
 }
 
-.login-form {
+.login-background .login-form {
   background-color: white;
   border-radius: 2px;
   width: 30%;
@@ -86,22 +20,22 @@
   padding-bottom: 10px;
 }
 
-.login-form h2 {
+.login-background .login-form h2 {
   font-family: 'Oswald', sans-serif;
 }
 
-.login-form label, .login-form button {
+.login-background .login-form label, .login-form button {
   font-family: 'Slabo 27px', serif;
 }
 
-.login-form input#password, .login-form input#username {
+.login-background .login-form input#password, .login-form input#username {
   margin-top: 10px;
   margin-bottom: 20px;
   height: 30px;
   width: 50%;
 }
 
-.login-button {
+.login-background .login-button {
   border-color: transparent;
   padding: 10px;
   font-style: bold;
@@ -110,4 +44,20 @@
   color: white;
   background-color: rgb(10, 115, 141);
   margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .login-background .login-form {
+    width: 50% !important;
+    left: 25% !important;
+    position: absolute !important;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .login-background .login-form {
+    width: 80% !important;
+    left: 10% !important;
+    position: absolute !important;
+  }
 }

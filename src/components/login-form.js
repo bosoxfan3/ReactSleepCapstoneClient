@@ -24,8 +24,7 @@ export class LoginForm extends React.Component {
       <div className="login-background">
         <div className="row">
           <div className="col-12"> 
-            <div className="login-form-section">
- 
+            <div className="login-form-section"> 
               <form
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
