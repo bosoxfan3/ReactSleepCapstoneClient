@@ -1,4 +1,48 @@
+#stats h1 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+#stats h2 {
+  font-family: 'Oswald', sans-serif;
+}
+
+#stats h3, #stats h4, #stats p {
+  font-family: 'Slabo 27px', serif;
+}
+
 #stats .no-sleep {
   text-align: center;
   padding-bottom: 30px;
+}
+
+#stats #percentage-bar {
+  text-align: center;
+}
+
+#stats #percentage-bar h3 {
+  margin-bottom: 10px;
+}
+
+#stats #percentage-bar h4 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#stats #hours-section {
+  padding-top: 40px;
+}
+
+#stats #pie-section {
+  padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 640px) {
+  #stats #evening-mood-pie {
+    padding-top: 40px;
+  }
+  #stats #morning-mood-pie {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import NVD3Chart from 'react-nvd3';
 
+import './morning-mood-pie.css';
+
 var data = [
   {key: "One", y: 0},
   {key: "Two", y: 0},
@@ -54,18 +56,18 @@ class MorningMoodPie extends React.Component {
   render() {
     const datum = this.calculateData(this.props.sleeps);
     return (
-    <div>
-      <h2>Morning Mood Frequencies</h2>
-    <NVD3Chart
-      id="chart"
-      height={370}
-      type="pieChart"
-      datum={datum}
-      x="key"
-      y="y"
-      tooltip={{enabled: false}}
-    />
-  </div>
+      <div className="morning-mood-pie">
+        <h2>Morning Mood Frequencies</h2>
+        <NVD3Chart
+          id="chart"
+          height={370}
+          type="pieChart"
+          datum={datum}
+          x="key"
+          y="y"
+          tooltip={{enabled: false}}
+        />
+      </div>
     )
   }
 }

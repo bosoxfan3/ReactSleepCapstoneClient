@@ -23,26 +23,28 @@ export class SleepStatsSection extends React.Component {
             <PercentageBar />
           </div>
           <div className="col-12" id="hours-section">
-            <div className="col-3" id="average-hours">
-              <AverageHours />
-            </div>
             <div className="col-9" id="sleeps-bar-chart">
               <SleepsBarChart />
             </div>
+            <div className="col-3" id="average-hours">
+              <AverageHours />
+            </div>
           </div>
           <div className="col-12" id="chart-section">
-          <div className="col-8" id="boolean-chart">
+            <div className="col-8" id="boolean-chart">
               <BooleanChart />
             </div>
             <div className="col-4" id="caffeine-chart">
               <CaffeineChart />
             </div>
           </div>
-          <div className="col-6" id="evening-mood-pie">
-            <EveningMoodPie />
-          </div>
-          <div className="col-6" id="morning-mood-pie">
-            <MorningMoodPie />
+          <div className="col-12" id="pie-section">
+            <div className="col-6" id="evening-mood-pie">
+              <EveningMoodPie />
+            </div>
+            <div className="col-6" id="morning-mood-pie">
+              <MorningMoodPie />
+            </div>
           </div>
         </div>
     } else {

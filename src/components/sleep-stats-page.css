@@ -10,24 +10,3 @@
   margin-top: 95px;
   background-color: rgb(235, 235, 235);
 }
-
-.stats-page-background h1 {
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-}
-
-.stats-page-background h2 {
-  font-family: 'Oswald', sans-serif;
-}
-
-.stats-page-background h3, h4, p {
-  font-family: 'Slabo 27px', serif;
-}
-
-.stats-page-background #percentage-bar {
-  text-align: center;
-}
-
-.stats-page-background #sleeps-bar-chart, .stats-page-background #average-hours {
-  padding-top: 50px;
-}
