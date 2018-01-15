@@ -1,71 +1,22 @@
-* {
-  box-sizing: border-box;
-}
-
-.row {
-  max-width: 1000px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-}
-
-.row::before,
-.row::after {
-  display: table;
-  content: '';
-}
-
-.row::after {
-  clear: both;
-}
-
-.col-3, .col-4, .col-6, .col-12 {
-  float: left;
-  padding-left: 1.04166666%;
-  padding-right: 1.04166666%;
-}
-
-/* Mobile defaults */
-.col-3, .col-4, .col-6, .col-12 {
-  width: 100%;
-}
-
-/* Non-mobile, grid */
-@media only screen and (min-width: 640px) {
-  .col-3 {
-    width: 25%;
-  }
-  .col-4 {
-    width: 33.333333%;
-  }
-  .col-6 {
-    width: 50%;
-  }
-  .col-12 {
-    width: 100%;
-  }
-}
-
-.background {
+.my-sleeps-background {
   background-image: url('https://i.ytimg.com/vi/Wl2sDEpjqQI/maxresdefault.jpg');
   background-size: cover;
   width: 100%;
   padding-bottom: 400px;
 }
 
-.main-area {
+.my-sleeps-background .main-area {
   margin-top: 120px;
   background-color: rgb(235, 235, 235);
   padding-bottom: 30px !important;
 }
 
-.main-title {
+.my-sleeps-background .main-title {
   text-align: center;
-  /* padding-top: 15px; */
   font-family: 'Oswald', sans-serif;
 }
 
-.sleep {
+.my-sleeps-background .sleep {
   border-style: ridge;
   border-color: rgb(111, 191, 216);
   border-width: 3px;
@@ -74,33 +25,33 @@
   margin-right: 20px;
 }
 
-.sleep h3 {
+.my-sleeps-background .sleep h3 {
   font-family: 'Oswald', sans-serif;
 }
 
-.sleep p, .sleep button {
+.my-sleeps-background .sleep p, .my-sleeps-background .sleep button {
   font-family: 'Slabo 27px', serif;
 }
 
-.no-sleep {
+.my-sleeps-background .no-sleep {
   text-align: center;
 }
 
-.sleep-date {
+.my-sleeps-background .sleep-date {
   text-align: center;
 }
 
-.sleep-section {
+.my-sleeps-background .sleep-section {
   width: 33%;
   text-align: center;
   display: inline-block;
 }
 
-.button-section {
+.my-sleeps-background .button-section {
   text-align: center;
 }
 
-.button {
+.my-sleeps-background .button {
   margin-left: 20px;
   margin-right: 20px;
   width: 80px;
@@ -113,6 +64,49 @@
   margin-bottom: 20px;
 }
 
-.button:hover {
+.my-sleeps-background .button:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 560px) {
+  .my-sleeps-background .sleep-section {
+    position: relative;
+    left: 2px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .my-sleeps-background .sleep-section {
+    left: 3px;
+  }
+  .my-sleeps-background h3 {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .my-sleeps-background .sleep-section {
+    left: 2px;
+  }
+  .my-sleeps-background .sleep-section p {
+    font-size: 11pt;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .my-sleeps-background .sleep-section {
+    left: 3px;
+  }
+  .my-sleeps-background .sleep-section p {
+    font-size: 10pt;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .my-sleeps-background .sleep-section {
+    left: 4px;
+  }
+  .my-sleeps-background .sleep-section p {
+    font-size: 9pt;
+  }
 }

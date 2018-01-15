@@ -70,7 +70,7 @@ export class MySleeps extends React.Component {
       );
     });
     return (
-      <div className="background">
+      <div className="my-sleeps-background">
         <div className="row">
           <div className="col-12 main-area">
             <h1 className="main-title">Previous Sleeps</h1>

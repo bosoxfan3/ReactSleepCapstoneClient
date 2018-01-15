@@ -40,11 +40,4 @@ describe('<MySleeps />', () => {
     const items = wrapper.find('#sleeps-div .sleep');
     expect(items.length).toEqual(sleeps.length);
   });
-  // it('Should dispatch deleteSleepData when delete button is clicked', () => {
-  //   const dispatch = jest.fn();
-  //   const wrapper = mount(<MySleeps dispatch={dispatch} sleeps={[sleep1]} />);
-  //   wrapper.find('#delete-button').simulate('click');
-  //   console.log(deleteSleepData(sleep1.id));
-  //   expect(dispatch).toHaveBeenCalledWith(deleteSleepData(sleep1.id));
-  // });
 });
