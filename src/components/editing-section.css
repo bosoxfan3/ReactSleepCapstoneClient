@@ -38,6 +38,8 @@
 .edit-form-background .date-field {
   margin: 5px;
   margin-right: 25px;
+  display: inline-block;
+  position: relative;
 }
 
 .edit-form-background .date-field select {

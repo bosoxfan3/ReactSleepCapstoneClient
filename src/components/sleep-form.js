@@ -22,7 +22,7 @@ export class SleepForm extends React.Component {
   }
   render() {
     return (
-      <div className="background">
+      <div className="sleep-form-background">
         <div className="row">
           <div className="col-12 main-area">
             <section className="sleep-form-section">
@@ -33,32 +33,38 @@ export class SleepForm extends React.Component {
                   this.onSubmit(values)
                 )}>
                 <section name="date-of-sleep">
-                  <label htmlFor="month">Month</label>
-                  <div className="date-field">
-                    <Field
-                      component={Select}
-                      name="month"
-                      options={months}
-                      validate={required}
-                    />
+                  <div className="date-div">
+                    <label htmlFor="month">Month</label>
+                    <div className="date-field">
+                      <Field
+                        component={Select}
+                        name="month"
+                        options={months}
+                        validate={required}
+                      />
+                    </div>
                   </div>
-                  <label htmlFor="day">Day</label>
-                  <div className="date-field">
-                    <Field
-                      component={Select}
-                      name="day"
-                      options={days}
-                      validate={required}
-                    />
+                  <div className="date-div">
+                    <label htmlFor="day">Day</label>
+                    <div className="date-field">
+                      <Field
+                        component={Select}
+                        name="day"
+                        options={days}
+                        validate={required}
+                      />
+                    </div>
                   </div>
-                  <label htmlFor="year">Year</label>
-                  <div className="date-field">
-                    <Field
-                      component={Select}
-                      name="year"
-                      options={[2017, 2018]}
-                      validate={required}
-                    />
+                  <div className="date-div">
+                    <label htmlFor="year">Year</label>
+                    <div className="date-field">
+                      <Field
+                        component={Select}
+                        name="year"
+                        options={[2017, 2018]}
+                        validate={required}
+                      />
+                    </div>
                   </div>
                 </section>
                 <section id="sleep-times">

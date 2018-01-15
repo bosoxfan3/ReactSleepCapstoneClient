@@ -1,94 +1,48 @@
-* {
-  box-sizing: border-box;
-}
-
-.row {
-  max-width: 1000px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-}
-
-.row::before,
-.row::after {
-  display: table;
-  content: '';
-}
-
-.row::after {
-  clear: both;
-}
-
-.col-3, .col-4, .col-6, .col-12 {
-  float: left;
-  padding-left: 1.04166666%;
-  padding-right: 1.04166666%;
-}
-
-/* Mobile defaults */
-.col-3, .col-4, .col-6, .col-12 {
-  width: 100%;
-}
-
-/* Non-mobile, grid */
-@media only screen and (min-width: 640px) {
-  .col-3 {
-    width: 25%;
-  }
-  .col-4 {
-    width: 33.333333%;
-  }
-  .col-6 {
-    width: 50%;
-  }
-  .col-12 {
-    width: 100%;
-  }
-}
-
-.background {
+.sleep-form-background {
   background-image: url('https://i.ytimg.com/vi/Wl2sDEpjqQI/maxresdefault.jpg');
   background-size: cover;
   width: 100%;
   padding-bottom: 400px;
 }
 
-.main-area {
+.sleep-form-background .main-area {
   margin-top: 120px;
   background-color: rgb(235, 235, 235);
   padding-bottom: 40px;
 }
 
-.sleep-form-section {
-  /* padding-top: 20px; */
+.sleep-form-background .sleep-form-section {
   text-align: center;
 }
 
-.sleep-form-section h1 {
+.sleep-form-background .sleep-form-section h1 {
   font-size: 2em;
   font-family: 'Oswald', sans-serif;
 }
 
-.sleep-form {
+.sleep-form-background .sleep-form {
   font-size: 14pt;
 }
 
-.sleep-form label {
+.sleep-form-background .sleep-form label {
   padding-left: 5px;
   padding-right: 5px;
   font-size: 14pt;
   font-family: 'Slabo 27px', serif;
 }
 
-.date-field {
-  position: relative;
+.sleep-form-background .date-div {
   display: inline-block;
-  vertical-align: middle;
-  margin: 5px;
-  margin-right: 25px;
 }
 
-.date-field select {
+.sleep-form-background .date-field {
+  margin: 5px;
+  margin-right: 25px;
+  display: inline-block;
+  position: relative;
+}
+
+.sleep-form-background .date-field select {
   background-color: turquoise;
   color: white;
   font-size: inherit;
@@ -99,17 +53,18 @@
   border-radius: 3px;
   text-indent: 0.01px;
   text-overflow: '';
+  font-family: 'Slabo 27px', serif;
   -webkit-appearance: button; /* hide default arrow in chrome OSX */
 }
 
-.date-field::before,
-.date-field::after {
+.sleep-form-background .date-field::before,
+.sleep-form-background .date-field::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.date-field::after { /*  Custom dropdown arrow */
+.sleep-form-background .date-field::after { /*  Custom dropdown arrow */
   content: "\25BC";
   height: 1em;
   font-size: .625em;
@@ -119,7 +74,7 @@
   margin-top: -.5em;
 }
 
-.date-field::before { /*  Custom dropdown arrow cover */
+.sleep-form-background .date-field::before { /*  Custom dropdown arrow cover */
   width: 2em;
   right: 0;
   top: 0;
@@ -127,82 +82,87 @@
   border-radius: 0 3px 3px 0;
 }
 
-.date-field select[disabled] {
+.sleep-form-background .date-field select[disabled] {
   color: rgba(0,0,0,.3);
 }
 
-.date-field select[disabled]::after {
+.sleep-form-background .date-field select[disabled]::after {
   color: rgba(0,0,0,.1);
 }
 
-.date-field::before {
+.sleep-form-background .date-field::before {
   background-color: rgba(0,0,0,.15);
 }
 
-.date-field::after {
+.sleep-form-background .date-field::after {
   color: rgba(0,0,0,.4);
 }
 
-#sleep-times {
+.sleep-form-background #sleep-times {
   font-family: 'Slabo 27px', serif;
 }
 
-.time-field {
+.sleep-form-background .time-field {
   display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 25px;
 }
 
-.time-field label {
+.sleep-form-background .time-field label {
   font-size: 14pt;
 }
 
-.time-field input {
+.sleep-form-background .time-field input {
   background-color: turquoise;
   border-style: none;
   color: white;
   padding: 5px;
   margin-top: 10px;
-  font-family: 14pt;
-  font-family: 'Roboto';
-}
-
-#sleep-alarm, #sleep-exercise, #sleep-blue-light {
+  font-size: 14pt;
   font-family: 'Slabo 27px', serif;
 }
 
-input[type="radio"] {
+.sleep-form-background #sleep-alarm, .sleep-form-background #sleep-exercise, .sleep-form-background #sleep-blue-light {
+  font-family: 'Slabo 27px', serif;
+}
+
+.sleep-form-background #sleep-alarm p, .sleep-form-background #sleep-exercise p, .sleep-form-background #sleep-blue-light p {
+  margin-top: 25px;
+  margin-bottom: 7px;
+}
+
+.sleep-form-background input[type="radio"] {
   position: relative;
   right: 35px;
   top: 23px;
   z-index: 2;
 }
 
-input[id*="0"] + label {
+.sleep-form-background input[id*="0"] + label {
   position: relative;
   right: 62px;
   top: 5px;
   z-index: 1;
 }
 /*because the "No" label needed less moving than the "Yes" to be centered in the box*/
-input[id*="1"] + label {
+.sleep-form-background input[id*="1"] + label {
   position: relative;
   right: 60px;
   top: 5px;
   z-index: 1;
 }
 
-input[type="radio"]:checked + label span{
+.sleep-form-background input[type="radio"]:checked + label span{
   background-color: turquoise;
   z-index: -1000;
 }
 
-input[type="radio"]:checked + label {
+.sleep-form-background input[type="radio"]:checked + label {
   color: white;
 }
 
-.caffeine-field {
+.sleep-form-background .caffeine-field {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -210,12 +170,12 @@ input[type="radio"]:checked + label {
   margin-bottom: 20px;
 }
 
-#sleep-caffeine label {
+.sleep-form-background #sleep-caffeine label {
   display: block;
   margin-top: 20px;
 }
 
-.caffeine-field select {
+.sleep-form-background .caffeine-field select {
   background-color: turquoise;
   color: white;
   font-size: inherit;
@@ -226,17 +186,18 @@ input[type="radio"]:checked + label {
   border-radius: 3px;
   text-indent: 0.01px;
   text-overflow: '';
+  font-family: 'Slabo 27px', serif;
   -webkit-appearance: button; /*hide default arrow in chrome OSX*/
 }
 
-.caffeine-field::before,
-.caffeine-field::after {
+.sleep-form-background .caffeine-field::before,
+.sleep-form-background .caffeine-field::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.caffeine-field::after { /*  Custom dropdown arrow */
+.sleep-form-background .caffeine-field::after { /*  Custom dropdown arrow */
   content: "\25BC";
   height: 1em;
   font-size: .625em;
@@ -246,7 +207,7 @@ input[type="radio"]:checked + label {
   margin-top: -.5em;
 }
 
-.caffeine-field::before { /*  Custom dropdown arrow cover */
+.sleep-form-background .caffeine-field::before { /*  Custom dropdown arrow cover */
   width: 2em;
   right: 0;
   top: 0;
@@ -254,23 +215,23 @@ input[type="radio"]:checked + label {
   border-radius: 0 3px 3px 0;
 }
 
-.caffeine-field select[disabled] {
+.sleep-form-background .caffeine-field select[disabled] {
   color: rgba(0,0,0,.3);
 }
 
-.caffeine-field select[disabled]::after {
+.sleep-form-background .caffeine-field select[disabled]::after {
   color: rgba(0,0,0,.1);
 }
 
-.caffeine-field::before {
+.sleep-form-background .caffeine-field::before {
   background-color: rgba(0,0,0,.15);
 }
 
-.caffeine-field::after {
+.sleep-form-background .caffeine-field::after {
   color: rgba(0,0,0,.4);
 }
 
-.moodAtWake-field {
+.sleep-form-background .moodAtWake-field {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -278,11 +239,11 @@ input[type="radio"]:checked + label {
   margin-bottom: 20px;
 }
 
-#sleep-mood-wake label {
+.sleep-form-background #sleep-mood-wake label {
   display: block;
 }
 
-.moodAtWake-field select {
+.sleep-form-background .moodAtWake-field select {
   background-color: turquoise;
   color: white;
   font-size: inherit;
@@ -293,17 +254,18 @@ input[type="radio"]:checked + label {
   border-radius: 3px;
   text-indent: 0.01px;
   text-overflow: '';
+  font-family: 'Slabo 27px', serif;
   -webkit-appearance: button; /*hide default arrow in chrome OSX*/
 }
 
-.moodAtWake-field::before,
-.moodAtWake-field::after {
+.sleep-form-background .moodAtWake-field::before,
+.sleep-form-background .moodAtWake-field::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.moodAtWake-field::after { /*  Custom dropdown arrow */
+.sleep-form-background .moodAtWake-field::after { /*  Custom dropdown arrow */
   content: "\25BC";
   height: 1em;
   font-size: .625em;
@@ -313,7 +275,7 @@ input[type="radio"]:checked + label {
   margin-top: -.5em;
 }
 
-.moodAtWake-field::before { /*  Custom dropdown arrow cover */
+.sleep-form-background .moodAtWake-field::before { /*  Custom dropdown arrow cover */
   width: 2em;
   right: 0;
   top: 0;
@@ -321,23 +283,23 @@ input[type="radio"]:checked + label {
   border-radius: 0 3px 3px 0;
 }
 
-.moodAtWake-field select[disabled] {
+.sleep-form-background .moodAtWake-field select[disabled] {
   color: rgba(0,0,0,.3);
 }
 
-.moodAtWake-field select[disabled]::after {
+.sleep-form-background .moodAtWake-field select[disabled]::after {
   color: rgba(0,0,0,.1);
 }
 
-.moodAtWake-field::before {
+.sleep-form-background .moodAtWake-field::before {
   background-color: rgba(0,0,0,.15);
 }
 
-.moodAtWake-field::after {
+.sleep-form-background .moodAtWake-field::after {
   color: rgba(0,0,0,.4);
 }
 
-.moodAtSleep-field {
+.sleep-form-background .moodAtSleep-field {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -345,11 +307,11 @@ input[type="radio"]:checked + label {
   margin-bottom: 20px;
 }
 
-#sleep-mood-sleep label {
+.sleep-form-background #sleep-mood-sleep label {
   display: block;
 }
 
-.moodAtSleep-field select {
+.sleep-form-background .moodAtSleep-field select {
   background-color: turquoise;
   color: white;
   font-size: inherit;
@@ -360,17 +322,18 @@ input[type="radio"]:checked + label {
   border-radius: 3px;
   text-indent: 0.01px;
   text-overflow: '';
+  font-family: 'Slabo 27px', serif;
   -webkit-appearance: button; /*hide default arrow in chrome OSX*/
 }
 
-.moodAtSleep-field::before,
-.moodAtSleep-field::after {
+.sleep-form-background .moodAtSleep-field::before,
+.sleep-form-background .moodAtSleep-field::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.moodAtSleep-field::after { /*  Custom dropdown arrow */
+.sleep-form-background .moodAtSleep-field::after { /*  Custom dropdown arrow */
   content: "\25BC";
   height: 1em;
   font-size: .625em;
@@ -380,7 +343,7 @@ input[type="radio"]:checked + label {
   margin-top: -.5em;
 }
 
-.moodAtSleep-field::before { /*  Custom dropdown arrow cover */
+.sleep-form-background .moodAtSleep-field::before { /*  Custom dropdown arrow cover */
   width: 2em;
   right: 0;
   top: 0;
@@ -388,31 +351,38 @@ input[type="radio"]:checked + label {
   border-radius: 0 3px 3px 0;
 }
 
-.moodAtSleep-field select[disabled] {
+.sleep-form-background .moodAtSleep-field select[disabled] {
   color: rgba(0,0,0,.3);
 }
 
-.moodAtSleep-field select[disabled]::after {
+.sleep-form-background .moodAtSleep-field select[disabled]::after {
   color: rgba(0,0,0,.1);
 }
 
-.moodAtSleep-field::before {
+.sleep-form-background .moodAtSleep-field::before {
   background-color: rgba(0,0,0,.15);
 }
 
-.moodAtSleep-field::after {
+.sleep-form-background .moodAtSleep-field::after {
   color: rgba(0,0,0,.4);
 }
 
-.submit-button {
+.sleep-form-background .submit-button {
   width: 80px;
   padding: 5px;
   border-radius: 2px;
   border-color: transparent;
   font-style: bold;
   font-size: 10pt;
+  margin-top: 10px;
 }
   
-.submit-button:hover {
+.sleep-form-background .submit-button:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 612px) {
+  .sleep-form-background .date-div {
+    display: block;
+  }
 }
