@@ -23,3 +23,27 @@ span {
   position: relative;
   top: 15%;
 }
+
+@media only screen and (max-width: 900px) {
+  #average-hours-div p {
+    height: 140px;
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #average-hours-div p {
+    height: 120px;
+    font-size: 40pt;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #average-hours-div p {
+    height: 120px;
+    font-size: 40pt;
+    width: 50%;
+    left: 25%;
+    margin-top: 30px;
+  }
+}

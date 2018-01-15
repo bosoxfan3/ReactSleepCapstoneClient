@@ -1,3 +1,5 @@
-h4 {
+.boolean-chart h4 {
   text-align: center;
+  position: relative;
+  left: 4%;
 }

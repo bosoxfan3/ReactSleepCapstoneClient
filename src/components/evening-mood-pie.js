@@ -63,6 +63,7 @@ class EveningMoodPie extends React.Component {
       datum={datum}
       x="key"
       y="y"
+      tooltip={{enabled: false}}
     />
   </div>
     )

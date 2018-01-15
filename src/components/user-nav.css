@@ -40,3 +40,9 @@
 .user-nav .log-out-button:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 640px) {
+  .user-nav .link, .user-nav .log-out-button {
+    font-size: 15pt;
+  }
+}
