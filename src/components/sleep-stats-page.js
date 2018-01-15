@@ -8,6 +8,9 @@ import SleepStatsSection from './sleep-stats-section';
 
 import './sleep-stats-page.css';
 
+//necessary for the graphs
+import '../../node_modules/nvd3/build/nv.d3.min.css';
+
 export class SleepStatsPage extends React.Component {
   componentDidMount() {
     if (!this.props.loggedIn) {

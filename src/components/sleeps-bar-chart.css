@@ -2,14 +2,22 @@
   margin: 0 auto;
 }
 
-h2 {
+.sleeps-bar-chart h2 {
   text-align: center;
+  position: relative;
+  left: 4%;
 }
 
-g.tick.zero line {
+.sleeps-bar-chart g.tick.zero line {
   display: none;
 }
 
-g.tick.zero text {
+.sleeps-bar-chart g.tick.zero text {
   display: none;
+}
+
+@media only screen and (max-width: 640px) {
+  .sleeps-bar-chart h2 {
+    left: 0;
+  }
 }

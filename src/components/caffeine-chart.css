@@ -1,3 +1,48 @@
-g.tick line {
+.caffeine-chart {
+  margin: 0 auto;
+}
+
+.caffeine-chart h2, .caffeine-chart h4 {
+  text-align: center;
+}
+
+.caffeine-chart h2 {
+  position: relative;
+  left: 5%;
+}
+
+.caffeine-chart h4 {
+  position: relative;
+  left: 4%;
+}
+
+.caffeine-chart g.tick line {
   display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .caffeine-chart h4 {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 835px) {
+  .caffeine-chart h4 {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .caffeine-chart h4 {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .caffeine-chart h4 {
+    margin-bottom: 15px;
+  }
+  .caffeine-chart h2, .caffeine-chart h4 {
+    left: 0;
+  }
 }

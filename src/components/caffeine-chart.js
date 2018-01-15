@@ -3,9 +3,6 @@ import {connect} from 'react-redux';
 import NVD3Chart from 'react-nvd3';
 
 import './caffeine-chart.css';
-import '../../node_modules/nvd3/build/nv.d3.min.css';
-
-
 
 class CaffeineChart extends React.Component {
   calculateData(sleeps) {
@@ -37,7 +34,7 @@ class CaffeineChart extends React.Component {
         <h2>Caffeine Chart</h2>
         <h4>Plots Daily Caffeine Servings (0-5) Along With Corresponding Morning Mood(1-10)</h4>
         <NVD3Chart
-          height={275}
+          height={270}
           type="linePlusBarChart"
           datum={data}
           x= {xdata}

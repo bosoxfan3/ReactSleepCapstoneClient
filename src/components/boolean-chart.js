@@ -1,9 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import NVD3Chart from 'react-nvd3';
-// import BarChart from 'react-d3-components';
-// import BarChart from 'react-d3-basic';
-
 
 import './boolean-chart.css';
 
@@ -108,16 +105,16 @@ class ExerciseChart extends React.Component {
     return (
     <div className="boolean-chart">
       <h2>External Factors Chart</h2>
-      <h4>How Combinations of Exercise, Using an Alarm, and Exposing Yourself to Blue Light Affect Your Morning Mood</h4>
+      <h4>How Combinations of Exercise, Using an Alarm, and Exposing Yourself to Blue Light Affect Your Morning Mood (Click or Hover Over Bars For More Details)</h4>
       <NVD3Chart
-            height={300}
-            context={context}
-            color={{name:'getColor', type:'function'}}
-            tooltip={{enabled: true}}
-            type="discreteBarChart"
-            datum={data}
-            x="label"
-            y="value"
+        height={300}
+        context={context}
+        color={{name:'getColor', type:'function'}}
+        tooltip={{enabled: true}}
+        type="discreteBarChart"
+        datum={data}
+        x="label"
+        y="value"
       />
     </div>
     )
