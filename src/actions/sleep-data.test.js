@@ -167,84 +167,8 @@ describe('fetchSleepDataById', () => {
   });
 });
 
-// describe('postSleepData', () => {
-//   it('should dispatch postSleepDataSuccess on success', () => {
-//     const data1 = {
-//       month: "January",
-//       day: "1",
-//       year: "2017",
-//       bedTime: "23:00",
-//       awakeTime: "06:00",
-//       alarm: false,
-//       exercise: false,
-//       blueLight: false,
-//       caffeine: 1,
-//       moodAtWake: 6,
-//       moodAtSleep: 5
-//     };
-//     const data2 = {
-//       bedTime: 1483340400000,
-//       awakeTime: 1483365600000,
-//       alarm: false,
-//       exercise:  false,
-//       blueLight:  false,
-//       caffeine:  1,
-//       moodAtWake: 6,
-//       moodAtSleep:  5
-//     }
-//     global.fetch = jest.fn().mockImplementation(() =>
-//       Promise.resolve({
-//         ok: true,
-//         json() {
-//           return data2;
-//         }
-//       })
-//     );
-//     const dispatch = jest.fn();
-//     const getState = jest.fn();
-//     getState.mockReturnValue({auth: {authToken: 'abc'}});
-//     return postSleepData(data1)(dispatch, getState).then(() => {
-//       expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/sleeps/`, {
-//         'headers': {
-//           'Authorization': 'Bearer abc',
-//           'Accept': 'application/json',
-//           'Content-Type': 'application/json'
-//         }, 
-//         'method': 'POST',
-//         'body': JSON.stringify(data1)
-//       });
-//       expect(dispatch).toHaveBeenCalledWith(postSleepDataSuccess(data2));
-//     });
-//   });
-// });
-
-describe('deleteSleepData', () => {
-  it('should call deleteSleepData with DELETE HTTP request', () => {
-    const data = {
-      awakeTime: "00:00",
-      id: "123",
-      moodAtSleep:  0,
-      moodAtWake: 0
-    };
-    global.fetch = jest.fn().mockImplementation(() =>
-      Promise.resolve({
-        ok: true,
-      })
-    );
-    const dispatch = jest.fn();
-    const getState = jest.fn();
-    getState.mockReturnValue({auth: {authToken: 'abc'}});
-    return deleteSleepData(data.id)(dispatch, getState).then(() => {
-      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/sleeps/${data.id}`, {
-        'headers': {'Authorization': 'Bearer abc'}, 
-        'method': 'DELETE'
-      });
-    });
-  });
-});
-
-describe('updateSleepData', () => {
-  it('should dispatch updateSleepDataSuccess on success', () => {
+describe('postSleepData', () => {
+  it('should dispatch postSleepDataSuccess on success', () => {
     const data1 = {
       month: "January",
       day: "1",
@@ -293,3 +217,79 @@ describe('updateSleepData', () => {
     });
   });
 });
+
+describe('deleteSleepData', () => {
+  it('should call deleteSleepData with DELETE HTTP request', () => {
+    const data = {
+      awakeTime: "00:00",
+      id: "123",
+      moodAtSleep:  0,
+      moodAtWake: 0
+    };
+    global.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        ok: true,
+      })
+    );
+    const dispatch = jest.fn();
+    const getState = jest.fn();
+    getState.mockReturnValue({auth: {authToken: 'abc'}});
+    return deleteSleepData(data.id)(dispatch, getState).then(() => {
+      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/sleeps/${data.id}`, {
+        'headers': {'Authorization': 'Bearer abc'}, 
+        'method': 'DELETE'
+      });
+    });
+  });
+});
+
+// describe('updateSleepData', () => {
+//   it('should dispatch updateSleepDataSuccess on success', () => {
+//     const data1 = {
+//       month: "January",
+//       day: "1",
+//       year: "2017",
+//       bedTime: "23:00",
+//       awakeTime: "06:00",
+//       alarm: false,
+//       exercise: false,
+//       blueLight: false,
+//       caffeine: 1,
+//       moodAtWake: 6,
+//       moodAtSleep: 5
+//     };
+//     const data2 = {
+//       bedTime: 1483340400000,
+//       awakeTime: 1483365600000,
+//       alarm: false,
+//       exercise:  false,
+//       blueLight:  false,
+//       caffeine:  1,
+//       moodAtWake: 6,
+//       moodAtSleep:  5
+//     }
+//     global.fetch = jest.fn().mockImplementation(() =>
+//       Promise.resolve({
+//         ok: true,
+//         json() {
+//           return data2;
+//         }
+//       })
+//     );
+//     const dispatch = jest.fn();
+//     const getState = jest.fn();
+//     getState.mockReturnValue({auth: {authToken: 'abc'}});
+//     return postSleepData(data1)(dispatch, getState).then(() => {
+//       expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/sleeps/`, {
+//         'headers': {
+//           'Authorization': 'Bearer abc',
+//           'Accept': 'application/json',
+//           'Content-Type': 'application/json'
+//         }, 
+//         'method': 'POST',
+//         'body': JSON.stringify(data1)
+//       });
+//       expect(dispatch).toHaveBeenCalledWith(postSleepDataSuccess(data2));
+//     });
+//   });
+// });

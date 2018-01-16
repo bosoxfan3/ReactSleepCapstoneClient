@@ -6,6 +6,9 @@ each other */
   background: url('https://images.unsplash.com/photo-1498681353033-e5632ec6decd?auto=format&fit=crop&w=1080&q=80');
   background-size: cover;
   background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 
   /* If I decide to go back to have a turqoise nav on landing page */
   /* width: 100%; */
