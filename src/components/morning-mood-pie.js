@@ -17,7 +17,7 @@ var data = [
   {key: "Ten", y: 0},
 ];
 
-class MorningMoodPie extends React.Component {
+export class MorningMoodPie extends React.Component {
   calculateData(sleeps) {
     for (let i=0; i<sleeps.length; i++) {
       if (sleeps[i].moodAtWake === 1) {
@@ -68,7 +68,7 @@ class MorningMoodPie extends React.Component {
           tooltip={{enabled: false}}
         />
       </div>
-    )
+    );
   }
 }
 

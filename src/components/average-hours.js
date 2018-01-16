@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import './average-hours.css';
 
-class AverageHours extends React.Component {
+export class AverageHours extends React.Component {
   calculateData(sleeps) {
     let totalHours = 0;
     for (let i=0; i<sleeps.length; i++) {

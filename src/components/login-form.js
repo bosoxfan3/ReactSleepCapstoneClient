@@ -1,8 +1,8 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
-
 import Input from './form-components/input';
 
 import './login-form.css';
@@ -61,6 +61,6 @@ export class LoginForm extends React.Component {
 }
 
 export default reduxForm({
-    form: 'login',
-    onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
+  form: 'login',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
 })(LoginForm);

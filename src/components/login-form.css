@@ -24,11 +24,11 @@
   font-family: 'Oswald', sans-serif;
 }
 
-.login-background .login-form label, .login-form button {
+.login-background .login-form label, .login-background .login-form button {
   font-family: 'Slabo 27px', serif;
 }
 
-.login-background .login-form input#password, .login-form input#username {
+.login-background .login-form input#password, .login-background .login-form input#username {
   margin-top: 10px;
   margin-bottom: 20px;
   height: 30px;

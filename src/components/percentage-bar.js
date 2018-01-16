@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import './percentage-bar.css';
 
-class PercentageBar extends React.Component {
+export class PercentageBar extends React.Component {
   render() {
     let totalSleeps = this.props.sleeps.length;
     let positiveMornings = 0;
@@ -34,7 +34,7 @@ class PercentageBar extends React.Component {
           <span hidden>Negative</span>
         </div>
       </div>
-    )
+    );
   }
 }
 

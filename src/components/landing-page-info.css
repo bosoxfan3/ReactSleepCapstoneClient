@@ -84,7 +84,7 @@ that I will writing the base responsive design code */
   padding-bottom: 50px;
 }
 
-#landing-page-info .first-section, .second-section, .third-section {
+#landing-page-info .first-section, #landing-page-info .second-section, #landing-page-info .third-section {
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -94,7 +94,7 @@ that I will writing the base responsive design code */
   padding-top: 30px;
 }
 
-#landing-page-info .first-image, .second-image, .third-image {
+#landing-page-info .first-image, #landing-page-info .second-image, #landing-page-info .third-image {
   text-align: center;
 }
 
@@ -154,7 +154,7 @@ that I will writing the base responsive design code */
 }
 
 @media only screen and (max-width: 720px) {
-  #landing-page-info .first-image, .third-image {
+  #landing-page-info .first-image, #landing-page-info .third-image {
     padding-top: 50px !important;
   }
   #landing-page-info .second-image {
@@ -163,7 +163,7 @@ that I will writing the base responsive design code */
 }
 
 @media only screen and (max-width: 640px) {
-  #landing-page-info .first-image, .third-image {
+  #landing-page-info .first-image, #landing-page-info .third-image {
     padding-top: 0 !important;
   }
   #landing-page-info .second-image {

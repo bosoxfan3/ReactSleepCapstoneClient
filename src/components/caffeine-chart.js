@@ -4,12 +4,11 @@ import NVD3Chart from 'react-nvd3';
 
 import './caffeine-chart.css';
 
-class CaffeineChart extends React.Component {
+export class CaffeineChart extends React.Component {
   calculateData(sleeps) {
-    var datum = [
+    let datum = [
       {
         "key": "Caffeine",
-        
         "color": "#9f5dfc",
         "values": []
       },

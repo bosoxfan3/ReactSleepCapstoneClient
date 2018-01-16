@@ -17,7 +17,7 @@ var data = [
   {key: "Ten", y: 0},
 ];
 
-class EveningMoodPie extends React.Component {
+export class EveningMoodPie extends React.Component {
   calculateData(sleeps) {
     for (let i=0; i<sleeps.length; i++) {
       if (sleeps[i].moodAtSleep === 1) {

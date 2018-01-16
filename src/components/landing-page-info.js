@@ -22,7 +22,8 @@ export function LandingPageInfo() {
             <header>
               <h2>Purpose</h2>
             </header>
-            <p>Ever wake up one day feeling great and another feeling terrible
+            <p>
+              Ever wake up one day feeling great and another feeling terrible
               and can't figure out why? RestFull will help you find
               correlations between actions, sleep quality, and mood, in turn allowing
               you to build beneficial habits!
@@ -42,9 +43,10 @@ export function LandingPageInfo() {
             <header>
               <h2>How to Use RestFull</h2>
             </header>
-            <p>Fill out our form with details about your sleep from the basics (bed time, wake time),
-            to answering questions such as whether you were exposed to light from a screen before sleeping
-            or rating your mood at bed time.
+            <p>
+              Fill out our form with details about your sleep from the basics (bed time, wake time),
+              to answering questions such as whether you were exposed to light from a screen before sleeping
+              or rating your mood at bed time.
             </p>
           </div>
         </div>
@@ -55,7 +57,8 @@ export function LandingPageInfo() {
             <header>
               <h2>See Your Stats</h2>
             </header>
-            <p>The data from your sleep submissions is then displayed, allowing you to
+            <p>
+              The data from your sleep submissions is then displayed, allowing you to
               find direct correlations between your habits and your sleep and overall well-being!
             </p>
           </div>

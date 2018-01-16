@@ -17,7 +17,6 @@ const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 
 export class EditingSection extends React.Component {
   onSubmit(values) {
-    console.log(values);
     this.props.dispatch(updateSleepData(values, this.props.sleep.id));
     this.props.history.push('/stats');
   }
@@ -91,7 +90,6 @@ export class EditingSection extends React.Component {
     this.props.dispatch(change('edit', 'moodAtSleep', this.props.sleep.moodAtSleep));
   }
   render() {
-    console.log(this.props.sleep)
     return (
       <div className="edit-form-background">
         <div className="row">

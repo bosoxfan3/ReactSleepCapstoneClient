@@ -4,7 +4,7 @@ import NVD3Chart from 'react-nvd3';
 
 import './boolean-chart.css';
 
-class ExerciseChart extends React.Component {
+export class BooleanChart extends React.Component {
   generateData(sleeps) {
     let data = [
       {
@@ -79,9 +79,7 @@ class ExerciseChart extends React.Component {
       }
     }
     let datum = [{
-      key: "Cumulative Return",
-      values: [
-      ]
+      values: []
     }];
     for (let i=0; i<data.length; i++) {
       datum[0].values.push({
@@ -93,7 +91,6 @@ class ExerciseChart extends React.Component {
   }
   render() {
     const data = this.generateData(this.props.sleeps);
-    console.log(data)
     var context = {
       getColor: function(i){
         var colors = ['#ff3333'];
@@ -121,9 +118,8 @@ class ExerciseChart extends React.Component {
   }
 }
 
-
 const mapStateToProps = state => ({
   sleeps: state.sleepData.sleeps
 });
 
-export default connect(mapStateToProps)(ExerciseChart);
+export default connect(mapStateToProps)(BooleanChart);
