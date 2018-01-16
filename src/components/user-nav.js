@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+
 import {setCurrentUser, setAuthToken} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
-import {Link} from 'react-router-dom';
 
 import './user-nav.css';
 
@@ -11,7 +12,7 @@ export class UserNav extends React.Component {
     this.props.dispatch(setCurrentUser(null));
     this.props.dispatch(setAuthToken(null));
     clearAuthToken();
-  };
+  }
   render() {
     return (
       <header>
@@ -25,7 +26,7 @@ export class UserNav extends React.Component {
         </nav>
       </header>
     );
-  };
+  }
 }
 
 const mapStateToProps = state => ({

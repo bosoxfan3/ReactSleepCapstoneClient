@@ -1,8 +1,8 @@
 import React from 'react';
 import {reduxForm, Field} from 'redux-form';
+
 import {required} from '../validators'
 import {postSleepData} from '../actions/sleep-data';
-
 import Select from './form-components/select';
 import TimeInput from './form-components/time-input';
 import Radio from './form-components/radio';
@@ -16,7 +16,6 @@ const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 
 export class SleepForm extends React.Component {
   onSubmit(values) {
-    console.log(values);
     this.props.dispatch(postSleepData(values));
     this.props.history.push(`/stats`);
   }

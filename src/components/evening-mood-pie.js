@@ -4,7 +4,7 @@ import NVD3Chart from 'react-nvd3';
 
 import './evening-mood-pie.css';
 
-var data = [
+let data = [
   {key: "One", y: 0},
   {key: "Two", y: 0},
   {key: "Three", y: 0},

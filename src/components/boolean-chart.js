@@ -91,9 +91,9 @@ export class BooleanChart extends React.Component {
   }
   render() {
     const data = this.generateData(this.props.sleeps);
-    var context = {
+    let context = {
       getColor: function(i){
-        var colors = ['#ff3333'];
+        let colors = ['#ff3333'];
         for (let i=0; i<colors.length; i++) {
           return colors[i];
         }

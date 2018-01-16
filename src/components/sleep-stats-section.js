@@ -55,7 +55,7 @@ export class SleepStatsSection extends React.Component {
         <h1>Sleep Statistics</h1>
         {stats}
       </div>
-    )
+    );
   }
 }
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import {fetchSleepData} from '../actions/sleep-data';
 
+import {fetchSleepData} from '../actions/sleep-data';
 import UserNav from './user-nav';
 import SleepStatsSection from './sleep-stats-section';
 

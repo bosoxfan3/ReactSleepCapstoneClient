@@ -106,7 +106,6 @@ describe('sleepDataReducer', () => {
       expect(state.error).toEqual(error);
     });
   });
-
   describe('fetchSleepDataByIdSuccess', () => {
     it('Should update currentSleep with the given data', () => {
       const state = sleepDataReducer(undefined, fetchSleepDataByIdSuccess(sleep1));
@@ -136,7 +135,6 @@ describe('sleepDataReducer', () => {
       expect(state.sleeps).toEqual([sleep1, sleep2]);
     });
   });
-
   describe('updateSleepDataSuccess', () => {
     it('Should update data with the given id', () => {
       const sleepData = {
