@@ -10,9 +10,9 @@ const initialState = {
   sleeps: [],
   error: null,
   currentSleep: {
-    awakeTime: "00:00",
+    awakeTime: "06:00",
     alarm: false,
-    bedTime:  "00:00",
+    bedTime:  "23:00",
     blueLight:  false,
     caffeine:  0,
     date:  "Jan 01 2017",
