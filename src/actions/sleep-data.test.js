@@ -183,8 +183,8 @@ describe('postSleepData', () => {
       moodAtSleep: 5
     };
     const data2 = {
-      bedTime: 1483257600000,
-      awakeTime: 1483257600000,
+      bedTime: Date.parse("January 1 2017 00:00"),
+      awakeTime: Date.parse("January 1 2017 00:00"),
       alarm: false,
       exercise:  false,
       blueLight:  false,
