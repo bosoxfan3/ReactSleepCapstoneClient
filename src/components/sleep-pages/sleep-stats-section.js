@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import PercentageBar from './percentage-bar';
-import SleepsBarChart from './sleeps-bar-chart';
-import AverageHours from './average-hours';
-import CaffeineChart from './caffeine-chart';
-import BooleanChart from './boolean-chart';
-import EveningMoodPie from './evening-mood-pie';
-import MorningMoodPie from './morning-mood-pie';
+import PercentageBar from '../stats-charts/percentage-bar';
+import SleepsBarChart from '../stats-charts/sleeps-bar-chart';
+import AverageHours from '../stats-charts/average-hours';
+import CaffeineChart from '../stats-charts/caffeine-chart';
+import BooleanChart from '../stats-charts/boolean-chart';
+import EveningMoodPie from '../stats-charts/evening-mood-pie';
+import MorningMoodPie from '../stats-charts/morning-mood-pie';
 
 import './sleep-stats-section.css';
 

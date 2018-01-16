@@ -2,15 +2,15 @@ import React from 'react';
 import {Route, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import LandingPage from './landing-page';
-import LogInPage from './login-page';
-import SignUpPage from './signup-page';
-import SleepStatsPage from './sleep-stats-page';
-import MySleepPage from './my-sleep-page';
-import AddSleepPage from './add-sleep-page';
-import EditingPage from './editing-page';
+import LandingPage from './landing-page/landing-page';
+import LogInPage from './login-page/login-page';
+import SignUpPage from './signup-page/signup-page';
+import SleepStatsPage from './sleep-pages/sleep-stats-page';
+import MySleepPage from './sleep-pages/my-sleep-page';
+import AddSleepPage from './sleep-pages/add-sleep-page';
+import EditingPage from './sleep-pages/editing-page';
 
-import {refreshAuthToken} from '../actions/auth';
+import {refreshAuthToken} from '../../actions/auth';
 
 export class App extends React.Component {
   componentDidMount() {

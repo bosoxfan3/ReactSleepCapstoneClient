@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {reduxForm, change, Field} from 'redux-form';
-import {required} from '../validators'
-import {updateSleepData} from '../actions/sleep-data';
 
-import Select from './form-components/select';
-import TimeInput from './form-components/time-input';
-import Radio from './form-components/radio';
+import {required} from '../../validators'
+import {updateSleepData} from '../../actions/sleep-data';
+import Select from '../form-components/select';
+import TimeInput from '../form-components/time-input';
+import Radio from '../form-components/radio';
 
 import './editing-section.css';
 

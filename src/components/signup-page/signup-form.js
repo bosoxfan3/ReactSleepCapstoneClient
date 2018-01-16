@@ -1,10 +1,10 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 
-import {registerUser} from '../actions/users';
-import {login} from '../actions/auth';
-import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
-import Input from './form-components/input';
+import {registerUser} from '../../actions/users';
+import {login} from '../../actions/auth';
+import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
+import Input from '../form-components/input';
 
 import './signup-form.css';
 

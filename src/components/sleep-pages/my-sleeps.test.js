@@ -1,8 +1,8 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import {deleteSleepData} from '../actions/sleep-data';
-import {MySleeps} from './my-sleeps';
+import {deleteSleepData} from '../../actions/sleep-data';
+import {MySleeps} from './my-sleeps.js';
 
 describe('<MySleeps />', () => {
   const sleep1 = {

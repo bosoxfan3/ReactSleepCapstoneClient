@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {deleteSleepData} from '../actions/sleep-data';
+import {deleteSleepData} from '../../actions/sleep-data';
 
 import './my-sleeps.css';
 
