@@ -173,8 +173,8 @@ describe('postSleepData', () => {
       month: "January",
       day: "1",
       year: "2017",
-      bedTime: "00:00",
-      awakeTime: "00:00",
+      bedTime: "23:00",
+      awakeTime: "06:00",
       alarm: false,
       exercise: false,
       blueLight: false,
@@ -183,8 +183,8 @@ describe('postSleepData', () => {
       moodAtSleep: 5
     };
     const data2 = {
-      bedTime: 1483257600000,
-      awakeTime: 1483257600000,
+      bedTime: 1483340400000,
+      awakeTime: 1483365600000,
       alarm: false,
       exercise:  false,
       blueLight:  false,
