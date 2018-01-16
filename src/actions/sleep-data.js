@@ -25,12 +25,6 @@ export const postSleepDataSuccess = data => ({
   data
 });
 
-// export const DELETE_SLEEP_DATA_SUCCESS = 'DELETE_SLEEP_DATA_SUCCESS';
-// export const deleteSleepDataSuccess = data => ({
-//   type: DELETE_SLEEP_DATA_SUCCESS,
-//   data
-// });
-
 export const UPDATE_SLEEP_DATA_SUCCESS = 'UPDATE_SLEEP_DATA_SUCCESS';
 export const updateSleepDataSuccess = (data) => ({
   type: UPDATE_SLEEP_DATA_SUCCESS,
@@ -38,7 +32,6 @@ export const updateSleepDataSuccess = (data) => ({
 });
 
 export const fetchSleepData = () => (dispatch, getState) => {
-
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/sleeps`, {
     method: 'GET',
@@ -60,7 +53,6 @@ export const fetchSleepDataById = (id) => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/sleeps/${id}`, {
     method: 'GET',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`
     }
   })
@@ -72,14 +64,13 @@ export const fetchSleepDataById = (id) => (dispatch, getState) => {
   });
 };
 
-
 export const postSleepData = (values) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   const bedTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.bedTime}`);
   const nextDay = Number(values.day) + 1;
   let awakeTime;
   if (values.bedTime[0] === '0') {
-    //so it doesn't jump ahead a day if you go to bed at 1am or another time after midnight
+    //so it doesn't jump ahead a day if you go to bed after midnight
     awakeTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.awakeTime}`);
   } else {
     awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
@@ -98,7 +89,6 @@ export const postSleepData = (values) => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/sleeps/`, {
     method: 'POST',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`,
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -118,7 +108,6 @@ export const deleteSleepData = (id) => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/sleeps/${id}`, {
     method: 'DELETE',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`
     }
   })
@@ -135,7 +124,7 @@ export const updateSleepData = (values, id) => (dispatch, getState) => {
   const nextDay = Number(values.day) + 1;
   let awakeTime;
   if (values.bedTime[0] === '0') {
-    //so it doesn't jump ahead a day if you go to bed at 1am or another time after midnight
+    //so it doesn't jump ahead a day if you go to bed after midnight
     awakeTime = Date.parse(`${values.month} ${values.day} ${values.year} ${values.awakeTime}`);
   } else {
     awakeTime = Date.parse(`${values.month} ${nextDay} ${values.year} ${values.awakeTime}`);
@@ -154,7 +143,6 @@ export const updateSleepData = (values, id) => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/sleeps/${data.id}`, {
     method: 'PUT',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`,
       'Accept': 'application/json',
       'Content-Type': 'application/json'

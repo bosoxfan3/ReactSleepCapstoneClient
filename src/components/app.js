@@ -46,18 +46,17 @@ export class App extends React.Component {
   }
   render() {
     return (
-        <div>
-          <main>
-            <Route exact path="/" component={LandingPage} />
-            <Route exact path="/login" component={LogInPage} />
-            <Route exact path="/signup" component={SignUpPage} />
-            <Route exact path="/stats" component={SleepStatsPage} />
-            <Route exact path="/sleeps/:id" component={EditingPage} />
-            <Route exact path="/sleeps" component={MySleepPage} />
-            <Route exact path="/sleeps/add/new" component={AddSleepPage} />
-
-          </main>
-        </div>
+      <div>
+        <main>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/login" component={LogInPage} />
+          <Route exact path="/signup" component={SignUpPage} />
+          <Route exact path="/stats" component={SleepStatsPage} />
+          <Route exact path="/sleeps/:id" component={EditingPage} />
+          <Route exact path="/sleeps" component={MySleepPage} />
+          <Route exact path="/sleeps/add/new" component={AddSleepPage} />
+        </main>
+      </div>
     );
   }
 }

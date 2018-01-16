@@ -1,13 +1,13 @@
-.radio-option {
+.inline-block {
+  display: inline-block;
+}
+
+.inline-block .radio-option {
   height: 50px;
   width: 50px;
   border: 2px solid turquoise;
   float: left;
  }
-
-.inline-block {
-  display: inline-block;
-}
 
 .inline-block [id*="0"] + label span {
   margin-left: 40px;

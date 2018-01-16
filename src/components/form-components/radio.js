@@ -18,7 +18,6 @@ export default function Radio(props) {
       <span className="radio-option"></span>
         {option}
       </label>
-
     </div>
   ));
   return (

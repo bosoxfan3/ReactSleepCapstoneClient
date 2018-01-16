@@ -7,8 +7,6 @@ import {
   fetchSleepDataByIdSuccess,
   POST_SLEEP_DATA_SUCCESS,
   postSleepDataSuccess,
-  // DELETE_SLEEP_DATA_SUCCESS,
-  // deleteSleepDataSuccess,
   UPDATE_SLEEP_DATA_SUCCESS,
   updateSleepDataSuccess,
   fetchSleepData,
@@ -219,7 +217,6 @@ describe('postSleepData', () => {
     });
   });
 })
-
 
 describe('deleteSleepData', () => {
   it('should call deleteSleepData with DELETE HTTP request', () => {

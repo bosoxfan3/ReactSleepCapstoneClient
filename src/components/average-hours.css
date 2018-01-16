@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-#average-hours-div p{
+#average-hours-div p {
   font-size: 50pt;
   background-color: #80b3ff;
   border: transparent;
@@ -19,7 +19,7 @@
   margin-top: 70px;
 }
 
-span {
+#average-hours-div span {
   position: relative;
   top: 15%;
 }
