@@ -10,7 +10,7 @@ import MySleepPage from './sleep-pages/my-sleep-page';
 import AddSleepPage from './sleep-pages/add-sleep-page';
 import EditingPage from './sleep-pages/editing-page';
 
-import {refreshAuthToken} from '../../actions/auth';
+import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {
   componentDidMount() {
