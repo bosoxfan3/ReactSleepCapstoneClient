@@ -9,14 +9,6 @@ each other */
   position: fixed;
   top: 0;
   z-index: 1000;
-
-  /* If I decide to go back to have a turqoise nav on landing page */
-  /* width: 100%; */
-  /* background-color: turquoise; */
-  /* position: fixed; */
-  /* top: 0; */
-  /* box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19); */
-  /* z-index: 1000; */
 }
 
 .landing-page-nav .site-links {
