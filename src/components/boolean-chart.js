@@ -114,7 +114,7 @@ export class BooleanChart extends React.Component {
         y="value"
       />
     </div>
-    )
+    );
   }
 }
 

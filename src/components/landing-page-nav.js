@@ -9,7 +9,7 @@ export function LandingPageNav() {
     <header>
       <nav className="landing-page-nav">
         <div className="site-links">
-          <Link className="link main-link" to="/">RestFull</Link>
+          <Link className="main-link" to="/">RestFull</Link>
           <img className="logo" src="https://image.flaticon.com/icons/svg/209/209714.svg" alt="moon logo" />
           <Link className="link" to="/signup">Sign Up</Link>
           <Link className="link" to="/login">Log In</Link>

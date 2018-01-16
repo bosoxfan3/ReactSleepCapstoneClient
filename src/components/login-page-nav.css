@@ -9,14 +9,14 @@
 
 .login-nav .login-links {
   display: inline-block;
-  padding: 12px !important;
+  padding: 12px;
 }
 
 .login-nav .link {
   text-decoration: none;
   color: white;
   padding-right: 15px;
-  font-size: 17pt !important;
+  font-size: 17pt;
   font-family: 'Acme', sans-serif;
 }
 

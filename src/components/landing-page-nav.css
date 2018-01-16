@@ -18,7 +18,7 @@ each other */
 
 .landing-page-nav .site-links {
   display: inline-block;
-  padding: 15px !important;
+  padding: 15px;
 }
 
 .landing-page-nav .logo {
@@ -32,15 +32,20 @@ each other */
 }
 
 .landing-page-nav .main-link {
-  font-size: 20pt !important;
+  font-size: 20pt;
 }
 
-.landing-page-nav .link {
+.landing-page-nav .link, .landing-page-nav .main-link {
   text-decoration: none;
   color: white;
   padding-right: 15px;
-  font-size: 17pt !important;
   font-family: 'Acme', sans-serif;
+}
+
+.landing-page-nav .link {
+  font-size: 17pt;
+  position: relative;
+  bottom: 1px;
 }
 
 .landing-page-nav .link:hover {

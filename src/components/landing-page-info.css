@@ -133,61 +133,52 @@ that I will writing the base responsive design code */
 
 @media only screen and (max-width: 1000px) {
   #landing-page-info .second-text-area {
-    padding-top: 0 !important;
+    padding-top: 0;
   }
 }
 
 @media only screen and (max-width: 900px) {
   #landing-page-info .second-image {
-    padding-top: 20px !important;
+    padding-top: 20px;
   }
 }
 
 @media only screen and (max-width: 810px) {
   #landing-page-info .text-area h2 {
-    font-size: 20pt !important;
+    font-size: 20pt;
   }
   
   #landing-page-info .text-area p {
-    font-size: 14pt !important;
+    font-size: 14pt;
   }
 }
 
 @media only screen and (max-width: 720px) {
   #landing-page-info .first-image, #landing-page-info .third-image {
-    padding-top: 50px !important;
+    padding-top: 50px;
   }
   #landing-page-info .second-image {
-    padding-top: 60px !important;
+    padding-top: 60px;
   }
 }
 
 @media only screen and (max-width: 640px) {
-  #landing-page-info .first-image, #landing-page-info .third-image {
-    padding-top: 0 !important;
-  }
-  #landing-page-info .second-image {
-    padding-top: 0 !important;
+  #landing-page-info .first-image, #landing-page-info .second-image, #landing-page-info .third-image {
+    padding-top: 0;
   }
   #landing-page-info .first-image img {
-    padding-top: 0 !important;
-    padding-bottom: 40px !important;
+    padding-top: 0;
+    padding-bottom: 40px;
   }
-  #landing-page-info .second-text-area {
-    padding-top: 0 !important;
-  }
-  #landing-page-info .third-text-area {
-    padding-top: 0 !important;
+  #landing-page-info .second-text-area, #landing-page-info .third-text-area, #landing-page-info .third-section {
+    padding-top: 0;
   }
   #landing-page-info .second-section {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  #landing-page-info .third-section {
-    padding-top: 0 !important;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   #landing-page-info .landing-page-section {
-    padding-top: 25px !important;
-    padding-bottom: 25px !important;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 }

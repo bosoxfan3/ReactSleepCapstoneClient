@@ -41,7 +41,7 @@ export class CaffeineChart extends React.Component {
           options= {{focusEnable: false}}
         />
       </div>
-    )
+    );
   }
 }
 

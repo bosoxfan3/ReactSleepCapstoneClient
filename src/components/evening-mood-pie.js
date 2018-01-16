@@ -68,7 +68,7 @@ export class EveningMoodPie extends React.Component {
           tooltip={{enabled: false}}
         />
       </div>
-    )
+    );
   }
 }
 
