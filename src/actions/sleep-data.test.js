@@ -184,7 +184,7 @@ describe('postSleepData', () => {
     };
     const data2 = {
       bedTime: 1483340400000,
-      awakeTime: 14833656qq00000,
+      awakeTime: 1483365600000,
       alarm: false,
       exercise:  false,
       blueLight:  false,
