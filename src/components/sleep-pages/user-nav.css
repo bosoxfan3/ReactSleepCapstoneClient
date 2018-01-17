@@ -46,3 +46,9 @@
     font-size: 15pt;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .user-nav .link {
+    padding-right: 10px;
+  }
+}

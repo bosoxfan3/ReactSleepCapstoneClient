@@ -50,3 +50,9 @@ each other */
 .landing-page-nav a:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 400px) {
+  .landing-page-nav .link {
+    padding-right: 10px;
+  }
+}
