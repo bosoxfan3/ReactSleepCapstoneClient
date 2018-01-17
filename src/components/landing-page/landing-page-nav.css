@@ -54,9 +54,14 @@ each other */
 @media only screen and (max-width: 400px) {
   .landing-page-nav .link {
     padding-right: 7px;
-    font-size: 14pt;
+    font-size: 13pt;
   }
   .landing-page-nav #demo-link {
     padding-right: 0px;
+  }
+  .landing-page-nav .main-link {
+    font-size: 17pt;
+    position: relative;
+    bottom: 2px;
   }
 }
