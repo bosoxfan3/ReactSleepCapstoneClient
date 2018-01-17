@@ -53,6 +53,7 @@ each other */
 
 @media only screen and (max-width: 400px) {
   .landing-page-nav .link {
-    padding-right: 10px;
+    padding-right: 7px;
+    font-size: 12pt;
   }
 }
