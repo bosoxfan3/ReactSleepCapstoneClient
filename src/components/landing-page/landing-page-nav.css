@@ -9,11 +9,11 @@ each other */
   position: fixed;
   top: 0;
   z-index: 1000;
+  padding: 12px;
 }
 
-.landing-page-nav .site-links {
-  display: inline-block;
-  padding: 15px;
+.landing-page-nav .main-link {
+  font-size: 20pt;
 }
 
 .landing-page-nav .logo {
@@ -26,8 +26,8 @@ each other */
   margin-right: 10px;
 }
 
-.landing-page-nav .main-link {
-  font-size: 20pt;
+.landing-page-nav .login-signup-links {
+  float: right;
 }
 
 .landing-page-nav .link, .landing-page-nav .main-link {
@@ -40,7 +40,7 @@ each other */
 .landing-page-nav .link {
   font-size: 17pt;
   position: relative;
-  bottom: 1px;
+  top: 2px;
 }
 
 .landing-page-nav .link:hover {

@@ -63,7 +63,7 @@ export function LandingPageInfo() {
             </p>
           </div>
           <div className="col-6 third-image">
-            <img className="stats-screenshot" src={require("../../screenshots/3.png")} alt="Screenshot of sleep stats page" />
+            <img className="stats-screenshot" src={require("../../screenshots/2.png")} alt="Screenshot of sleep stats page" />
           </div>
         </div>
       </div>
