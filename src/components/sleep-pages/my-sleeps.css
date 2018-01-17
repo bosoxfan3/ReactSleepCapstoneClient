@@ -112,10 +112,21 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .my-sleeps-background .sleep-section {
-    left: 3px;
-  }
   .my-sleeps-background .sleep-section p {
-    font-size: 8pt;
+    font-size: 9pt;
+  }
+  .my-sleeps-background .sleep-section {
+    left: 0;
+  }
+  .my-sleeps-background .button {
+    margin-bottom: 15px;
+  }
+  .my-sleeps-background .sleep-section {
+    width: 50%;
+  }
+  .my-sleeps-background .sleep-section1 {
+    position: relative;
+    left: 25%;
+    display: block;
   }
 }
