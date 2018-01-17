@@ -19,7 +19,7 @@ export class LandingPageNav extends React.Component {
           <div className="login-signup-links">
             <Link className="link" to="/signup">Sign Up</Link>
             <Link className="link" to="/login">Log In</Link>
-            <a className="link" onClick={() => this.logInDemoAccount()}>Demo</a>
+            <a id="demo-link" className="link" onClick={() => this.logInDemoAccount()}>Demo</a>
           </div>
         </nav>
       </header>
