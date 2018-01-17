@@ -5,6 +5,6 @@ import {shallow} from 'enzyme';
 
 describe('<EditingSection />', () => {
   it('renders without crashing', () => {
-    shallow(<EditingSection />);
+    shallow(<EditingSection sleep={[]} />);
   });
 });

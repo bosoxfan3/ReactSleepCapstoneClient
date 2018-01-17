@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 
 import {deleteSleepData} from '../../actions/sleep-data';
 import {MySleeps} from './my-sleeps.js';
@@ -33,6 +33,11 @@ describe('<MySleeps />', () => {
   };
   it('Renders without crashing', () => {
     shallow(<MySleeps sleeps={[]}/>);
+  });
+  it('renders a line of text if there are no nights of sleep', () => {
+    const wrapper = shallow(<MySleeps sleeps={[]} />);
+    const text = wrapper.find('#sleeps-div .no-sleep');
+    expect(text.text()).toEqual('No previous nights of sleep have been recorded!');
   });
   it('Renders a list of sleeps', () => {
     const sleeps = [sleep1, sleep2];
