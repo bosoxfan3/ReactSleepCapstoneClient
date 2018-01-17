@@ -46,3 +46,7 @@ each other */
 .landing-page-nav .link:hover {
   color: purple;
 }
+
+.landing-page-nav a:hover {
+  cursor: pointer;
+}
