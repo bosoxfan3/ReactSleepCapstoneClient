@@ -17,19 +17,6 @@ describe('<SleepStatsSection />', () => {
     moodAtSleep:  5,
     moodAtWake: 5
   };
-  const sleep2 = {
-    awakeTime: "23:00",
-    alarm: true,
-    bedTime:  "07:00",
-    blueLight:  false,
-    caffeine:  1,
-    date:  "Jan 02 2017",
-    exercise:  false,
-    hours:  8,
-    id:  "124",
-    moodAtSleep:  5,
-    moodAtWake: 5
-  };
   it('Renders without crashing', () => {
     shallow(<SleepStatsSection sleeps={[]} />);
   });
@@ -39,8 +26,8 @@ describe('<SleepStatsSection />', () => {
     expect(text.text()).toEqual('No previous nights of sleep have been recorded!');
   });
   it('Renders stats if there is one or more nights of sleep', () => {
-    const wrapper = shallow(<SleepStatsSection sleeps={[sleep1, sleep2]} />);
-    const firstStatTitle = wrapper.find('#stats #percentage-bar h2');
-    expect(firstStateTitle.text()).toEqual('Positive Wake Percentage');
+    const wrapper = shallow(<SleepStatsSection sleeps={[sleep1]} />);
+    const percentageBarTitle = wrapper.find('#stats h2');
+    expect(percentageBarTitle.text()).toEqual('Positive Wake Percentage');
   });
 });
