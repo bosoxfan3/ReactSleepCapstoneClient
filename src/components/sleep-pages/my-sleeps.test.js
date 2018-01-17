@@ -34,7 +34,7 @@ describe('<MySleeps />', () => {
   it('Renders without crashing', () => {
     shallow(<MySleeps sleeps={[]}/>);
   });
-  it('renders a line of text if there are no nights of sleep', () => {
+  it('Renders a line of text if there are no nights of sleep', () => {
     const wrapper = shallow(<MySleeps sleeps={[]} />);
     const text = wrapper.find('#sleeps-div .no-sleep');
     expect(text.text()).toEqual('No previous nights of sleep have been recorded!');
