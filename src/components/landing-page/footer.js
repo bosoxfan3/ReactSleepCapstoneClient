@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer>
       <p>Created by Daniel Acquesta</p>
-      <a href="https://github.com/bosoxfan3/ReactSleepCapstoneClient"><img src="https://diversity.github.com/assets/svg/mark-github.svg" alt="github logo" /></a>
+      <a href="https://github.com/bosoxfan3/RestFull"><img src="https://diversity.github.com/assets/svg/mark-github.svg" alt="github logo" /></a>
     </footer>
   );
 }
