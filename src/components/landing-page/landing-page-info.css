@@ -2,7 +2,6 @@
 that I will writing the base responsive design code */
 * {
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
 }
 
 .row {
