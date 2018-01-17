@@ -40,7 +40,7 @@ each other */
 .landing-page-nav .link {
   font-size: 17pt;
   position: relative;
-  top: 2px;
+  top: 5px;
 }
 
 .landing-page-nav .link:hover {
@@ -54,6 +54,9 @@ each other */
 @media only screen and (max-width: 400px) {
   .landing-page-nav .link {
     padding-right: 7px;
-    font-size: 12pt;
+    font-size: 14pt;
+  }
+  .landing-page-nav #demo-link {
+    padding-right: 0px;
   }
 }
