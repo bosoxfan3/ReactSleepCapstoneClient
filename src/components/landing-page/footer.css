@@ -12,4 +12,16 @@ footer p {
   font-size: 12pt;
   position: relative;
   bottom: 6px;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+footer a {
+  display: inline-block;
+}
+
+footer a img {
+  width: 20px;
+  position: relative;
+  bottom: 1px;
 }
