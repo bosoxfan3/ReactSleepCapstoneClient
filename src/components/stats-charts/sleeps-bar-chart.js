@@ -4,7 +4,7 @@ import NVD3Chart from 'react-nvd3';
 
 import './sleeps-bar-chart.css';
 
-export class SleepsBar extends React.Component {
+export class SleepsBarChart extends React.Component {
     calculateData(sleeps) {
       let datum = [{
         values: []
@@ -47,4 +47,4 @@ const mapStateToProps = state => ({
   sleeps: state.sleepData.sleeps
 });
 
-export default connect(mapStateToProps)(SleepsBar);
+export default connect(mapStateToProps)(SleepsBarChart);
