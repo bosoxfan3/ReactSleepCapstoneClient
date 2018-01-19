@@ -52,9 +52,7 @@ Then open [`localhost:3000`](http://localhost:3000) in a browser.
 
 Technologies Used
 -----------------
-RestFull is a React app created with create-react-app. It utilizes Enzyme for testing. 
-
-An accompanying RestFullAPI is a Node Javascript App created with Express. It utilizes MongoDB to track users and their nights of sleep. Developers will need to install MongoDB for full functionality.
+RestFull is an fullstack javascript application that utilizes React. It uses Enzyme for testing. It uses MongoDB to track users and their nights of sleep. Developers will need to install MongoDB for full functionality.
 ### Front End
   * Javascript - Used to build all components and testing
   * CSS - Used for styling components
