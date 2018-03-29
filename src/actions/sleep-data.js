@@ -36,7 +36,6 @@ export const fetchSleepData = () => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/sleeps`, {
     method: 'GET',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`
     }
   })

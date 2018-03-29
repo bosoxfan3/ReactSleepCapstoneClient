@@ -1,5 +1,5 @@
 /* because of react's transitive properties with css, this is the only place
-that I will writing the base responsive design code */
+that I will write the base responsive design code */
 * {
   box-sizing: border-box;
 }

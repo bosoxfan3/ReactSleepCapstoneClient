@@ -54,7 +54,7 @@
   text-indent: 0.01px;
   text-overflow: '';
   font-family: 'Slabo 27px', serif;
-  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+  -webkit-appearance: button;
 }
 
 .edit-form-background .date-field::before,
@@ -64,7 +64,7 @@
   pointer-events: none;
 }
 
-.edit-form-background .date-field::after { /*  Custom dropdown arrow */
+.edit-form-background .date-field::after {
   content: "\25BC";
   height: 1em;
   font-size: .625em;
@@ -74,7 +74,7 @@
   margin-top: -.5em;
 }
 
-.edit-form-background .date-field::before { /*  Custom dropdown arrow cover */
+.edit-form-background .date-field::before {
   width: 2em;
   right: 0;
   top: 0;
@@ -145,7 +145,7 @@
   top: 5px;
   z-index: 1;
 }
-/*because the "No" label needed less moving than the "Yes" to be centered in the box*/
+
 .edit-form-background input[id*="1"] + label {
   position: relative;
   right: 60px;
@@ -187,7 +187,7 @@
   text-indent: 0.01px;
   text-overflow: '';
   font-family: 'Slabo 27px', serif;
-  -webkit-appearance: button; /*hide default arrow in chrome OSX*/
+  -webkit-appearance: button;
 }
 
 .edit-form-background .caffeine-field::before,
@@ -197,7 +197,7 @@
   pointer-events: none;
 }
 
-.edit-form-background .caffeine-field::after { /*  Custom dropdown arrow */
+.edit-form-background .caffeine-field::after {
   content: "\25BC";
   height: 1em;
   font-size: .625em;
@@ -207,7 +207,7 @@
   margin-top: -.5em;
 }
 
-.edit-form-background .caffeine-field::before { /*  Custom dropdown arrow cover */
+.edit-form-background .caffeine-field::before {
   width: 2em;
   right: 0;
   top: 0;
@@ -255,7 +255,7 @@
   text-indent: 0.01px;
   text-overflow: '';
   font-family: 'Slabo 27px', serif;
-  -webkit-appearance: button; /*hide default arrow in chrome OSX*/
+  -webkit-appearance: button;
 }
 
 .edit-form-background .moodAtWake-field::before,
@@ -265,7 +265,7 @@
   pointer-events: none;
 }
 
-.edit-form-background .moodAtWake-field::after { /*  Custom dropdown arrow */
+.edit-form-background .moodAtWake-field::after {
   content: "\25BC";
   height: 1em;
   font-size: .625em;
@@ -275,7 +275,7 @@
   margin-top: -.5em;
 }
 
-.edit-form-background .moodAtWake-field::before { /*  Custom dropdown arrow cover */
+.edit-form-background .moodAtWake-field::before {
   width: 2em;
   right: 0;
   top: 0;
@@ -323,7 +323,7 @@
   text-indent: 0.01px;
   text-overflow: '';
   font-family: 'Slabo 27px', serif;
-  -webkit-appearance: button; /*hide default arrow in chrome OSX*/
+  -webkit-appearance: button;
 }
 
 .edit-form-background .moodAtSleep-field::before,
@@ -333,7 +333,7 @@
   pointer-events: none;
 }
 
-.edit-form-background .moodAtSleep-field::after { /*  Custom dropdown arrow */
+.edit-form-background .moodAtSleep-field::after {
   content: "\25BC";
   height: 1em;
   font-size: .625em;
@@ -343,7 +343,7 @@
   margin-top: -.5em;
 }
 
-.edit-form-background .moodAtSleep-field::before { /*  Custom dropdown arrow cover */
+.edit-form-background .moodAtSleep-field::before {
   width: 2em;
   right: 0;
   top: 0;

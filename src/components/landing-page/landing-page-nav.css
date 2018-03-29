@@ -1,6 +1,3 @@
-/* include the largest div in every declaration to stop style sheets from bleeding into
-each other */
-
 .landing-page-nav {
   width: 100%;
   background: url('https://images.unsplash.com/photo-1498681353033-e5632ec6decd?auto=format&fit=crop&w=1080&q=80');
