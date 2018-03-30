@@ -368,13 +368,14 @@
 }
 
 .edit-form-background .submit-edit-button {
-  width: 150px;
+  width: 120px;
   padding: 5px;
   border-radius: 2px;
   border-color: rgb(70, 70, 70);
   font-style: bold;
   font-size: 10pt;
   margin-top: 10px;
+  font-family: 'Slabo 27px', serif;
 }
   
 .edit-form-background .submit-edit-button:hover {
@@ -382,13 +383,14 @@
 }
 
 .edit-form-background .stop-edit-button {
-  width: 150px;
+  width: 120px;
   padding: 5px;
   border-radius: 2px;
   border-color: rgb(70, 70, 70);
   font-style: bold;
   font-size: 10pt;
   margin-top: 15px;
+  font-family: 'Slabo 27px', serif;
 }
   
 .edit-form-background .stop-edit-button:hover {

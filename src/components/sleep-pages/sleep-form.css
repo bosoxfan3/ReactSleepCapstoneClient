@@ -368,13 +368,14 @@
 }
 
 .sleep-form-background .submit-button {
-  width: 80px;
+  width: 120px;
   padding: 5px;
   border-radius: 2px;
   border-color: rgb(70, 70, 70);
   font-style: bold;
   font-size: 10pt;
   margin-top: 10px;
+  font-family: 'Slabo 27px', serif;
 }
   
 .sleep-form-background .submit-button:hover {

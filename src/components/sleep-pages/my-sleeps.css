@@ -17,8 +17,8 @@
 }
 
 .my-sleeps-background .sleep {
-  border-style: ridge;
-  border-color: rgb(111, 191, 216);
+  border-style: solid;
+  border-color: turquoise;
   border-width: 3px;
   margin-bottom: 50px;
   margin-left: 20px;
